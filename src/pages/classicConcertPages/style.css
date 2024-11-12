@@ -1,0 +1,253 @@
+body {
+    font-family: 'Noto Sans', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #ffffff;
+    margin: 0;
+}
+
+header {
+    position:fixed;
+    top:0;
+    width:100%;
+    height:100px;
+    padding:0;
+    background-color:  #ffffff;
+    align-items: center; 
+    justify-content: center;
+    z-index: 10;
+}
+
+/*제목*/
+.header-container { 
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: normal;
+    padding: 0 30px;
+    height:100%;
+    width: 100%;
+
+}
+
+.header-title {
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 1.2;
+    margin: 0;
+
+}
+
+/*메뉴*/
+.menu-container {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    margin-left:110px   /*제목 - 메뉴 간격*/
+}
+
+.menu-links {
+    font-size: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-links li {
+    margin: 40px; /* 메뉴 사이 간격 */
+}
+
+.menu-link {
+    text-decoration: none;
+    color: #333; /* 일반 링크 색상 */
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.highlight-link {
+    color: #ff6600; /* 강조된 링크 색상 */
+    font-weight: bold;
+}
+
+.menu-link:hover {
+    text-decoration: underline;
+}
+
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    padding-top: 100px;
+}
+
+/*네이게이션 바*/
+.breadcrumb {
+    font-size: 15px;
+    background-color:black;
+    color:white;
+    padding: 5px
+}
+
+section {
+    padding: 50px 20px 20px; 
+    background: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    position: relative; 
+    scroll-margin-top: 150px;
+}
+
+/*섹션 제목*/
+h2 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 25px;
+    position: relative;
+    padding-left: 20px;
+}
+
+/*구분선*/
+h2::before {
+    content: "";
+    position: absolute;
+    top: -20px; /* 제목 위에 구분 선 추가 */
+    left: 0;
+    width: 100%;
+    height: 2px; /* 검은색 줄 두께 */
+    background-color: #000;
+
+}
+
+/*세로선*/
+h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px; /* 두께 */
+    height: 80%; /* 높이 */
+    background-color: black;
+}
+
+/*곡제목*/
+h3{
+    margin:10px;
+}
+/*악장*/
+h4{
+    margin:10px;
+}
+p{
+    margin:10px;
+}
+
+#concert-details {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.concert-poster {
+    display: flex;
+    gap: 20px;
+}
+
+.concert-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+
+}
+
+/*예매버튼*/
+button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.conductor-info, .composer-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/*사진*/
+.conductor-info img, .composer-info img {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/*사이드 배너*/
+.side-banner {
+    position: fixed;
+    left: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.side-banner ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; 
+}
+
+.side-banner li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px; /* 버튼 크기 */
+    height: 80px; /* 버튼 크기 */
+    background-color: #000; 
+    color: #fff; 
+    border-radius: 50%;
+    text-decoration: none; 
+    text-align: center;
+    font-size: 14px; 
+    line-height: 1.2;
+    transition: background-color 0.3s, transform 0.3s; /* 호버 시 전환 효과 */
+}
+
+/*커서 효과*/
+.banner-link:hover {
+    background-color: #555; /* 호버 시 버튼 색상 */
+    transform: scale(1.1); /* 호버 시 크기 약간 확대 */
+}
