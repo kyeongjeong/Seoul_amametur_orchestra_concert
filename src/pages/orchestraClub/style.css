@@ -73,18 +73,22 @@ body {
     max-width: 1200px;
     margin: 140px auto 20px; /* 상단에서부터 140px 떨어지도록 설정 */
     padding: 40px; /* 좌우 패딩만 유지 */
-}
-
-.title-container {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+    position: relative;
+    z-index: 1;
 }
 
 .content p {
     margin: 10px 0; /* 본문 사이의 간격 최소화 */
     margin-left: 25px; /* 제목 시작점과 본문 시작점 일치 */
     line-height: 1.6; /* 가독성을 위한 줄 간격 */
+    max-width: 60%; /* 웹페이지 가로 길이의 2/3 지점에서 줄바꿈 */
+    word-wrap: break-word; /* 단어가 길어질 경우 줄바꿈 */
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .title-rectangle {
@@ -108,7 +112,8 @@ body {
     width: 50%;
     position: absolute;
     right: 110px;
-    top: 180px;
+    top: 200px;
+    z-index: 0;
 }
 
 .map img {
