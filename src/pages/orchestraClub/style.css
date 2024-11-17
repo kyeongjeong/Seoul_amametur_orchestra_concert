@@ -60,10 +60,20 @@ body {
     z-index: 999;
 }
 
+.container {
+    position: relative; /* 자식 요소의 위치 조정을 활성화 */
+}
+
+.map + .content {
+    margin-top: -300px; /* map 바로 아래 content를 위로 이동 */
+    position: relative;
+    z-index: 2; /* map보다 위로 표시 */
+}
+
 .content {
     max-width: 1200px;
-    margin: 140px auto 20px; /* 상단에서부터 140px 떨어지도록 설정 */
-    padding: 40px; /* 좌우 패딩만 유지 */
+    margin: 140px auto 0;
+    padding: 40px;
     position: relative;
     z-index: 2;
     pointer-events: none;
@@ -112,6 +122,7 @@ body {
     width: 100%;
     height: auto;
     pointer-events: none;
+    display: block;
 }
 
 .marker {

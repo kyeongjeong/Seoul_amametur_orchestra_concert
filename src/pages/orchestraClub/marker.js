@@ -1,6 +1,6 @@
 // 마커 데이터 배열
 const markers = [
-    { top: 50, left: 30, url: "details_page1.html" },
+    { top: 50, left: 30, url: "../orchestraClubPages/index.html" },
     { top: 20, left: 45, url: "details_page2.html" },
     { top: 30, left: 60, url: "details_page3.html" }
 ];
