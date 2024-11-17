@@ -65,7 +65,7 @@ body {
 }
 
 .map + .content {
-    margin-top: -300px; /* map 바로 아래 content를 위로 이동 */
+    margin-top: -400px; /* map 바로 아래 content를 위로 이동 */
     position: relative;
     z-index: 2; /* map보다 위로 표시 */
 }
@@ -139,3 +139,57 @@ body {
     pointer-events: auto;
 }
 
+/* 슬라이더 컨테이너 */
+.slider-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: visible; /* 슬라이더 영역 밖의 콘텐츠 숨김 */
+    display: flex;
+    align-items: center;
+}
+
+/* 슬라이더 */
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* 슬라이더 아이템 */
+.slider-item {
+    min-width: 250px; /* 각 슬라이더 아이템의 너비 */
+    margin: 0 10px;
+}
+
+.slider-item img {
+    width: 100%;
+    border-radius: 5px; /* 이미지 둥근 모서리 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* 좌우 버튼 */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 100;
+    border-radius: 50%;
+    font-size: 24px;
+}
+
+.prev-btn {
+    left: -40px;
+}
+
+.next-btn {
+    right: -40px;
+}
+
+.slider-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
