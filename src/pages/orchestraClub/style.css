@@ -1,0 +1,141 @@
+/*기본 스타일*/
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/*헤더 스타일*/
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    height: 100px;
+    padding: 0 30px;
+    background-color: #fff;
+    color: #000;
+}
+
+.logo {
+    margin-left: 30px;
+    margin-right: 150px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    gap: 80px;
+}
+
+.menu-item {
+    font-size: 20px;
+    text-decoration: none;
+    color: #000;
+}
+
+.menu-item:hover {
+    color: orange;
+}
+
+/*활성화된 메뉴 항목*/
+#current {
+    color: orange;
+}
+
+.current-menu-bar {
+    position: fixed;
+    top: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 60px;
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+    z-index: 999;
+}
+
+.container {
+    position: relative; /* 자식 요소의 위치 조정을 활성화 */
+}
+
+.map + .content {
+    margin-top: -300px; /* map 바로 아래 content를 위로 이동 */
+    position: relative;
+    z-index: 2; /* map보다 위로 표시 */
+}
+
+.content {
+    max-width: 1200px;
+    margin: 140px auto 0;
+    padding: 40px;
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.content p {
+    margin: 10px 0; /* 본문 사이의 간격 최소화 */
+    margin-left: 25px; /* 제목 시작점과 본문 시작점 일치 */
+    line-height: 1.6; /* 가독성을 위한 줄 간격 */
+    max-width: 60%; /* 웹페이지 가로 길이의 2/3 지점에서 줄바꿈 */
+    word-wrap: break-word; /* 단어가 길어질 경우 줄바꿈 */
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.title-rectangle {
+    width: 5px;
+    height: 30px;
+    background-color: #333;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.body-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.map {
+    position: relative;
+    width: 50%;
+    top: -500px;
+    right: -42%;
+    z-index: 0;
+}
+
+.map img {
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+    display: block;
+}
+
+.marker {
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+}
+
+.marker img {
+    width: 30px; /* 고정된 너비 */
+    height: 30px; /* 고정된 높이 */
+    object-fit: contain; /* 이미지 왜곡 방지 */
+    cursor: pointer;
+    pointer-events: auto;
+}
+
