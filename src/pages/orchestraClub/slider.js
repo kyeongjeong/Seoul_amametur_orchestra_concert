@@ -8,36 +8,36 @@ const sliderData = [
         src: "../../../public/images/orchestraClub_images/경희대_엠됴피.jpg", 
         alt: "경희대_엠됴피", 
         url: "../orchestraClubPages/index.html",
-        clubName: "엠됴피",
-        university: "경희대학교"
+        clubName: "MDOP",
+        university: "경희대학교 아마추어 오케스트라"
     },
     { 
         src: "../../../public/images/orchestraClub_images/서강대_에이시스.jpg", 
         alt: "서강대_에이시스", 
         url: "../orchestraClubPages/index.html",
-        clubName: "에이시스",
-        university: "서강대학교"
+        clubName: "ACES",
+        university: "서강대학교 아마추어 오케스트라"
     },
     { 
         src: "../../../public/images/orchestraClub_images/서울대_스누포.jpg", 
         alt: "서울대_스누포", 
         url: "../orchestraClubPages/index.html",
-        clubName: "스누포",
-        university: "서울대학교"
+        clubName: "SNUPO",
+        university: "서울대학교 아마추어 오케스트라"
     },
     { 
         src: "../../../public/images/orchestraClub_images/성대_스쿠오.jpg", 
         alt: "성대_스쿠오", 
         url: "../orchestraClubPages/index.html",
-        clubName: "스쿠오",
-        university: "성균관대학교"
+        clubName: "SKKUO",
+        university: "성균관대학교 아마추어 오케스트라"
     },
     { 
         src: "../../../public/images/orchestraClub_images/한양대_하나클랑.jpg", 
         alt: "한양대_하나클랑", 
         url: "../orchestraClubPages/index.html",
-        clubName: "하나클랑",
-        university: "한양대학교"
+        clubName: "HANAKLANG",
+        university: "한양대학교 아마추어 오케스트라"
     }
 ];
 
