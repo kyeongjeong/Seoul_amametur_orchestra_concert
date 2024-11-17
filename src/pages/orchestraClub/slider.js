@@ -4,17 +4,47 @@ const nextBtn = document.querySelector('.next-btn');
 
 // 슬라이더 데이터 및 상태
 const sliderData = [
-    { src: "../../../public/images/orchestraClub_images/경희대_엠됴피.jpg", alt: "경희대_엠됴피", url: "../orchestraClubPages/index.html" },
-    { src: "../../../public/images/orchestraClub_images/서강대_에이시스.jpg", alt: "서강대_에이시스", url: "../orchestraClubPages/index.html" },
-    { src: "../../../public/images/orchestraClub_images/서울대_스누포.jpg", alt: "서울대_스누포", url: "../orchestraClubPages/index.html" },
-    { src: "../../../public/images/orchestraClub_images/성대_스쿠오.jpg", alt: "성대_스쿠오", url: "../orchestraClubPages/index.html" },
-    { src: "../../../public/images/orchestraClub_images/한양대_하나클랑.jpg", alt: "한양대_하나클랑", url: "../orchestraClubPages/index.html" }
+    { 
+        src: "../../../public/images/orchestraClub_images/경희대_엠됴피.jpg", 
+        alt: "경희대_엠됴피", 
+        url: "../orchestraClubPages/index.html",
+        clubName: "엠됴피",
+        university: "경희대학교"
+    },
+    { 
+        src: "../../../public/images/orchestraClub_images/서강대_에이시스.jpg", 
+        alt: "서강대_에이시스", 
+        url: "../orchestraClubPages/index.html",
+        clubName: "에이시스",
+        university: "서강대학교"
+    },
+    { 
+        src: "../../../public/images/orchestraClub_images/서울대_스누포.jpg", 
+        alt: "서울대_스누포", 
+        url: "../orchestraClubPages/index.html",
+        clubName: "스누포",
+        university: "서울대학교"
+    },
+    { 
+        src: "../../../public/images/orchestraClub_images/성대_스쿠오.jpg", 
+        alt: "성대_스쿠오", 
+        url: "../orchestraClubPages/index.html",
+        clubName: "스쿠오",
+        university: "성균관대학교"
+    },
+    { 
+        src: "../../../public/images/orchestraClub_images/한양대_하나클랑.jpg", 
+        alt: "한양대_하나클랑", 
+        url: "../orchestraClubPages/index.html",
+        clubName: "하나클랑",
+        university: "한양대학교"
+    }
 ];
 
 let currentIndex = 0; // 현재 슬라이더 인덱스
-const itemWidth = 250 + 20; // 이미지 너비(250px) + 마진(10px * 2)
+const itemWidth = 250 + 20; // 카드 너비(250px) + 마진(10px * 2)
 const containerWidth = 1200; // 버튼 사이의 슬라이더 최대 길이
-const visibleItems = Math.floor(containerWidth / itemWidth); // 한 번에 보이는 이미지 수
+const visibleItems = Math.floor(containerWidth / itemWidth); // 한 번에 보이는 카드 수
 const totalItems = sliderData.length;
 
 // 슬라이더 아이템 생성 함수
@@ -25,14 +55,29 @@ function createSliderItems() {
 
         // 이미지 링크 생성
         const link = document.createElement('a');
-        link.href = item.url; // 링크 URL 설정
+        link.href = item.url;
 
+        // 카드 내용 구성
         const img = document.createElement('img');
         img.src = item.src;
         img.alt = item.alt;
 
-        // 링크에 이미지를 추가
+        const description = document.createElement('div');
+        description.className = 'card-description';
+
+        const clubName = document.createElement('h3');
+        clubName.textContent = item.clubName;
+
+        const university = document.createElement('p');
+        university.textContent = item.university;
+
+        // 설명 추가
+        description.appendChild(clubName);
+        description.appendChild(university);
+
+        // 링크에 이미지와 설명 추가
         link.appendChild(img);
+        link.appendChild(description);
         sliderItem.appendChild(link);
         slider.appendChild(sliderItem);
     });

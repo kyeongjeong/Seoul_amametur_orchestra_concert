@@ -193,12 +193,46 @@ body {
 
 /* 슬라이더 아이템 */
 .slider-item {
-    min-width: 250px; /* 이미지 너비 */
+    min-width: 250px; /* 카드 너비 */
     margin: 0 10px;
+    text-align: center;
+    background-color: #f9f9f9; /* 카드 배경 */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.slider-item:hover {
+    transform: scale(1.05); /* 호버 시 확대 */
 }
 
 .slider-item img {
     width: 100%;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    height: 250px; /* 이미지 정사각형 */
+    object-fit: cover;
+}
+
+/* 카드 전체 링크 밑줄 제거 */
+.slider-item a {
+    text-decoration: none; /* 링크의 기본 밑줄 제거 */
+}
+
+.card-description {
+    padding: 10px;
+    font-family: Arial, sans-serif;
+}
+
+.card-description h3 {
+    font-size: 18px;
+    margin: 10px 0 5px;
+    color: #333;
+    text-decoration: none;
+}
+
+.card-description p {
+    font-size: 14px;
+    color: #777;
+    margin: 0;
+    text-decoration: none;
 }
