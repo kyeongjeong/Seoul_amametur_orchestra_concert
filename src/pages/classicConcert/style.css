@@ -205,3 +205,74 @@ body {
     margin-bottom: 40px;
     background-color: #000;
 }
+
+.concert-list {
+    margin-top: 40px;
+}
+
+.concert-item {
+    display: flex;
+    gap: 20px; /* 사진과 내용 간 간격 */
+    margin-bottom: 30px;
+    align-items: center;
+    position: relative; /* 버튼 배치를 위한 기준 */
+}
+
+.concert-image {
+    width: 300px; /* 사진 크기 확대 */
+    height: 200px;
+    background-color: lightgray;
+    border-radius: 5px;
+    flex-shrink: 0;
+    background-image: url('placeholder.jpg'); /* 실제 이미지 경로로 변경 */
+    background-size: cover;
+    background-position: center;
+}
+
+.concert-details {
+    flex: 1;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 버튼을 아래로 배치 */
+    position: relative;
+}
+
+.concert-title {
+    font-size: 22px; /* 제목 크기 조정 */
+    font-weight: bold;
+    margin-bottom: 20px; /* 제목 아래 간격 축소 */
+}
+
+.concert-date,
+.concert-time,
+.concert-location {
+    font-size: 14px; /* 내용 글씨 크기 축소 */
+    margin-bottom: 2px; /* 각 항목 간 간격 축소 */
+    color: #555;
+}
+
+.details-button {
+    align-self: flex-end; /* 오른쪽 아래로 정렬 */
+    margin-top: 10px; /* 버튼과 내용 간 약간의 간격 */
+    margin-right: 30px;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.details-button:hover {
+    background-color: orange;
+}
+
+.dividing_line2{
+    height: 2px;
+    width: 100%;
+    margin: 30px 0 30px 0;
+    background-color: rgba(190, 190, 190, 0.8);
+}
