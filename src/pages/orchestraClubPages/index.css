@@ -1,0 +1,271 @@
+/* 전체적인 스타일 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 헤더 스타일 */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    height: 100px;
+    padding: 0 30px;
+    background-color: #fff;
+    color: #000;
+}
+
+.logo {
+    margin-left: 30px;
+    margin-right: 150px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    gap: 80px;
+}
+
+.menu-item {
+    font-size: 20px;
+    text-decoration: none;
+    color: #000;
+}
+
+.menu-item:hover {
+    color: orange;
+}
+
+#current {
+    color: orange;
+}
+
+/* 검정색 바 스타일 */
+.current-menu-bar {
+    position: fixed;
+    top: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 60px;
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+    z-index: 999;
+}
+
+/* 왼쪽 고정 버튼 설정 */
+.sidebar {
+    position: fixed;
+    left: 20px;
+    top: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar button {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    font-size: 18px;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* 기본 색상: 소개 버튼은 주황색, 연혁 버튼은 검정색으로 시작 */
+.btn-intro {
+    background-color: orange;
+}
+
+.btn-history {
+    background-color: black;
+}
+
+/* 버튼에 가로선 추가 */
+.sidebar button::before {
+    content: "";
+    position: absolute;
+    left: -40px; /* 버튼 왼쪽에 선을 배치 */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px; /* 선의 길이를 버튼 가장자리에 닿게 설정 */
+    height: 2px; /* 선의 두께 */
+    background-color: transparent; /* 기본적으로 선을 보이지 않게 설정 */
+    transition: background-color 0.3s ease;
+}
+
+/* 활성화된 버튼에 가로선 색상 적용 */
+.btn-intro.active::before,
+.btn-history.active::before {
+    background-color: orange; /* 활성화된 버튼의 선 색상 */
+}
+
+.btn-intro.active,
+.btn-intro { /* 기본적으로 "소개" 버튼은 활성화된 상태로 시작 */
+    background-color: orange;
+}
+
+.btn-history.active {
+    background-color: orange;
+    color: white;
+}
+
+.btn-intro:not(.active) {
+    background-color: black;
+    color: white;
+}
+
+/* 소개 섹션 */
+.section-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.section-intro img {
+    width: 80%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.intro-text {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.description {
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* 연혁 섹션 */
+.section-history {
+    display: flex;
+    margin: 50px 0;
+    margin-left: 170px;
+    align-items: flex-start;
+}
+
+/* 예매 정보와 타임라인 각각 절반 너비 */
+.history-container {
+    width: 50%;
+    padding-right: 20px;
+}
+
+.timeline-container {
+    width: 500px; /* 기존 너비 유지 */
+    background-color: black;
+    color: white;
+    padding: 20px;
+    margin-left: 20px;
+    border-radius: 0; 
+    flex-grow: 1; /* 세로로 공간이 계속 확장되도록 설정 */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* 사진과 예매 정보 한 줄에 배치 */
+.history-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.history-image {
+    width: 33.3%;
+    padding-right: 20px;
+}
+
+.history-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.reservation-info {
+    width: calc(50% - 10px); /* 예매 정보와 이미지의 간격을 맞춤 */
+    padding-left: 10px;
+}
+
+/* 타임라인 세로형 고정 스타일 */
+.timeline {
+    width: 50%;
+    margin-left: 20px;
+    position: relative;
+}
+
+.timeline:before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #ccc;
+}
+
+.timeline-item {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 12px;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    background-color: #333;
+    border-radius: 50%;
+}
+
+.timeline-year {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.timeline-content {
+    padding-left: 20px;
+    border-left: 2px dashed #fff;
+}
+
+.timeline-content p {
+    margin: 5px 0;
+}
+
+/* "세부 정보" 버튼 스타일 */
+.btn-more {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    margin-top: 10px;
+    font-size: 14px;
+}
