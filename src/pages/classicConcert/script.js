@@ -30,10 +30,10 @@ fetch('concerts.json')
                 concertItem.innerHTML = `
                     <div class="concert-image"></div>
                     <div class="concert-details">
-                        <h2 class="concert-title">${concert.university} ${concert.club}</h2>
-                        <p class="concert-date">날짜: ${concert.date}</p>
-                        <p class="concert-time">일시: ${concert.time}</p>
-                        <p class="concert-location">장소: ${concert.location}</p>
+                        <h2 class="concert-title">${concert.title}</h2>
+                        <p class="concert-date">날짜: ${concert.date} ${concert.time}</p>
+                        <p class="concert-time">장소: ${concert.location}</p>
+                        <p class="concert-location">주최: ${concert.university} ${concert.club}</p>
                         <button class="details-button">세부 정보</button>
                     </div>
                 `;

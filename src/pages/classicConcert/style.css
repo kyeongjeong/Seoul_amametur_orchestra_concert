@@ -241,21 +241,20 @@ body {
 .concert-title {
     font-size: 22px; /* 제목 크기 조정 */
     font-weight: bold;
-    margin-bottom: 20px; /* 제목 아래 간격 축소 */
+    margin-bottom: 0px; /* 제목 아래 간격 축소 */
 }
 
 .concert-date,
 .concert-time,
 .concert-location {
     font-size: 14px; /* 내용 글씨 크기 축소 */
-    margin-bottom: 2px; /* 각 항목 간 간격 축소 */
+    margin-bottom: 0px; /* 각 항목 간 간격 축소 */
     color: #555;
 }
 
 .details-button {
-    align-self: flex-end; /* 오른쪽 아래로 정렬 */
+    align-self: flex-start; /* 오른쪽 아래로 정렬 */
     margin-top: 10px; /* 버튼과 내용 간 약간의 간격 */
-    margin-right: 30px;
     padding: 8px 16px;
     font-size: 14px;
     border: none;
