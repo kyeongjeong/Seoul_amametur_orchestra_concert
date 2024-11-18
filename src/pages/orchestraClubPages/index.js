@@ -24,7 +24,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// 버튼 클릭 시 해당 섹션으로 부드럽게 스크롤 이동
+// 버튼 클릭 시 해당 섹션으로 부드럽게 이동
 document.querySelector('.btn-intro').addEventListener('click', () => {
     document.getElementById('intro').scrollIntoView({ behavior: 'smooth' });
 });

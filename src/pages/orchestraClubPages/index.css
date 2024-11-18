@@ -1,18 +1,10 @@
 /* 전체적인 스타일 */
 body {
     margin: 0;
-    padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
+    padding-top: 140px; /* 헤더 + 검정 바 높이만큼 여백 추가 */
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* 헤더 스타일 */
 .header {
     position: fixed;
     top: 0;
@@ -68,6 +60,7 @@ body {
     z-index: 999;
 }
 
+
 /* 왼쪽 고정 버튼 설정 */
 .sidebar {
     position: fixed;
@@ -103,12 +96,12 @@ body {
 .sidebar button::before {
     content: "";
     position: absolute;
-    left: -40px; /* 버튼 왼쪽에 선을 배치 */
+    left: -40px;
     top: 50%;
     transform: translateY(-50%);
-    width: 40px; /* 선의 길이를 버튼 가장자리에 닿게 설정 */
-    height: 2px; /* 선의 두께 */
-    background-color: transparent; /* 기본적으로 선을 보이지 않게 설정 */
+    width: 40px;
+    height: 2px;
+    background-color: transparent; 
     transition: background-color 0.3s ease;
 }
 
@@ -188,7 +181,7 @@ body {
     align-items: flex-start;
 }
 
-/* 사진과 예매 정보 한 줄에 배치 */
+/* 사진과 예매 정보 한 줄 배치 */
 .history-item {
     display: flex;
     align-items: center;
@@ -207,40 +200,50 @@ body {
 }
 
 .reservation-info {
-    width: calc(50% - 10px); /* 예매 정보와 이미지의 간격을 맞춤 */
+    width: calc(50% - 10px);
     padding-left: 10px;
 }
 
-/* 타임라인 세로형 고정 스타일 */
-.timeline {
-    width: 50%;
+/* 타임라인 검정네모 박스 */
+.timeline-container {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border-radius: 0px;
+    width: 100%;
     margin-left: 20px;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+    min-height: 100%;
+    height: auto;
 }
 
-.timeline:before {
-    content: "";
-    position: absolute;
-    left: 20px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background-color: #ccc;
-}
-
+/* 타임라인 아이템 */
 .timeline-item {
     margin-bottom: 20px;
-    width: 100%;
+    width: 100%; 
 }
 
 .timeline-dot {
-    position: absolute;
-    left: 12px;
-    top: 8px;
-    width: 12px;
-    height: 12px;
-    background-color: #333;
-    border-radius: 50%;
+    display: none;
+}
+
+.timeline-year {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.timeline-content {
+    padding-left: 20px;
+    border-left: 2px dashed #fff;
+    margin-left: 10px;
+}
+
+.timeline-content p {
+    margin: 5px 0;
 }
 
 .timeline-year {
