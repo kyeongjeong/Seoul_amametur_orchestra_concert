@@ -80,6 +80,13 @@ body {
     font-weight: bold;
 }
 
+.map-description {
+    text-align: right;
+    color: gray;
+    font-size: 14px;
+    margin: -10px 0 10px 0;
+}
+
 #map {
     width: 100%;
     height: 550px;
