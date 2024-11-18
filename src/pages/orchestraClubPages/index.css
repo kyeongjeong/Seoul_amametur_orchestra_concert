@@ -126,6 +126,11 @@ body {
     color: white;
 }
 
+.small-text {
+    font-size: 20px; /* 원하는 크기로 조정 */
+    font-weight: bold; /* 글씨 두께도 조정 가능 */
+}
+
 /* 소개 섹션 */
 .section-intro {
     display: flex;
@@ -196,15 +201,23 @@ body {
 .history-image img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 0;
 }
+
+/* 
+물어보기!!
+.history-image img {
+    width: 180px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0; 
+} */
 
 .reservation-info {
     width: calc(50% - 10px); /* 예매 정보와 이미지의 간격을 맞춤 */
     padding-left: 10px;
 }
 
-/* 타임라인 세로형 고정 스타일 */
 /* 타임라인 섹션 스타일 */
 .timeline-container {
     background-color: black; /* 검정색 배경 */
@@ -259,4 +272,16 @@ body {
     border-radius: 20px;
     margin-top: 10px;
     font-size: 14px;
+}
+
+/* "이전 공연 영상 바로가기" 링크 스타일 */
+.btn-link {
+    color: black;
+    text-decoration: underline;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.btn-link:hover {
+    color: orange;
 }
