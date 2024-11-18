@@ -139,8 +139,15 @@
         <h1 class="title">Today's Classic Concert</h1>
     </div>
     
-    <div id="concert-list" class="concert-list"></div>
-
+    <div class="concert-list-container">
+        <div id="concert-list" class="concert-list"></div>
+        <div class="pagination">
+            <button id="prev-page" class="pagination-button" disabled>이전</button>
+            <div id="page-numbers" class="page-numbers"></div>
+            <button id="next-page" class="pagination-button">다음</button>
+        </div>
+    </div>
+    
     <script src="script.js"></script>
 
 
