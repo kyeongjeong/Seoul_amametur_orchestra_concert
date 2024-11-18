@@ -313,12 +313,14 @@ body {
 }
 
 .page-button.active {
-    background-color: orange;
-    color: #fff;
+    background-color: #f2f2f2;
+    color: #333;
+    pointer-events: none;
 }
 
 .page-button:hover {
-    background-color: #f0f0f0;
+    background-color: transparent; 
+    color: inherit;
 }
 
 .page-button:disabled {
