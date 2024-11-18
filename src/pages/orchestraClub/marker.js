@@ -1,60 +1,18 @@
-// // 마커 데이터 배열
-// const markers = [
-//     { top: 49, left: 38, url: "../orchestraClubPages/index.html" }, //서강대
-//     { top: 75, left: 37, url: "../orchestraClubPages/index.html" }, //서울대
-//     { top: 40, left: 60, url: "../orchestraClubPages/index.html" }, //경희대
-//     { top: 36, left: 48, url: "../orchestraClubPages/index.html" }, //성균관대
-//     { top: 46, left: 60, url: "../orchestraClubPages/index.html" }, //한양대
-// ];
-
-// // 지도 컨테이너 선택
-// const mapContainer = document.querySelector(".map");
-
-// function createMarker(top, left, url) {
-//     const marker = document.createElement("a");
-//     marker.className = "marker";
-//     marker.href = url;
-//     marker.title = "Orchestra Info";
-
-//     const markerImg = document.createElement("img");
-//     markerImg.src = "../../../public/images/map_marker.png";
-//     markerImg.alt = "Map Marker";
-
-//     // 이미지 크기 고정
-//     markerImg.style.width = "30px";
-//     markerImg.style.height = "30px";
-//     markerImg.style.objectFit = "contain"; // 이미지 왜곡 방지
-
-//     marker.appendChild(markerImg);
-
-//     marker.style.position = "absolute";
-//     marker.style.top = `${top}%`;
-//     marker.style.left = `${left}%`;
-
-//     marker.addEventListener("click", (event) => {
-//         event.preventDefault();
-//         console.log(`Navigating to: ${url}`);
-//         window.location.href = url;
-//     });
-
-//     return marker;
-// }
-
-
-// // 마커 추가
-// markers.forEach(markerData => {
-//     const marker = createMarker(markerData.top, markerData.left, markerData.url);
-//     mapContainer.appendChild(marker);
-// });
-
-
 // 마커 데이터 배열
 const markers = [
-    { top: 49, left: 38, university: "서강대학교", club: "ACES", url: "../orchestraClubPages/index.html" },
+    { top: 50, left: 40, university: "서강대학교", club: "ACES", url: "../orchestraClubPages/index.html" },
     { top: 75, left: 37, university: "서울대학교", club: "SNUP", url: "../orchestraClubPages/index.html" },
     { top: 40, left: 60, university: "경희대학교", club: "MDOP", url: "../orchestraClubPages/index.html" },
     { top: 36, left: 48, university: "성균관대학교", club: "SKKUO", url: "../orchestraClubPages/index.html" },
     { top: 46, left: 60, university: "한양대학교", club: "HANAKLANG", url: "../orchestraClubPages/index.html" },
+    { top: 50, left: 65, university: "건국대학교", club: "KUPHIL", url: "../orchestraClubPages/index.html" },
+    { top: 36, left: 55, university: "고려대학교", club: "Korea University Orchestra", url: "../orchestraClubPages/index.html" },
+    { top: 24, left: 62, university: "광운대학교", club: "Da KAPO", url: "../orchestraClubPages/index.html" },
+    { top: 46, left: 51, university: "동국대학교", club: "OPUS", url: "../orchestraClubPages/index.html" },
+    { top: 53, left: 43, university: "숙명여자대학교", club: "S.O.Phi.A", url: "../orchestraClubPages/index.html" },
+    { top: 38, left: 63, university: "서울시립대학교", club: "Cantabile", url: "../orchestraClubPages/index.html" },
+    { top: 63, left: 41, university: "중앙대학교", club: "RUBATO", url: "../orchestraClubPages/index.html" },
+    { top: 49, left: 33, university: "홍익대학교", club: "HIAMO", url: "../orchestraClubPages/index.html" }
 ];
 
 // 지도 컨테이너 선택
