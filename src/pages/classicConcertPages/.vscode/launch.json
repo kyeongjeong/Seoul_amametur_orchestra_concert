@@ -1,0 +1,14 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Open classicconcert_detail.html",
+            "file": "c:\\Users\\22dkw\\Desktop\\곽도경\\2-2\\오픈소스\\Team project\\Seoul_amateur_orchestra_club\\src\\pages\\classicConcertPages\\classicconcert_detail.html"
+        }
+    ]
+}

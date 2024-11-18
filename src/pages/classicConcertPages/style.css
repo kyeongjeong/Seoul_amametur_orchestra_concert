@@ -1,99 +1,83 @@
 body {
-    font-family: 'Noto Sans', Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #ffffff;
     margin: 0;
+    font-family: Arial, sans-serif;
 }
-
-header {
-    position:fixed;
-    top:0;
-    width:100%;
-    height:100px;
-    padding:0;
-    background-color:  #ffffff;
-    align-items: center; 
-    justify-content: center;
-    z-index: 10;
-}
-
-/*제목*/
-.header-container { 
-    max-width: 1200px;
-    display: flex;
-    align-items: center;
-    justify-content: normal;
-    padding: 0 30px;
-    height:100%;
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-
-}
-
-.header-title {
-    font-size: 24px;
-    font-weight: normal;
-    line-height: 1.2;
-    margin: 0;
-
-}
-
-/*메뉴*/
-.menu-container {
-    display: flex;
-    align-items:center;
-    justify-content: center;
-    margin-left:110px   /*제목 - 메뉴 간격*/
-}
-
-.menu-links {
-    font-size: 20px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    z-index: 1000;
     display: flex;
     align-items: center;
-    justify-content: center;
+    height: 100px;
+    padding: 0 30px;
+    background-color: #fff;
+    color: #000;
 }
-
-.menu-links li {
-    margin: 40px; /* 메뉴 사이 간격 */
-}
-
-.menu-link {
-    text-decoration: none;
-    color: #333; /* 일반 링크 색상 */
-    font-size: 20px;
-    font-weight: normal;
-}
-
-.highlight-link {
-    color: #ff6600; /* 강조된 링크 색상 */
+.logo {
+    margin-left: 30px;
+    margin-right: 150px;
+    font-size: 24px;
     font-weight: bold;
 }
-
-.menu-link:hover {
-    text-decoration: underline;
+.menu {
+    display: flex;
+    gap: 80px;
 }
-
+.menu-item {
+    font-size: 20px;
+    text-decoration: none;
+    color: #000;
+}
+.menu-item:hover {
+    color: orange;
+}
+#current {
+    color: orange;
+}
+.current-menu-bar {
+    position: fixed;
+    top: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 60px;
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+    z-index: 999;
+}
+.content {
+    max-width: 1200px;
+    margin: 140px auto 20px;
+    padding: 40px;
+}
+.title-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.title-rectangle {
+    width: 5px;
+    height: 30px;
+    background-color: #333;
+}
+.title {
+    font-size: 32px;
+    font-weight: bold;
+}
 
 main {
     max-width: 1200px;
     margin: 20px auto;
     padding: 0 20px;
-    padding-top: 100px;
-}
-
-/*네이게이션 바*/
-.breadcrumb {
-    font-size: 15px;
-    background-color:black;
-    color:white;
-    padding: 5px
+    padding-top: 50px;
 }
 
 section {
-    padding: 50px 20px 20px; 
+    padding: 100px 20px 20px; 
     background: #fff;
     border-radius: 10px;
     display: flex;
@@ -104,19 +88,18 @@ section {
 }
 
 /*섹션 제목*/
-h2 {
-    margin-top: 15px;
+h1 {
+    margin-top: 40px;
     margin-bottom: 15px;
-    font-size: 25px;
     position: relative;
     padding-left: 20px;
 }
 
 /*구분선*/
-h2::before {
+h1::before {
     content: "";
     position: absolute;
-    top: -20px; /* 제목 위에 구분 선 추가 */
+    top: -40px; /* 제목 위에 구분 선 추가 */
     left: 0;
     width: 100%;
     height: 2px; /* 검은색 줄 두께 */
@@ -125,7 +108,7 @@ h2::before {
 }
 
 /*세로선*/
-h2::after {
+h1::after {
     content: "";
     position: absolute;
     left: 0;
@@ -137,11 +120,11 @@ h2::after {
 }
 
 /*곡제목*/
-h3{
+h2{
     margin:10px;
 }
 /*악장*/
-h4{
+h3{
     margin:10px;
 }
 p{
@@ -180,10 +163,6 @@ button {
     border-radius: 5px;
 }
 
-button:hover {
-    background-color: #555;
-}
-
 .conductor-info, .composer-info {
     display: flex;
     align-items: center;
@@ -210,44 +189,54 @@ ul li {
 /*사이드 배너*/
 .side-banner {
     position: fixed;
-    left: 100px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.side-banner ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    left: 20px;
+    top: 170px;
     display: flex;
     flex-direction: column;
-    gap: 5px; 
+    gap: 10px;
+
 }
 
-.side-banner li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.banner-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 80px; /* 버튼 크기 */
-    height: 80px; /* 버튼 크기 */
-    background-color: #000; 
-    color: #fff; 
+.side-banner button {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    font-size: 10px;
+    color: white;
+    border: none;
     border-radius: 50%;
-    text-decoration: none; 
-    text-align: center;
-    font-size: 14px; 
-    line-height: 1.2;
-    transition: background-color 0.3s, transform 0.3s; /* 호버 시 전환 효과 */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: -5px;
 }
 
-/*커서 효과*/
-.banner-link:hover {
-    background-color: #555; /* 호버 시 버튼 색상 */
-    transform: scale(1.1); /* 호버 시 크기 약간 확대 */
+.side-banner button:not(.active) {
+    background-color: black;
+    color: white;
 }
+
+.side-banner button.active {
+    background-color: orange;
+    color: white;
+}
+
+.side-banner button:hover {
+    background-color: orange;
+}
+
+/* 버튼에 가로선 추가 */
+.side-banner button.active::before {
+    background-color: orange;
+}
+.side-banner button::before {
+    content: "";
+    position: absolute;
+    left: -40px; /* 버튼 왼쪽에 선을 배치 */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px; /* 선의 길이를 버튼 가장자리에 닿게 설정 */
+    height: 2px; /* 선의 두께 */
+    background-color: transparent; /* 기본적으로 선을 보이지 않게 설정 */
+    transition: background-color 0.3s ease;
+}
+
