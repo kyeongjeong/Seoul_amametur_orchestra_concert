@@ -80,6 +80,13 @@ body {
     font-weight: bold;
 }
 
+.map-description {
+    text-align: right;
+    color: gray;
+    font-size: 14px;
+    margin: -10px 0 10px 0;
+}
+
 #map {
     width: 100%;
     height: 550px;
@@ -197,4 +204,203 @@ body {
     margin-top: 70px;
     margin-bottom: 40px;
     background-color: #000;
+}
+
+.concert-list {
+    margin-top: 40px;
+}
+
+.concert-item {
+    display: flex;
+    gap: 20px; /* 사진과 내용 간 간격 */
+    margin-bottom: 30px;
+    align-items: center;
+    position: relative; /* 버튼 배치를 위한 기준 */
+}
+
+.concert-image {
+    width: 300px; /* 사진 크기 확대 */
+    height: 200px;
+    background-color: lightgray;
+    border-radius: 5px;
+    flex-shrink: 0;
+    background-image: url('placeholder.jpg'); /* 실제 이미지 경로로 변경 */
+    background-size: cover;
+    background-position: center;
+}
+
+.concert-details {
+    flex: 1;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 버튼을 아래로 배치 */
+    position: relative;
+}
+
+.concert-title {
+    font-size: 22px; /* 제목 크기 조정 */
+    font-weight: bold;
+    margin-bottom: 20px; /* 제목 아래 간격 축소 */
+}
+
+.concert-date,
+.concert-time,
+.concert-location {
+    font-size: 14px; /* 내용 글씨 크기 축소 */
+    margin-bottom: 2px; /* 각 항목 간 간격 축소 */
+    color: #555;
+}
+
+.details-button {
+    align-self: flex-end; /* 오른쪽 아래로 정렬 */
+    margin-top: 10px; /* 버튼과 내용 간 약간의 간격 */
+    margin-right: 30px;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.details-button:hover {
+    background-color: orange;
+}
+
+.dividing_line2{
+    height: 2px;
+    width: 100%;
+    margin: 30px 0 30px 0;
+    background-color: rgba(190, 190, 190, 0.8);
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.pagination-button {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.page-numbers {
+    display: flex;
+    gap: 10px;
+}
+
+.page-button {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.page-button.active {
+    background-color: #f2f2f2;
+    color: #333;
+    pointer-events: none;
+}
+
+.page-button:hover {
+    background-color: transparent; 
+    color: inherit;
+}
+
+.page-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* 검색창 컨테이너 */
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    position: relative;
+    z-index: 200;
+}
+
+/* 검색 입력 필드 */
+#search-bar {
+    width: 550px;
+    height: 25px;
+    padding: 8px 16px;
+    font-size: 16px;
+    border: 3px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+
+#search-bar:focus {
+    border-color: black;
+}
+
+/* 검색 결과 리스트 */
+#search-results {
+    position: absolute;
+    top: 46px; /* 검색창 바로 아래 */
+    left: 0;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 150;
+    list-style: none;
+    padding: 8px;
+    margin: 0;
+    width: calc(100% - 5px); /* 검색창의 정확한 길이에 맞춤 */
+    box-sizing: border-box; /* 패딩과 테두리를 포함한 크기 계산 */
+    display: none; /* 초기 상태에서 숨김 */
+}
+
+/* 검색 결과 항목 */
+#search-results li {
+    padding: 12px; /* 내부 여백 */
+    cursor: pointer;
+    font-size: 15px;
+    border-bottom: 1px solid #eee; /* 항목 간 구분선 */
+    border-radius: 5px; /* 항목 자체 둥근 모서리 */
+    transition: background-color 0.3s, box-shadow 0.3s; /* 호버 효과 */
+}
+
+#search-results li:last-child {
+    border-bottom: none;
+}
+
+#search-results li:hover {
+    background-color: rgba(255, 166, 0, 0.201); /* 옅은 파란색 배경 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 호버 시 그림자 효과 */
+}
+
+/* 검색 결과 없음 메시지 */
+#search-results .no-results {
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+    padding: 10px;
+    font-style: italic;
+    border-radius: 5px;
+    margin-top: 5px;
 }
