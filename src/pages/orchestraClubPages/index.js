@@ -24,11 +24,27 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// 버튼 클릭 시 해당 섹션으로 부드럽게 스크롤 이동
+
 document.querySelector('.btn-intro').addEventListener('click', () => {
-    document.getElementById('intro').scrollIntoView({ behavior: 'smooth' });
+    const introSection = document.getElementById('intro');
+    const offset = -150;
+    const elementPosition = introSection.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.scrollY + offset;
+
+    window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+    });
 });
 
 document.querySelector('.btn-history').addEventListener('click', () => {
-    document.getElementById('history').scrollIntoView({ behavior: 'smooth' });
+    const historySection = document.getElementById('history');
+    const offset = -170; // -170px 위로 보이게 조정 -> 물어보기!!
+    const elementPosition = historySection.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.scrollY + offset;
+
+    window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+    });
 });
