@@ -84,10 +84,10 @@ fetch('concerts.json')
         prevButton.addEventListener('click', () => {
             if (currentPageGroup > 1) {
                 currentPageGroup--;
-                currentPage = (currentPageGroup - 1) * pageGroupSize + 1; // 이전 그룹의 첫 페이지로 이동
+                currentPage = currentPageGroup * pageGroupSize; // 이전 그룹의 마지막 페이지로 이동
                 renderPage(currentPage);
             }
-        });
+        });        
 
         nextButton.addEventListener('click', () => {
             if (currentPageGroup < totalPageGroups) {
