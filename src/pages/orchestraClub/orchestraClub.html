@@ -24,15 +24,42 @@
                 <div class="title-rectangle"></div>
                 <h2 class="title">Seoul Amateur Orchestra Club</h2>
             </div>
-            <p>대충 서울 지역에는 오케스트라가 20개 정도 있다는 얘기</p>
-            <p>이 웹사이트에서는 아마추어 오케스트라를 모아 볼 수 있다는 얘기</p>
-            <p>검색도 가능합니다 아마도요</p>
-            <p>지도 클립도 가능합니다 아마도요</p>
-            <p>여기 들어갈 설명 문구는 고민 중 해봐야 할 듯</p>
+            <p>Seoul is home to numerous amateur orchestras, many of which are operated by universities, and the total number exceeds 20.</p>
+            <p>This webpage allows you to explore these amateur orchestras all in one place.</p>
+            <p>You can check the locations of the orchestras on the map to the right. By clicking on a marker, you'll be directed to a detailed page with more information about the selected orchestra.</p>
+            <p>You can also use the search feature at the bottom to conveniently find the orchestra you're looking for.</p>
+            <p>This website provides valuable information for music enthusiasts and those interested in amateur orchestral activities in the Seoul area. Discover the history, performance schedules, and ways to participate in various orchestras, and embark on a new musical journey.</p>
+            <p>Our goal is to connect music lovers and share the charm of amateur orchestras with a wider audience. We warmly welcome your visit and hope you enjoy exploring!</p>
         </div>
         <div class="map">
             <img src="../../../public/images/seoul_map_image.png" alt="서울 지도">
         </div>
+
+        <div class="content2">
+            <div class="title-container">
+                <div class="title-rectangle"></div>
+                <h2 class="title">Today's Orchestra Club</h2>
+                <div class="search-container">
+                    <input type="text" id="search-bar" placeholder="Search by club or university...">
+                    <ul id="search-results"></ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-container">
+            <button class="slider-btn prev-btn">❮</button>
+            <div class="slider-wrapper">
+                <div class="slider"></div>
+            </div>
+            <button class="slider-btn next-btn">❯</button>
+        </div>
     </div>
+
+    <br><br><br><br><br>
+
+    <!-- JavaScript 파일 로드 -->
+    <script src="marker.js"></script>
+    <script src="slider.js"></script>
+    <script src="search.js"></script>
 </body>
 </html>
