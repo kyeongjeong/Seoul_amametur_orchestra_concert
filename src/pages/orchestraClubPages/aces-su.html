@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>concert_info</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="logo">Seoul Armateur<br>Orchestra Club</div>
+        <nav class="menu">
+            <a href="#" class="menu-item">Home</a>
+            <a href="#" class="menu-item" id="current">Orchestra Club</a>
+            <a href="#" class="menu-item">Classic Concert</a>
+            <a href="#" class="menu-item">My Pages</a>
+        </nav>
+    </header>
+
+    <!-- 현재 메뉴 표시 바 -->
+    <div class="current-menu-bar">home -> Classic Concert -> aces</div>
+
+    <!-- 왼쪽 고정된 버튼 -->
+    <div class="sidebar">
+        <button class="btn-intro active">소개</button>
+        <button class="btn-history">연혁</button>
+    </div>
+
+    <main>
+        <!-- 소개 섹션 -->
+        <div class="section-intro" id="intro">
+            <img src="../../../public/images/orchestra_photo/서강대_aces.png" alt="Orchestra">
+            <div class="intro-text"><br>“클래식 음악을 좋아하는 사람이라면 누구나 함께할 수 있는 서강대 유일의 오케스트라 동아리"<br</div>
+            <div class="description">
+                <br>서강오케스트라 ACES는 클래식을 연주하는 서강대학교 아마추어 오케스트라 동아리입니다.<br><br>
+                클래식은 수백 년 동안 가치를 인정받아온 음악으로,<br>
+                ACES는 그 속에 담긴 감정과 아름다움을 재현하며 진정한 삶의 자양분을 쌓아가고 있습니다.<br>
+                혼자가 아닌 함께 연주하며 팀워크와 화합의 가치를 몸소 배우며, 단원들과 유대감을 쌓아갑니다.<br><br>
+                매년 5월과 11월에 정기 연주회를 개최하고 있으며,<br>
+                음악 전공자가 아니어도 클래식에 대한 열정과 관심만 있다면 누구나 입단 가능합니다.<br><br>
+                정기 연습, MT, 음악회 관람 등 다양한 활동으로 단원 간 친밀함을 다지며,<br>
+                비대면 면접과 수시 오디션을 통해 신입 단원을 모집합니다.<br><br>
+                ACES는 음악을 통해 깊은 팀워크와 성장을 경험할 수 있는 특별한 동아리입니다.<br>
+            </div>
+        </div>        
+
+        <!-- 연혁 섹션 -->
+        <div class="section-history" id="history">
+            <!-- 예매 정보 섹션 -->
+            <div class="history-container">
+                <!-- 첫 번째 항목: 세부 정보 버튼 -->
+                <div class="history-item">
+                    <div class="history-image">
+                        <img src="../../../public/images/concert_poster/snu/snupo_63.png" alt="연주회 이미지 1">
+                    </div>
+                    <div class="reservation-info">
+                        <h4><u>관현악</u></h4>
+                        <h3>제 63회 정기연주회</h3>
+                        <p>2024-08-29<br>안양아트센터 관악홀</p>
+                        <a href="#" class="btn-more">세부 정보</a>
+                    </div>
+                </div>
+                
+                <!-- 나머지 항목: 이전 공연 바로가기 -->
+                <div class="history-item">
+                    <div class="history-image">
+                        <img src="../../../public/images/concert_poster/snu/snupo_62.png" alt="연주회 이미지 2">
+                    </div>
+                    <div class="reservation-info">
+                        <h4><u>관현악</u></h4>
+                        <h3>제 62회 정기연주회</h3>
+                        <p>2024-02-29<br><br>⇒ <a href="https://youtu.be/ty8TXimzFSY?si=GIJ-JnguhHiaGmvC" class="btn-link">이전 공연 영상 바로가기</a></p>
+                    </div>
+                </div>
+                <div class="history-item">
+                    <div class="history-image">
+                        <img src="../../../public/images/concert_poster/snu/snupo_61.png" alt="연주회 이미지 3">
+                    </div>
+                    <div class="reservation-info">
+                        <h4><u>관현악</u></h4>
+                        <h3>제 61회 정기연주회</h3>
+                        <p>2023-09-01<br><br>⇒ <a href="https://youtu.be/ItUyz4Px_So?si=_CTXH5649DBit9ON" class="btn-link">이전 공연 영상 바로가기</a></p>
+                    </div>
+                </div>
+                <div class="history-item">
+                    <div class="history-image">
+                        <img src="../../../public/images/concert_poster/snu/snupo_60.png" alt="연주회 이미지 3">
+                    </div>
+                    <div class="reservation-info">
+                        <h4><u>관현악</u></h4>
+                        <h3>제 60회 정기연주회</h3>
+                        <p>2023-03-02<br><br>⇒ <a href="https://youtu.be/fQaH4_lO_AU?si=k6t5l9VVa3uURF21" class="btn-link">이전 공연 영상 바로가기</a></p>
+                    </div>
+                </div>
+                <div class="history-item">
+                    <div class="history-image">
+                        <img src="../../../public/images/concert_poster/snu/snupo_59.png" alt="연주회 이미지 3">
+                    </div>
+                    <div class="reservation-info">
+                        <h4><u>관현악</u></h4>
+                        <h3>제 59회 정기연주회</h3>
+                        <p>2022-09-01<br><br>⇒ <a href="https://youtu.be/iniMVL-zSV0?si=RWAVsv1FgFxjchBD" class="btn-link">이전 공연 영상 바로가기</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 타임라인 섹션 -->
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-year">1992<span class="small-text">&nbsp;&nbsp;서울대학교 악우협회 오케스트라 창단</span></div>
+                    <div class="timeline-content">
+                        <p><br></p>
+                        <p><br></p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2021 <span class="small-text">&nbsp;&nbsp;제 57회 정기연주회</span></div>
+                    <div class="timeline-content">
+                        <p>2021.09.27 회장 | 박재형   지휘 | 이승혁   협연 | 이정환<br></p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2022 <span class="small-text">&nbsp;&nbsp;제 58 &middot; 59회 정기연주회</span></div>
+                    <div class="timeline-content">
+                        <p>2022.03.02 회장 | 박재형   지휘 | 이승혁   협연 | 문영란<br></p>
+                        <p>2022.09.01 회장 | 박재형   지휘 | 이승혁   협연 | 김현지<br></p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2023 <span class="small-text">&nbsp;&nbsp;제 60 &middot; 61회 정기연주회</span></div>
+                    <div class="timeline-content">
+                        <p>2023.03.02 회장 | 장승민   지휘 | 이준호<br></p>
+                        <p>2023.09.01 회장 | 장승민   지휘 | 이동준<br></p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2024 <span class="small-text">&nbsp;&nbsp;제 62 &middot; 63회 정기연주회</span></div>
+                    <div class="timeline-content">
+                        <p>2024.02.29 회장 | 김동민   지휘 | 문민석   협연 | 박진우<br></p>
+                        <p>2024.08.29 회장 | 김동민   지휘 | 기동현<br></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script src="scroll-navigation.js"></script>
+
+</body>
+</html>
