@@ -43,29 +43,44 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-});
 
 
+    // 현재 HTML 파일의 클럽명을 구분하기 위한 dataset 사용
+    const currentClub = document.body.dataset.club;
 
-document.addEventListener('DOMContentLoaded', function () {
-    const heartButton = document.querySelector('.heart-button');
-    const heartIcon = heartButton.querySelector('i');
+    // JSON 파일 불러오기
+    fetch('concert_infos.json')
+        .then(response => response.json())
+        .then(data => {
+            // 현재 클럽과 일치하는 콘서트 데이터를 필터링
+            const concertData = data.find(concert => concert.club === currentClub);
 
-    heartButton.addEventListener('click', function () {
-        if (heartIcon.classList.contains('far')) {
-            // 빈 하트 -> 빨간 하트
-            heartIcon.classList.remove('far');
-            heartIcon.classList.add('fas');
-            heartButton.classList.add('liked');
+            // 콘서트 정보가 존재할 경우 HTML에 동적으로 삽입
+            if (concertData) {
+                document.getElementById('concert-title').textContent = concertData.title;
+                document.getElementById('concert-date').textContent = concertData.date;
+                document.getElementById('concert-time').textContent = concertData.time;
+                document.getElementById('concert-location').textContent = concertData.location;
+                document.getElementById('concert-univ').textContent = concertData.university;
+                document.getElementById('concert-image').src = concertData.image;
+            } else {
+                console.error(`No concert information found for club: ${currentClub}`);
+            }
+        })
+        .catch(error => console.error('Error fetching JSON data:', error));
+
+    // 하트 버튼 클릭 이벤트
+    document.querySelector('.heart-button').addEventListener('click', function() {
+        const icon = this.querySelector('i');
+        if (icon.classList.contains('far')) {
+            icon.classList.remove('far');
+            icon.classList.add('fas', 'liked');
         } else {
-            // 빨간 하트 -> 빈 하트
-            heartIcon.classList.remove('fas');
-            heartIcon.classList.add('far');
-            heartButton.classList.remove('liked');
+            icon.classList.remove('fas', 'liked');
+            icon.classList.add('far');
         }
     });
 });
-
 
 
 
