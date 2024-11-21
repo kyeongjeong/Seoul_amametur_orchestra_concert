@@ -7,11 +7,10 @@
         "time": "오후 5시",
         "location": "도옵 구민회관 하모니홀",
         "image": "포오스으터어",
-        "era" : "",
-        "genre": "",
-        "mainInst": "", 
-        "country": "",
-        "mood": ""
+        "era" : "Classical",
+        "genre": ["Opera","Symphony"],
+        "InstPreference": "All", 
+        "country": ["Austria","Germany"]
     },
    {
         "title": "2024 30th HIAMO AUTUMN CONCERT “이립(而立)",
@@ -21,10 +20,9 @@
         "time": "오후 6시 30분",
         "location": "고양아람누리 아람음악당",
         "image": "포스터 이미지 위치",
-        "era" : "",
-        "genre": "",
-        "mainInst": "", 
-        "country": "",
-        "mood": ""
+        "era" : ["Romantic","Modern"],
+        "genre": ["Opera","Orchestral Piece","Symphony"],
+        "InstPreference": "All", 
+        "country": ["Italy, Finland", "Germany"]
     }
 ] 
