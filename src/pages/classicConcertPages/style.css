@@ -73,18 +73,19 @@ main {
     max-width: 1200px;
     margin: 20px auto;
     padding: 0 20px;
-    padding-top: 50px;
+    padding-top: 160px;
 }
 
 section {
-    padding: 100px 20px 20px; 
+    padding: 0px 20px; 
     background: #fff;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     text-align: left;
     position: relative; 
-    scroll-margin-top: 130px;
+    scroll-margin-top: 160px;
+    margin-bottom: 70px;
 }
 
 /*섹션 제목*/
