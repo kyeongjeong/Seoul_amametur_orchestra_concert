@@ -1,0 +1,106 @@
+/*기본 스타일*/
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/*헤더 스타일*/
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    height: 100px;
+    padding: 0 30px;
+    background-color: #fff;
+    color: #000;
+}
+
+.logo {
+    margin-left: 30px;
+    margin-right: 150px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    gap: 80px;
+}
+
+.menu-item {
+    font-size: 20px;
+    text-decoration: none;
+    color: #000;
+}
+
+.menu-item:hover {
+    color: orange;
+}
+
+/*활성화된 메뉴 항목*/
+#current {
+    color: orange;
+}
+
+.current-menu-bar {
+    position: fixed;
+    top: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 60px;
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+    z-index: 999;
+}
+
+/* 슬라이더 스타일 */
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    margin-top: 100px;
+}
+
+.slider-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider-images img {
+    width: 100%;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.slider-controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    pointer-events: all;
+    z-index: 100;
+}
+
+.slider-controls button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
