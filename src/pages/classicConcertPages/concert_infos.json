@@ -23,6 +23,19 @@
         "era" : ["Romantic","Modern"],
         "genre": ["Opera","Orchestral Piece","Symphony"],
         "InstPreference": "All", 
-        "country": ["Italy, Finland", "Germany"]
+        "country": ["Italy", "Finland", "Germany"]
+    },
+    {
+        "title": "고려대학교 관혁악단 52회 정기 연주회",
+        "university": "고려대학교",
+        "club": "고려대학교 관혁악단",
+        "date": "2024년 8월 24일",
+        "time": "오후 7시",
+        "location": "고려대학교 인촌기념관",
+        "image": "포스터 이미지 위치",
+        "era" : "Romantic",
+        "genre": ["Opera","Symphony"],
+        "InstPreference": "All", 
+        "country": ["Austria", "Russia", "Germany"]
     }
 ] 
