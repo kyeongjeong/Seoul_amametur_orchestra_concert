@@ -44,3 +44,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const heartButton = document.querySelector('.heart-button');
+    const heartIcon = heartButton.querySelector('i');
+
+    heartButton.addEventListener('click', function () {
+        if (heartIcon.classList.contains('far')) {
+            // 빈 하트 -> 빨간 하트
+            heartIcon.classList.remove('far');
+            heartIcon.classList.add('fas');
+            heartButton.classList.add('liked');
+        } else {
+            // 빨간 하트 -> 빈 하트
+            heartIcon.classList.remove('fas');
+            heartIcon.classList.add('far');
+            heartButton.classList.remove('liked');
+        }
+    });
+});
+
