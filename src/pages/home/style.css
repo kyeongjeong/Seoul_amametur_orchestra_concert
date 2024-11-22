@@ -261,8 +261,9 @@ body {
     background-color: #333;
 }
 
-/* Suggested Music 스타일 */
+/* Suggested Music 기본 숨김 설정 */
 .suggested-music {
+    display: none; /* 처음에는 보이지 않도록 설정 */
     margin-top: 50px; /* 더 아래쪽으로 이동 */
     display: flex;
     align-items: center; /* 모든 요소를 수직 중앙 정렬 */
