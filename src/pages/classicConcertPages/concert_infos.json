@@ -102,6 +102,19 @@
         "genre": ["Orchestral Piece","Cencerto","Symphony"],
         "InstPreference": ["All","Violin"], 
         "country": "Germany"
+    },
+        {
+        "title": "MDOP 제84회 정기연주회 ’ILLUSION‘",
+        "university": "경희대학교",
+        "club": "MDOP",
+        "date": "2024년 8월 31일",
+        "time": "오후 5시",
+        "location": "부천아트센터 콘서트홀",
+        "image": "포스터 이미지 위치",
+        "era" : "Romantic",
+        "genre": ["Cencerto","Symphony"],
+        "InstPreference": ["All","Violin"], 
+        "country": ["Austria", "Finland"]
     }
 
 ] 
