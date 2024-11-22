@@ -1,5 +1,6 @@
 [
     {
+        "idx": 1,
         "title": "제 11회 연주회 Kiassik",
         "university": "광운대학교",
         "club": "DaKAPO",
@@ -13,6 +14,7 @@
         "country": ["Austria","Germany"]
     },
    {
+        "idx": 2,
         "title": "2024 30th HIAMO AUTUMN CONCERT “이립(而立)”",
         "university": "홍익대학교",
         "club": "HIAMO",
@@ -26,6 +28,7 @@
         "country": ["Italy", "Finland", "Germany"]
     },
     {
+        "idx": 3,
         "title": "고려대학교 관혁악단 52회 정기 연주회",
         "university": "고려대학교",
         "club": "고려대학교 관혁악단",
@@ -39,6 +42,7 @@
         "country": ["Austria", "Russia", "Germany"]
     },
     {
+        "idx": 4,
         "title": "ACES 제 28회 가을 연주회",
         "university": "서강대학교",
         "club": "ACES",
@@ -52,6 +56,7 @@
         "country": ["Austria", "France", "Germany"]
     },
     {
+        "idx": 5,
         "title": "SNUPO 제63회 정기연주회 ",
         "university": "서울대학교",
         "club": "SNUPO",
@@ -65,6 +70,7 @@
         "country": ["Austria", "Finland", "Russia"]
     },
     {
+        "idx": 6,
         "title": "SKKUO 제38회 가을 연주회 ",
         "university": "성균관대학교",
         "club": "SKKUO",
@@ -78,6 +84,7 @@
         "country": ["Czech Republic", "Russia"]
     },
     {
+        "idx": 7,
         "title": "하나클랑 제22회 정기 연주회: 「MISSING」 ",
         "university": "한양대학교",
         "club": "Hanaklang",
@@ -91,6 +98,7 @@
         "country": ["Czech Republic", "Russia","France"]
     },
     {
+        "idx": 8,
         "title": "RUBATO 제 63회 정기 연주회 ",
         "university": "중앙대학교",
         "club": "RUBATO",
@@ -104,6 +112,7 @@
         "country": "Germany"
     },
     {
+        "idx": 9,
         "title": "MDOP 제84회 정기연주회 'ILLUSION'",
         "university": "경희대학교",
         "club": "MDOP",
@@ -117,6 +126,7 @@
         "country": ["Austria", "Finland"]
     },
     {
+        "idx": 10,
         "title": "2025 「칸타빌레」 제33회 정기연주회",
         "university": "서울시립대학교",
         "club": "Cantabile",
@@ -130,6 +140,7 @@
         "country": ["Germany", "Czech Republic","Austria"]
     },
     {
+        "idx": 11,
         "title": "KUPHIL 제 43회 정기 연주회 ECLIPSE: Solar",
         "university": "건국대학교",
         "club": "KUPHIL",
@@ -141,7 +152,22 @@
         "genre": ["Opera","Symphony"],
         "InstPreference": "All", 
         "country": "Austria"
+    },
+    {
+        "idx": 12,
+        "title": "OPUS 제23회 정기연주회",
+        "university": "동국대학교",
+        "club": "OPUS",
+        "date": "2024년 11월 16일",
+        "time": "오후 7시",
+        "location": "추계예술대학교 콘서트홀",
+        "image": "포스터 이미지 위치",
+        "era" : "Classical",
+        "genre": ["Orchestral Piece","Symphony"],
+        "InstPreference": "All", 
+        "country": "Germany"
     }
+
 
 
 ] 
