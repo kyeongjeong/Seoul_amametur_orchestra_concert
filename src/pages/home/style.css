@@ -148,13 +148,13 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4개의 카테고리가 화면에 꽉 차게 배치 */
     gap: 20px; /* 카테고리 사이 간격 */
-    margin-bottom: 20px;
+    margin-bottom: 80px;
     width: 100%; /* 부모 요소 크기에 맞춤 */
     max-width: 1200px; /* 적절한 최대 너비 설정 */
 }
 
 .category {
-    position: relative; /* 기본 위치 설정 */
+    position: relative;
 }
 
 .category h4 {
@@ -164,9 +164,19 @@ body {
     font-size: 18px;
 }
 
+.category h4::after {
+    content: "";
+    display: block;
+    margin: 5px auto;
+    margin-top: 20px;
+    width: 70%;
+    height: 1px;
+    background: #000;
+}
+
 .categories .options {
     overflow-y: scroll !important;
-    max-height: 120px !important;
+    max-height: 140px !important;
 }
 
 .options {
@@ -178,7 +188,9 @@ body {
     gap: 10px; /* 글씨 간 간격 */
     scrollbar-width: thin; /* 스크롤바를 얇게 설정 (Firefox) */
     scrollbar-color: #ccc transparent; /* 스크롤바 색상 설정 (Firefox) */
-    background-color: #fff; /* 배경색 추가 */
+    background-color: #fff;
+    width: 70%; /* 선택창과 스크롤 영역의 간격 최소화 */
+    margin: 0 auto; /* 선택창을 가운데 정렬 */
 }
 
 /* 웹킷 기반 브라우저 (Chrome, Edge, Safari)용 스크롤바 스타일 */
@@ -201,36 +213,86 @@ body {
     text-align: center;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .options div:hover,
 .options div.selected {
-    background-color: orange;
+    background-color: rgba(255, 166, 0, 0.784);
     color: #fff;
 }
 
-.selected-options {
-    margin-top: 20px;
+.selected-options-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    padding: 10px 20px;
 }
 
 #selected-options-list {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    max-width: 70%;
+    border-radius: 10px;
 }
 
 #selected-options-list div {
-    background-color: orange;
+    background-color: rgba(255, 166, 0, 0.784);
     color: #fff;
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
 }
 
+#recommend-btn {
+    padding: 15px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#recommend-btn:hover {
+    background-color: #333;
+}
+
+/* Suggested Music 스타일 */
 .suggested-music {
-    margin-top: 20px;
-    text-align: center;
+    margin-top: 50px; /* 더 아래쪽으로 이동 */
+    display: flex;
+    align-items: flex-start;
+    gap: 40px; /* Suggested Music과 추천된 노래 간격 */
+    flex-wrap: wrap; /* 줄바꿈 허용 */
+    padding: 10px 20px;
+}
+
+/* Suggested Music 제목 스타일 */
+.suggested-music-label {
+    font-size: 18px; /* 글씨 크기만 증가 */
+    color: white;
+    background-color: black;
+    padding: 10px 20px;
+    border-radius: 8px;
+    white-space: nowrap; /* 텍스트가 줄바꿈되지 않도록 */
+    flex-shrink: 0; /* 공간 부족 시 크기 유지 */
+    margin: 0;
+}
+
+/* 추천된 노래 스타일 */
+#suggested-music-title {
     font-size: 18px;
-    font-weight: bold;
+    color: black;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 약간의 그림자 추가 */
+    max-width: calc(100% - 200px); /* Suggested Music과 간격 유지 */
+    word-wrap: break-word; /* 줄 넘침 방지 */
+    line-height: 1.5;
 }
 
