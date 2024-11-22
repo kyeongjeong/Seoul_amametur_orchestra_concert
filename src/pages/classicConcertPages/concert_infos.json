@@ -89,6 +89,19 @@
         "genre": ["Orchestral Piece","Opera","Symphony"],
         "InstPreference": "All", 
         "country": ["Czech Republic", "Russia","France"]
+    },
+    {
+        "title": "RUBATO 제 63회 정기 연주회 ",
+        "university": "중앙대학교",
+        "club": "RUBATO",
+        "date": "2024년 8월 18일",
+        "time": "오후 7시",
+        "location": "부천시민회과 대공연장",
+        "image": "포스터 이미지 위치",
+        "era" : ["Romantic", "Classical"],
+        "genre": ["Orchestral Piece","Cencerto","Symphony"],
+        "InstPreference": ["All","Violin"], 
+        "country": "Germany"
     }
 
 ] 
