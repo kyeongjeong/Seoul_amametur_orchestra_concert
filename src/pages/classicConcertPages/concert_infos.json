@@ -103,8 +103,8 @@
         "InstPreference": ["All","Violin"], 
         "country": "Germany"
     },
-        {
-        "title": "MDOP 제84회 정기연주회 ’ILLUSION‘",
+    {
+        "title": "MDOP 제84회 정기연주회 'ILLUSION'",
         "university": "경희대학교",
         "club": "MDOP",
         "date": "2024년 8월 31일",
@@ -115,6 +115,20 @@
         "genre": ["Cencerto","Symphony"],
         "InstPreference": ["All","Violin"], 
         "country": ["Austria", "Finland"]
+    },
+    {
+        "title": "2025 「칸타빌레」 제33회 정기연주회",
+        "university": "서울시립대학교",
+        "club": "Cantabile",
+        "date": "2025년 3월",
+        "time": "미정",
+        "location": "미정",
+        "image": "포스터 이미지 위치",
+        "era" : "Romantic",
+        "genre": ["Orchestral Piece","Opera","Symphony"],
+        "InstPreference": "All", 
+        "country": ["Germany", "Czech Republic","Austria"]
     }
+
 
 ] 
