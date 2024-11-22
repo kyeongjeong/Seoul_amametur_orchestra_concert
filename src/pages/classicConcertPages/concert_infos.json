@@ -37,5 +37,19 @@
         "genre": ["Opera","Symphony"],
         "InstPreference": "All", 
         "country": ["Austria", "Russia", "Germany"]
+    },
+    {
+        "title": "ACES 제 28회 가을 연주회",
+        "university": "서강대학교",
+        "club": "ACES",
+        "date": "2024년 11월 15일",
+        "time": "오후 7시",
+        "location": "도봉 구민회관 하모니홀",
+        "image": "포스터 이미지 위치",
+        "era" : ["Romantic", "Classical","Orchestral Piece"],
+        "genre": ["Opera","Symphony"],
+        "InstPreference": "All", 
+        "country": ["Austria", "France", "Germany"]
     }
+
 ] 
