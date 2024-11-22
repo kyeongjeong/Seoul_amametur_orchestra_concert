@@ -1,6 +1,7 @@
 [
     {
         "idx": 1,
+        "music": [8, 14, 27],   
         "title": "제 11회 연주회 Kiassik",
         "university": "광운대학교",
         "club": "DaKAPO",
@@ -43,6 +44,7 @@
     },
     {
         "idx": 4,
+        "music": [86, 33, 27],
         "title": "ACES 제 28회 가을 연주회",
         "university": "서강대학교",
         "club": "ACES",
