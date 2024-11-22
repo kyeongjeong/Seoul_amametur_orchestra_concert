@@ -63,6 +63,19 @@
         "genre": ["Orchestral Piece","Symphony"],
         "InstPreference": "All", 
         "country": ["Austria", "Finland", "Russia"]
+    },
+    {
+        "title": "SKKUO 제38회 가을 연주회 ",
+        "university": "성균관대학교",
+        "club": "SKKUO",
+        "date": "2024년 8월 27일",
+        "time": "오후 7시 30분",
+        "location": "경기아트센터 대극장",
+        "image": "포스터 이미지 위치",
+        "era" : "Romantic",
+        "genre": ["Concenrto","Opera","Symphony"],
+        "InstPreference": ["All","Piano"], 
+        "country": ["Czech Republic", "Russia"]
     }
 
 ] 
