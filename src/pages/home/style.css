@@ -265,9 +265,9 @@ body {
 .suggested-music {
     margin-top: 50px; /* 더 아래쪽으로 이동 */
     display: flex;
-    align-items: flex-start;
+    align-items: center; /* 모든 요소를 수직 중앙 정렬 */
     gap: 40px; /* Suggested Music과 추천된 노래 간격 */
-    flex-wrap: wrap; /* 줄바꿈 허용 */
+    flex-wrap: nowrap; /* 줄바꿈 방지 */
     padding: 10px 20px;
 }
 
@@ -295,4 +295,3 @@ body {
     word-wrap: break-word; /* 줄 넘침 방지 */
     line-height: 1.5;
 }
-
