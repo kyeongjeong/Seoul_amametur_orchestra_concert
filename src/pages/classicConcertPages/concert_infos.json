@@ -128,6 +128,19 @@
         "genre": ["Orchestral Piece","Opera","Symphony"],
         "InstPreference": "All", 
         "country": ["Germany", "Czech Republic","Austria"]
+    },
+    {
+        "title": "KUPHIL 제 43회 정기 연주회 ECLIPSE: Solar",
+        "university": "건국대학교",
+        "club": "KUPHIL",
+        "date": "2024년 8월 30일",
+        "time": "오후 6시",
+        "location": "과천 시민회관 대극장",
+        "image": "포스터 이미지 위치",
+        "era" : ["Romantic", "Classical"],
+        "genre": ["Opera","Symphony"],
+        "InstPreference": "All", 
+        "country": "Austria"
     }
 
 
