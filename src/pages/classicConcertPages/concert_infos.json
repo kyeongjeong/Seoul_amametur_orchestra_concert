@@ -166,6 +166,20 @@
         "genre": ["Orchestral Piece","Symphony"],
         "InstPreference": "All", 
         "country": "Germany"
+    },
+    {
+        "idx": 13,
+        "title": "소피아 제29회 정기연주회",
+        "university": "숙명여자대학교",
+        "club": "Sophia",
+        "date": "2024년 8월 31일",
+        "time": "오후 7시",
+        "location": "숙명여자대학교 음악대학 숙연당",
+        "image": "포스터 이미지 위치",
+        "era" : ["Romantic", "Classical"],
+        "genre": ["Orchestral Piece","Symphony"],
+        "InstPreference": "All", 
+        "country": ["Germany", "Czech Republic"]
     }
 
 
