@@ -76,6 +76,19 @@
         "genre": ["Concenrto","Opera","Symphony"],
         "InstPreference": ["All","Piano"], 
         "country": ["Czech Republic", "Russia"]
+    },
+    {
+        "title": "하나클랑 제22회 정기 연주회: 「MISSING」 ",
+        "university": "한양대학교",
+        "club": "Hanaklang",
+        "date": "2024년 8월 30일",
+        "time": "오후 6시 30분",
+        "location": "한양대학교 백남음악관 콘서트홀",
+        "image": "포스터 이미지 위치",
+        "era" : "Romantic",
+        "genre": ["Orchestral Piece","Opera","Symphony"],
+        "InstPreference": "All", 
+        "country": ["Czech Republic", "Russia","France"]
     }
 
 ] 
