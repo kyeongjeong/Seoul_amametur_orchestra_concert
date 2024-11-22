@@ -25,6 +25,70 @@
         </div>
     </div>
 
+    <!-- 추천 -->
+    <div class="container">
+        <div class="content">
+            <div class="title-container">
+                <div class="title-rectangle"></div>
+                <h2 class="title">Classic Music Recommendation</h2>
+            </div>
+            
+            <div class="categories">
+                <div class="category" id="era">
+                    <h4>시대</h4>
+                    <div class="options">
+                        <div>Baroque</div>
+                        <div>Classical</div>
+                        <div>Romantic</div>
+                        <div>Modern</div>
+                    </div>
+                </div>
+                <div class="category" id="genre">
+                    <h4>형식</h4>
+                    <div class="options">
+                        <div>Symphony</div>
+                        <div>Orchestral Piece</div>
+                        <div>Concerto</div>
+                        <div>Opera</div>
+                    </div>
+                </div>
+                <div class="category" id="instPreference">
+                    <h4>악기</h4>
+                    <div class="options">
+                        <div>Violin</div>
+                        <div>Cello</div>
+                        <div>Piano</div>
+                        <div>All</div>
+                    </div>
+                </div>
+                <div class="category" id="country">
+                    <h4>국가</h4>
+                    <div class="options">
+                        <div>Austria</div>
+                        <div>Germany</div>
+                        <div>Russia</div>
+                        <div>Czech</div>
+                        <div>France</div>
+                        <div>Finland</div>
+                        <div>Italy</div>
+                        <div>Norway</div>
+                        <div>Armenia</div>
+                    </div>
+                </div>
+            </div>
+            <div class="selected-options">
+                <h4>Selected Options</h4>
+                <div id="selected-options-list"></div>
+            </div>
+            <button id="recommend-btn">Recommendation</button>
+            <div class="suggested-music">
+                <h4>Suggested Music</h4>
+                <p id="suggested-music-title"></p>
+            </div> 
+        </div>         
+    </div>
+
     <script src="banner.js"></script>
+    <script src="recommend.js"></script>
 </body>
 </html>

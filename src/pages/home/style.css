@@ -105,3 +105,132 @@ body {
 .slider-controls button:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
+
+/* 콘텐트 요소 추가 */
+.container {
+    position: relative; /* 자식 요소의 위치 조정을 활성화 */
+}
+
+.content {
+    max-width: 1200px;
+    margin: 140px auto 0;
+    padding: 40px;
+    position: relative;
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.title-rectangle {
+    width: 5px;
+    height: 30px;
+    background-color: #333;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.body-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+
+/* 추천 창 */ 
+.categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4개의 카테고리가 화면에 꽉 차게 배치 */
+    gap: 20px; /* 카테고리 사이 간격 */
+    margin-bottom: 20px;
+    width: 100%; /* 부모 요소 크기에 맞춤 */
+    max-width: 1200px; /* 적절한 최대 너비 설정 */
+}
+
+.category {
+    position: relative; /* 기본 위치 설정 */
+}
+
+.category h4 {
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.categories .options {
+    overflow-y: scroll !important;
+    max-height: 120px !important;
+}
+
+.options {
+    padding: 10px;
+    max-height: 150px; /* 스크롤 높이 설정 */
+    overflow-y: scroll; /* 스크롤 활성화 */
+    display: flex;
+    flex-direction: column; /* 글씨를 세로로 배치 */
+    gap: 10px; /* 글씨 간 간격 */
+    scrollbar-width: thin; /* 스크롤바를 얇게 설정 (Firefox) */
+    scrollbar-color: #ccc transparent; /* 스크롤바 색상 설정 (Firefox) */
+    background-color: #fff; /* 배경색 추가 */
+}
+
+/* 웹킷 기반 브라우저 (Chrome, Edge, Safari)용 스크롤바 스타일 */
+.options::-webkit-scrollbar {
+    width: 10px;
+}
+
+.options::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+}
+
+.options::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.options div {
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.options div:hover,
+.options div.selected {
+    background-color: orange;
+    color: #fff;
+}
+
+.selected-options {
+    margin-top: 20px;
+}
+
+#selected-options-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#selected-options-list div {
+    background-color: orange;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.suggested-music {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
