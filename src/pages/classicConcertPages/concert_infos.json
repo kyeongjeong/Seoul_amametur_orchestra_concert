@@ -16,7 +16,7 @@
     },
    {
         "idx": 2,
-        "music": [75, 35],
+        "music": [75, 35,88],
         "title": "2024 30th HIAMO AUTUMN CONCERT “이립(而立)”",
         "university": "홍익대학교",
         "club": "HIAMO",
@@ -76,7 +76,7 @@
     },
     {
         "idx": 6,
-        "music": [47, 45],
+        "music": [47, 45,89],
         "title": "SKKUO 제38회 가을 연주회 ",
         "university": "성균관대학교",
         "club": "SKKUO",
