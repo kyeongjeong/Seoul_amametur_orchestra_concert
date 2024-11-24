@@ -868,5 +868,25 @@
         "instPreference": "all",
         "country": "Armenia",
         "eventDetailsAvailable": 0
+    },
+    {
+        "idx": 88,
+        "title": "La Gazza Ladra Overture",
+        "composer": "G. Rossini",
+        "era": "romantic",
+        "genre": "opera",
+        "instPreference": "all",
+        "country": "Italy",
+        "eventDetailsAvailable": 1
+    },
+    {
+        "idx": 89,
+        "title": "Eugene Onegin, Polonaise",
+        "composer": "P.I. Tchaikovsky",
+        "era": "romatic",
+        "genre": "opera",
+        "instPreference": "all",
+        "country": "Russia",
+        "eventDetailsAvailable": 1
     }
 ]

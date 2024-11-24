@@ -81,7 +81,7 @@ function startAutoSlide() {
     stopAutoSlide(); // 기존 타이머 초기화
     autoSlideInterval = setInterval(() => {
         moveToSlide(index + 1); // 다음 슬라이드로 이동
-    }, 5000); // 3초마다 실행
+    }, 3000); // 3초마다 실행
 }
 
 // 자동 슬라이드 중지
