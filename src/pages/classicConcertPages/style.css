@@ -68,23 +68,46 @@ body {
     font-size: 32px;
     font-weight: bold;
 }
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;  /* 버튼 간격 */
+}
+.heart-button {
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: gray;
+    transition: transform 0.2s;
+}
+
+.heart-button:hover {
+    transform: scale(1.2);
+}
+
+.heart-button i.liked {
+    color: red;
+}
 
 main {
     max-width: 1200px;
     margin: 20px auto;
     padding: 0 20px;
-    padding-top: 50px;
+    padding-top: 160px;
 }
 
 section {
-    padding: 100px 20px 20px; 
+    padding: 0px 20px; 
     background: #fff;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     text-align: left;
     position: relative; 
-    scroll-margin-top: 150px;
+    scroll-margin-top: 160px;
+    margin-bottom: 70px;
 }
 
 /*섹션 제목*/
@@ -162,20 +185,41 @@ button {
     cursor: pointer;
     border-radius: 5px;
 }
-
-.conductor-info, .composer-info {
+/*지휘자*/
+.conductor-info{
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 40px;
 }
-
-/*사진*/
-.conductor-info img, .composer-info img {
+.conductor-details {
+    display: flex;
+    flex-direction: column;
+}
+/*지휘자사진*/
+.conductor-info img{
     width: 250px;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+/*작곡가*/
+.composer-info {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.composer-details {
+    display: flex;
+    flex-direction: column;
+}
+/*작곡가사진*/
+.composer-info img {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 
 ul {
     list-style: disc;
@@ -185,6 +229,7 @@ ul {
 ul li {
     margin-bottom: 10px;
 }
+
 
 /*사이드 배너*/
 .side-banner {
