@@ -144,7 +144,7 @@ function displayPlaces(places, type) {
 
         var itemEl = document.createElement('li');
         itemEl.innerHTML = `
-            <h3>${place.place_name}</h3>
+            <h3>${index + 1}. ${place.place_name}</h3>
             <div>${place.address_name}</div>
             <button onclick="selectPlace(${place.y}, ${place.x}, '${type}')">선택</button>
         `;
