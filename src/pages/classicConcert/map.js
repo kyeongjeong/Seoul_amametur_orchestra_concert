@@ -15,6 +15,7 @@ var startPoint = null;
 var endPoint = null;
 var startMarker = null;
 var endMarker = null;
+var currentPolyline = null; 
 
 // JSON 데이터 로드
 fetch('positions.json') // JSON 파일 경로
@@ -133,6 +134,7 @@ function displayPlaces(places, type) {
     listEl.innerHTML = '';
 
     removeMarkers();
+    removePolyline();
 
     // 검색 결과의 중심 계산
     var bounds = new kakao.maps.LatLngBounds();
@@ -272,8 +274,11 @@ async function findRoute() {
                         });
                     });
 
+                    // 기존 Polyline 제거
+                    removePolyline();
+
                     // 지도에 Polyline 추가
-                    const polyline = new kakao.maps.Polyline({
+                    currentPolyline = new kakao.maps.Polyline({
                         path: linePath,
                         strokeWeight: 5,
                         strokeColor: '#FF0000',
@@ -281,7 +286,7 @@ async function findRoute() {
                         strokeStyle: 'solid'
                     });
 
-                    polyline.setMap(map); // 지도에 경로 표시
+                    currentPolyline.setMap(map); // 지도에 경로 표시
 
                     alert(`경로 찾기 성공!\n총 거리: ${route.summary.distance}m\n예상 시간: ${route.summary.duration / 60}분`);
                 } else {
@@ -296,5 +301,12 @@ async function findRoute() {
         }
     } else {
         alert('출발지와 도착지를 모두 설정하세요.');
+    }
+}
+
+function removePolyline() {
+    if (currentPolyline) {
+        currentPolyline.setMap(null); // 지도에서 제거
+        currentPolyline = null; // 변수 초기화
     }
 }
