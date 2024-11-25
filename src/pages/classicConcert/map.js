@@ -125,6 +125,56 @@ function searchPlaces(type) {
     }, {size: 5});
 }
 
+// 검색 결과 표시
+function displayPlaces(places, type) {
+    var listEl = document.getElementById(type + 'PlacesList');
+    listEl.innerHTML = '';
+
+    removeMarkers();
+
+    // 검색 결과의 중심 계산
+    var bounds = new kakao.maps.LatLngBounds();
+
+    places.forEach((place, index) => {
+        var marker = addMarker(new kakao.maps.LatLng(place.y, place.x), index);
+
+        var itemEl = document.createElement('li');
+        itemEl.innerHTML = `
+            <div>${place.place_name}</div>
+            <div>${place.address_name}</div>
+            <button onclick="selectPlace(${place.y}, ${place.x}, '${type}')">선택</button>
+        `;
+        listEl.appendChild(itemEl);
+
+        // 마커 클릭 시 지도 이동
+        kakao.maps.event.addListener(marker, 'click', function() {
+            map.panTo(new kakao.maps.LatLng(place.y, place.x));
+        });
+
+        // Bounds에 포함
+        bounds.extend(new kakao.maps.LatLng(place.y, place.x));
+    });
+
+    // 지도 중심을 검색 결과 중심으로 설정
+    map.setBounds(bounds);
+}
+
+// 페이징 처리
+function displayPagination(pagination, type) {
+    var paginationEl = document.getElementById(type + 'Pagination');
+    paginationEl.innerHTML = '';
+
+    for (var i = 1; i <= Math.ceil(pagination.totalCount / 5); i++) {
+        var btn = document.createElement('button');
+        btn.innerHTML = i;
+        btn.onclick = (function(page) {
+            return function() {
+                pagination.gotoPage(page);
+            };
+        })(i);
+        paginationEl.appendChild(btn);
+    }
+}
 
 // 마커 제거
 function removeMarkers() {
