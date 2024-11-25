@@ -8,6 +8,12 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 
 var overlays = []; // 열린 오버레이를 저장할 배열
 
+var placesService = new kakao.maps.services.Places();
+var geocoder = new kakao.maps.services.Geocoder();
+var markers = [];
+var startPoint = null;
+var endPoint = null;
+
 // JSON 데이터 로드
 fetch('positions.json') // JSON 파일 경로
     .then(response => response.json())
@@ -74,4 +80,32 @@ function closeAllOverlays() {
 // 특정 오버레이 닫기
 function closeOverlay(index) {
     overlays[index].setMap(null);
+}
+
+
+// 마커 생성
+function addMarker(position, idx) {
+    var imageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png',
+        imageSize = new kakao.maps.Size(36, 37),
+        imgOptions = {
+            spriteSize: new kakao.maps.Size(36, 691),
+            spriteOrigin: new kakao.maps.Point(0, (idx * 46) + 10),
+            offset: new kakao.maps.Point(13, 37)
+        },
+        markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imgOptions),
+        marker = new kakao.maps.Marker({
+            position: position,
+            image: markerImage 
+        });
+
+    marker.setMap(map);
+    markers.push(marker);
+
+    return marker;
+}
+
+// 마커 제거
+function removeMarkers() {
+    markers.forEach(marker => marker.setMap(null));
+    markers = [];
 }
