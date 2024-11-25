@@ -12,3 +12,15 @@ document.querySelectorAll('.tab-button').forEach(button => {
         document.getElementById(target).style.display = 'grid';
     });
 });
+
+// 모든 하트 아이콘에 클릭 이벤트 추가
+document.querySelectorAll('.heart-icon').forEach(heart => {
+    heart.addEventListener('click', () => {
+        // 현재 상태 확인 후 토글
+        if (heart.textContent === '❤️') {
+            heart.textContent = '🤍'; // 비워진 하트
+        } else {
+            heart.textContent = '❤️'; // 채워진 하트
+        }
+    });
+});
