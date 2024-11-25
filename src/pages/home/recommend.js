@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //JSON 데이터 로드
     Promise.all([
-        fetch('composer_music.json').then(response => response.json()),
-        fetch('../classicConcertPages/concert_infos.json').then(response => response.json())
+        fetch('../../data/composer_music.json').then(response => response.json()),
+        fetch('../../data/concert_infos.json').then(response => response.json())
     ])
         .then(([music, concerts]) => {
             musicData = music;
