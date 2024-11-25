@@ -8,18 +8,24 @@
 </head>
 <body>
 
-<!-- 헤더 구조 -->
 <header class="header">
-    <div class="logo">Seoul Armateur<br>Orchestra Club</div>
+    <a href="../home/mainPage.html" class="logo">
+        Seoul Armateur<br>Orchestra Club
+    </a>
     <nav class="menu">
-        <a href="#" class="menu-item">Home</a>
-        <a href="#" class="menu-item">Orchestra Club</a>
-        <a href="#" class="menu-item" id="current">Classic Concert</a>     <!-- 본인이 만든 페이지 부분을 id current로 바꾸기 -->
+        <a href="../home/mainPage.html" class="menu-item">Home</a>
+        <a href="../orchestraClub/orchestraClub.html" class="menu-item">Orchestra Club</a>
+        <a href="concert_info.html" class="menu-item" id="current">Classic Concert</a> 
     </nav>
 </header>
 
-<!-- 현재 메뉴 표시 바 -->
-<div class="current-menu-bar">home -> Classic Concert</div>
+<div class="current-menu-bar">
+    <a href="../home/mainPage.html" class="menu-bar-link">
+        <img src="../../../public/images/home_emoji.png" alt="홈 로고">
+    </a>
+    <span class="separator">❯</span>
+    <a href="concert_info.html" class="menu-bar-link">Classic Concert</a>
+</div>
 
 <!-- 내용 -->
 <div class="content">
@@ -31,7 +37,7 @@
     <p class="map-description">파란색 마커를 클릭하면 세부 정보를 확인할 수 있습니다.</p>
     
     <div id="map"></div>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey="></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2d22334333c1fbe904d33a49e81497d7"></script>
     <script src="map.js"></script>
 
     <div class="dividing_line"></div>
