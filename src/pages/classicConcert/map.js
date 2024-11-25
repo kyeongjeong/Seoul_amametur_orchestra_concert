@@ -140,7 +140,7 @@ function displayPlaces(places, type) {
 
         var itemEl = document.createElement('li');
         itemEl.innerHTML = `
-            <div>${place.place_name}</div>
+            <h3>${place.place_name}</h3>
             <div>${place.address_name}</div>
             <button onclick="selectPlace(${place.y}, ${place.x}, '${type}')">선택</button>
         `;
@@ -192,5 +192,51 @@ function selectPlace(lat, lng, type) {
     } else if (type === 'end') {
         endPoint = selectedPoint;
         alert(`도착지가 설정되었습니다: ${lat}, ${lng}`);
+    }
+}
+
+// 길찾기 실행
+async function findRoute() {
+    if (startPoint && endPoint) {
+        const startLat = startPoint.getLat();
+        const startLng = startPoint.getLng();
+        const endLat = endPoint.getLat();
+        const endLng = endPoint.getLng();
+
+        // API 요청 URL 생성
+        const apiUrl = `https://apis-navi.kakaomobility.com/v1/directions?` +
+            `origin=${startLng},${startLat}` +
+            `&destination=${endLng},${endLat}`;
+
+        try {
+            // GET 요청
+            const response = await fetch(apiUrl, {
+                method: 'GET',
+                headers: {
+                    'Authorization': 'KakaoAK ',
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            // 응답 처리
+            if (response.ok) {
+                const data = await response.json();
+                const routes = data.routes; // 경로 정보
+
+                if (routes && routes.length > 0) {
+                    const route = routes[0]; // 가장 추천된 경로
+                    alert(`경로 찾기 성공!\n총 거리: ${route.summary.distance}m\n예상 시간: ${route.summary.duration / 60}분`);
+                } else {
+                    alert('경로를 찾을 수 없습니다.');
+                }
+            } else {
+                alert(`API 요청 실패: ${response.status}`);
+            }
+        } catch (error) {
+            console.error('길찾기 중 오류 발생:', error);
+            alert('길찾기 중 오류가 발생했습니다.');
+        }
+    } else {
+        alert('출발지와 도착지를 모두 설정하세요.');
     }
 }
