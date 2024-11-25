@@ -13,6 +13,8 @@ var geocoder = new kakao.maps.services.Geocoder();
 var markers = [];
 var startPoint = null;
 var endPoint = null;
+var startMarker = null;
+var endMarker = null;
 
 // JSON 데이터 로드
 fetch('positions.json') // JSON 파일 경로
@@ -186,11 +188,43 @@ function removeMarkers() {
 function selectPlace(lat, lng, type) {
     var selectedPoint = new kakao.maps.LatLng(lat, lng);
 
+    removeMarkers();
+
+    // 선택된 장소의 마커 이미지 설정
+    var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
+    var imageSize = new kakao.maps.Size(24, 35); 
+    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+
+    // 출발지 마커 설정
     if (type === 'start') {
         startPoint = selectedPoint;
-    } else if (type === 'end') {
-        endPoint = selectedPoint;
+        // 기존 마커 제거
+        if (startMarker) {
+            startMarker.setMap(null);
+        }
+        // 새 마커 생성 및 지도에 표시
+        startMarker = new kakao.maps.Marker({
+            position: selectedPoint,
+            image: markerImage
+        });
+        startMarker.setMap(map);
     }
+    // 도착지 마커 설정
+    else if (type === 'end') {
+        endPoint = selectedPoint;
+        // 기존 마커 제거
+        if (endMarker) {
+            endMarker.setMap(null);
+        }
+        // 새 마커 생성 및 지도에 표시
+        endMarker = new kakao.maps.Marker({
+            position: selectedPoint,
+            image: markerImage
+        });
+        endMarker.setMap(map);
+    }
+    // 선택한 위치로 지도 이동
+    map.panTo(selectedPoint);
 }
 
 // 길찾기 실행
