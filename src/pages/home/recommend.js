@@ -184,6 +184,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
         suggestedMusic.style.display = 'flex'; // Suggested Music 표시
         suggestedConcert.style.display = 'flex'; // Suggested Concert 표시
-
     });
 });
