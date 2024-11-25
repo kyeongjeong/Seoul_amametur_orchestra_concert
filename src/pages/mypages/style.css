@@ -138,3 +138,61 @@ body {
     border-bottom: 2px solid orange;
     color: orange;
 }
+
+/* 공연 리스트 */
+.concert-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    align-items: stretch;
+}
+
+/* 공연 항목 */
+.history-item {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+/* 공연 항목 이미지 */
+.history-image {
+    width: 33.3%;
+    padding-right: 20px;
+}
+
+.history-image img {
+    width: 100%;
+    height: auto;
+}
+
+/* 공연 설명 */
+.reservation-info {
+    width: 66.6%;
+}
+
+.reservation-info h3 {
+    margin: 0;
+}
+
+.btn-more {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* 공연 섹션 제목 */
+.concert-section h2 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 24px;
+    color: #333;
+}
