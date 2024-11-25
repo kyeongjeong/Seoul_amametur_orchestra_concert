@@ -37,7 +37,24 @@
     <p class="map-description">파란색 마커를 클릭하면 세부 정보를 확인할 수 있습니다.</p>
     
     <div id="map"></div>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2d22334333c1fbe904d33a49e81497d7"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=&libraries=services"></script>
+    
+    <div>
+        <h4>출발지 검색</h4>
+        <input type="text" id="startKeyword" placeholder="출발지 키워드 입력" />
+        <button onclick="searchPlaces('start')">검색</button>
+        <ol id="startPlacesList"></ol>
+        <div id="startPagination"></div>
+    </div>
+
+    <div>
+        <h4>도착지 검색</h4>
+        <input type="text" id="endKeyword" placeholder="도착지 키워드 입력" />
+        <button onclick="searchPlaces('end')">검색</button>
+        <ol id="endPlacesList"></ol>
+        <div id="endPagination"></div>
+    </div>
+    
     <script src="map.js"></script>
 
     <div class="dividing_line"></div>
