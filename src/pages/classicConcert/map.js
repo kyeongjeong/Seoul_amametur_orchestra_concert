@@ -188,10 +188,8 @@ function selectPlace(lat, lng, type) {
 
     if (type === 'start') {
         startPoint = selectedPoint;
-        alert(`출발지가 설정되었습니다: ${lat}, ${lng}`);
     } else if (type === 'end') {
         endPoint = selectedPoint;
-        alert(`도착지가 설정되었습니다: ${lat}, ${lng}`);
     }
 }
 
