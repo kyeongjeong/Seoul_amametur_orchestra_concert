@@ -181,3 +181,16 @@ function removeMarkers() {
     markers.forEach(marker => marker.setMap(null));
     markers = [];
 }
+
+// 장소 선택
+function selectPlace(lat, lng, type) {
+    var selectedPoint = new kakao.maps.LatLng(lat, lng);
+
+    if (type === 'start') {
+        startPoint = selectedPoint;
+        alert(`출발지가 설정되었습니다: ${lat}, ${lng}`);
+    } else if (type === 'end') {
+        endPoint = selectedPoint;
+        alert(`도착지가 설정되었습니다: ${lat}, ${lng}`);
+    }
+}
