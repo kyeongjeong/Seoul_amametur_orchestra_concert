@@ -39,21 +39,28 @@
     <div id="map"></div>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=&libraries=services"></script>
     
-    <div>
-        <h4>출발지 검색</h4>
-        <input type="text" id="startKeyword" placeholder="출발지 키워드 입력" />
-        <button onclick="searchPlaces('start')">검색</button>
-        <ol id="startPlacesList"></ol>
-        <div id="startPagination"></div>
+    <div class="search-container-wrapper">
+        <div class="search-container">
+            <h4>출발지 검색</h4>
+            <div class="search-input-wrapper">
+                <input type="text" id="startKeyword" placeholder="출발지 키워드 입력" />
+                <button onclick="searchPlaces('start')">검색</button>
+            </div>
+            <ol id="startPlacesList"></ol>
+            <div id="startPagination"></div>
+        </div>
+    
+        <div class="search-container">
+            <h4>도착지 검색</h4>
+            <div class="search-input-wrapper">
+                <input type="text" id="endKeyword" placeholder="도착지 키워드 입력" />
+                <button onclick="searchPlaces('end')">검색</button>
+            </div>
+            <ol id="endPlacesList"></ol>
+            <div id="endPagination"></div>
+        </div>
     </div>
-
-    <div>
-        <h4>도착지 검색</h4>
-        <input type="text" id="endKeyword" placeholder="도착지 키워드 입력" />
-        <button onclick="searchPlaces('end')">검색</button>
-        <ol id="endPlacesList"></ol>
-        <div id="endPagination"></div>
-    </div>
+    <button onclick="findRoute()">길찾기</button>    
     
     <script src="map.js"></script>
 
