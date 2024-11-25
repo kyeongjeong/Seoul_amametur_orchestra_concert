@@ -1,0 +1,115 @@
+/* 전체적인 스타일 */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding-top: 140px; /* 헤더 + 검정 바 높이만큼 여백 추가 */
+}
+
+/* 헤더 스타일 */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    height: 100px;
+    padding: 0 30px;
+    background-color: #fff;
+    color: #000;
+}
+
+.logo {
+    margin-left: 30px;
+    margin-right: 150px;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none; /* 밑줄 제거 */
+    color: black; /* 기본 텍스트 색상 */
+}
+
+.logo:visited {
+    color: black; /* 방문한 후에도 색상을 유지 */
+}
+
+.logo:hover {
+    color: black; /* 마우스 올렸을 때 색상 유지 */
+    text-decoration: none; /* 호버 시 밑줄 제거 */
+}
+
+.logo:active {
+    color: black; /* 클릭 중에도 색상 유지 */
+    text-decoration: none; /* 클릭 중 밑줄 제거 */
+}
+
+.menu {
+    display: flex;
+    gap: 80px;
+}
+
+.menu-item {
+    font-size: 20px;
+    text-decoration: none;
+    color: #000;
+}
+
+.menu-item:hover {
+    color: orange;
+}
+
+/* 활성화된 메뉴 항목 */
+#current {
+    color: orange;
+}
+
+.current-menu-bar {
+    position: fixed;
+    top: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 60px;
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+    z-index: 999;
+}
+
+.menu-bar-link {
+    text-decoration: none; /* 밑줄 제거 */
+    color: inherit; /* 부모 요소의 색상을 상속 */
+}
+
+.menu-bar-link:hover {
+    text-decoration: none;
+}
+
+.separator {
+    margin: 0 10px; /* ❯ 양옆에 여백 추가 */
+}
+
+.container {
+    max-width: 1200px; /* 전체 너비 제한 */
+    margin: 0 auto; /* 중앙 정렬 */
+    padding: 20px; /* 양쪽 여백 */
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.title-rectangle {
+    width: 5px;
+    height: 30px;
+    background-color: #333;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+}
