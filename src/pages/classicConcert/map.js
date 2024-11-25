@@ -288,6 +288,12 @@ async function findRoute() {
 
                     currentPolyline.setMap(map); // 지도에 경로 표시
 
+                    // 지도 범위를 출발지와 목적지를 포함하도록 설정
+                    const bounds = new kakao.maps.LatLngBounds();
+                    bounds.extend(startPoint); // 출발지 추가
+                    bounds.extend(endPoint); // 도착지 추가
+                    map.setBounds(bounds); // 지도 범위 설정
+
                     alert(`경로 찾기 성공!\n총 거리: ${route.summary.distance}m\n예상 시간: ${route.summary.duration / 60}분`);
                 } else {
                     alert('경로를 찾을 수 없습니다.');
