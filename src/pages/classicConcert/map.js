@@ -216,13 +216,39 @@ async function findRoute() {
                 }
             });
 
-            // 응답 처리
+            /// 응답 처리
             if (response.ok) {
                 const data = await response.json();
-                const routes = data.routes; // 경로 정보
+
+                const linePath = []; // 경로를 저장할 배열
+                const routes = data.routes;
 
                 if (routes && routes.length > 0) {
-                    const route = routes[0]; // 가장 추천된 경로
+                    const route = routes[0]; // 추천 경로
+
+                    // 경로 정보에서 선형 좌표 추출
+                    route.sections[0].roads.forEach(road => {
+                        road.vertexes.forEach((vertex, index) => {
+                            if (index % 2 === 0) {
+                                linePath.push(new kakao.maps.LatLng(
+                                    road.vertexes[index + 1], // lat
+                                    road.vertexes[index] // lng
+                                ));
+                            }
+                        });
+                    });
+
+                    // 지도에 Polyline 추가
+                    const polyline = new kakao.maps.Polyline({
+                        path: linePath,
+                        strokeWeight: 5,
+                        strokeColor: '#FF0000',
+                        strokeOpacity: 0.7,
+                        strokeStyle: 'solid'
+                    });
+
+                    polyline.setMap(map); // 지도에 경로 표시
+
                     alert(`경로 찾기 성공!\n총 거리: ${route.summary.distance}m\n예상 시간: ${route.summary.duration / 60}분`);
                 } else {
                     alert('경로를 찾을 수 없습니다.');
