@@ -196,3 +196,16 @@ body {
     font-size: 24px;
     color: #333;
 }
+
+/* 하트 아이콘 스타일 */
+.heart-icon {
+    font-size: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+/* 클릭 시 효과 */
+.heart-icon:active {
+    transform: scale(1.2); /* 클릭 시 확대 */
+}
