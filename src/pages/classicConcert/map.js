@@ -104,6 +104,28 @@ function addMarker(position, idx) {
     return marker;
 }
 
+// 검색 함수
+function searchPlaces(type) {
+    var keyword = document.getElementById(type + 'Keyword').value;
+
+    if (!keyword.trim()) {
+        alert('키워드를 입력해주세요.');
+        return;
+    }
+
+    placesService.keywordSearch(keyword, function(result, status, pagination) {
+        if (status === kakao.maps.services.Status.OK) {
+            displayPlaces(result.slice(0, 5), type);
+            displayPagination(pagination, type);
+        } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
+            alert('검색 결과가 없습니다.');
+        } else {
+            alert('검색 중 오류가 발생했습니다.');
+        }
+    }, {size: 5});
+}
+
+
 // 마커 제거
 function removeMarkers() {
     markers.forEach(marker => marker.setMap(null));
