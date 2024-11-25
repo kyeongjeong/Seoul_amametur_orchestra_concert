@@ -8,7 +8,7 @@
         "date": "2024년 8월 17일",
         "time": "오후 5시",
         "location": "도봉 구민회관 하모니홀",
-        "image": "포오스으터어",
+        "image": "../../../public/images/concert_dakapo.jpg",
         "era" : "Classical",
         "genre": ["Opera","Symphony"],
         "InstPreference": "All", 
