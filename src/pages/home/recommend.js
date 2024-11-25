@@ -106,8 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
-    
     // 추천 버튼 클릭 이벤트
     document.getElementById('recommend-btn').addEventListener('click', () => {
         if (!isMusicDataLoaded) {
@@ -123,44 +121,42 @@ document.addEventListener('DOMContentLoaded', () => {
         // 콘서트 카드 컨테이너 초기화
         const concertCardsContainer = document.querySelector('.concert-cards');
         concertCardsContainer.innerHTML = ''; 
-        const suggestedConcertContainer = document.getElementById('suggested-concert');
         
         // 선택된 태그와 일치하는 곡 필터링
-        const filteredMusic = musicData.filter(music => {
+        let filteredMusic = musicData.filter(music => {
             return Object.keys(selectedOptions).every(category => {
                 if (!selectedOptions[category].length) return true; // 해당 카테고리에 선택된 옵션이 없는 경우 통과
                 return selectedOptions[category].some(option => option.toLowerCase() === music[category].toLowerCase());
             });
         });
 
-        // 랜덤 곡 선택
-        if (filteredMusic.length > 0) {
-            const randomMusic = filteredMusic[Math.floor(Math.random() * filteredMusic.length)];
-            suggestedMusicTitle.innerText = `${randomMusic.composer} - ${randomMusic.title}`;
+        // 필터링된 곡이 없으면 전체 음악 데이터 중 랜덤 추천
+        let message = '';
+        if (filteredMusic.length === 0) {
+            filteredMusic = [musicData[Math.floor(Math.random() * musicData.length)]];
+            message = `
+                <div style="margin-bottom: 10px; font-size: 14px; color: #555;">
+                    We couldn't find any matches for your selected options.<br>
+                    But don't worry! We've picked a great piece for you to explore :
+                </div>
+            `;
+        }
 
-            // Suggested Concert 로직
-            if (randomMusic.eventDetailsAvailable === 1) {
-                // 관련 콘서트 필터링
-                const relatedConcerts = concertData.filter(concert => concert.music.includes(randomMusic.idx));
-                if (relatedConcerts.length > 0) {
-                    createConcertCards(relatedConcerts); // 카드 생성 함수 호출
-                    document.getElementById('suggested-concert').style.display = 'block'; // 관련 콘서트 표시
-                    suggestedConcertContainer.style.alignItems = 'flex-start';
-                } 
-                else {
-                    const concertCardsContainer = document.querySelector('.concert-cards');
-                    concertCardsContainer.innerHTML = ''; // 기존 콘텐츠 초기화
-                    const noConcertMessage = document.createElement('div');
-                    noConcertMessage.textContent = 'No related concerts found.';
-                    noConcertMessage.style.textAlign = 'center';
-                    noConcertMessage.style.color = '#777';
-                    noConcertMessage.style.fontSize = '16px';
-                    concertCardsContainer.appendChild(noConcertMessage);
-                    suggestedConcertContainer.style.alignItems = 'center';
-                    document.getElementById('suggested-concert').style.display = 'block'; // No concert 메시지 표시
-                }
-            } else if (randomMusic.eventDetailsAvailable === 0 || randomMusic.eventDetailsAvailable === -1) {
-                // 이벤트 세부 정보가 없는 경우
+        // 랜덤 곡 선택
+        const randomMusic = filteredMusic[Math.floor(Math.random() * filteredMusic.length)];
+        suggestedMusicTitle.innerHTML = `${message} ${randomMusic.composer} - ${randomMusic.title}`;
+        
+        // Suggested Concert 로직
+        if (randomMusic.eventDetailsAvailable === 1) {
+            
+            // 관련 콘서트 필터링
+            const relatedConcerts = concertData.filter(concert => concert.music.includes(randomMusic.idx));
+            if (relatedConcerts.length > 0) {
+                createConcertCards(relatedConcerts); // 카드 생성 함수 호출
+                document.getElementById('suggested-concert').style.display = 'block'; // 관련 콘서트 표시
+                suggestedConcert.style.alignItems = 'flex-start';
+            } 
+            else {
                 const concertCardsContainer = document.querySelector('.concert-cards');
                 concertCardsContainer.innerHTML = ''; // 기존 콘텐츠 초기화
                 const noConcertMessage = document.createElement('div');
@@ -169,15 +165,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 noConcertMessage.style.color = '#777';
                 noConcertMessage.style.fontSize = '16px';
                 concertCardsContainer.appendChild(noConcertMessage);
-                suggestedConcertContainer.style.alignItems = 'center';
+                suggestedConcert.style.alignItems = 'center';
                 document.getElementById('suggested-concert').style.display = 'block'; // No concert 메시지 표시
             }
-        } else {
-            // 필터링된 곡이 없는 경우
-            suggestedMusicTitle.innerText = 'No results found.';
+        } else if (randomMusic.eventDetailsAvailable === 0 || randomMusic.eventDetailsAvailable === -1) {
+            // 이벤트 세부 정보가 없는 경우
+            const concertCardsContainer = document.querySelector('.concert-cards');
+            concertCardsContainer.innerHTML = ''; // 기존 콘텐츠 초기화
+            const noConcertMessage = document.createElement('div');
+            noConcertMessage.textContent = 'No related concerts found.';
+            noConcertMessage.style.textAlign = 'center';
+            noConcertMessage.style.color = '#777';
+            noConcertMessage.style.fontSize = '16px';
+            concertCardsContainer.appendChild(noConcertMessage);
+            suggestedConcert.style.alignItems = 'center';
+            document.getElementById('suggested-concert').style.display = 'block'; // No concert 메시지 표시
         }
 
         suggestedMusic.style.display = 'flex'; // Suggested Music 표시
         suggestedConcert.style.display = 'flex'; // Suggested Concert 표시
+
     });
 });
