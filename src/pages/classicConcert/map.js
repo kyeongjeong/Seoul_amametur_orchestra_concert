@@ -16,6 +16,8 @@ var endPoint = null;
 var startMarker = null;
 var endMarker = null;
 var currentPolyline = null; 
+let selectedStartEl = null;
+let selectedEndEl = null;
 
 // JSON 데이터 로드
 fetch('positions.json') // JSON 파일 경로
@@ -116,7 +118,7 @@ function searchPlaces(type) {
         return;
     }
 
-    placesService.keywordSearch(keyword, function(result, status, pagination) {
+    placesService.keywordSearch(keyword, function(result, status) {
         if (status === kakao.maps.services.Status.OK) {
             displayPlaces(result.slice(0, 5), type);
         } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
@@ -145,10 +147,33 @@ function displayPlaces(places, type) {
         itemEl.innerHTML = `
             <h3>${index + 1}. ${place.place_name}</h3>
             <div>${place.address_name}</div>
-            <button onclick="selectPlace(${place.y}, ${place.x}, '${type}')">선택</button>
         `;
         listEl.appendChild(itemEl);
 
+        itemEl.style.cursor = 'pointer'; // 클릭 가능 표시
+
+        // 클릭 시 장소 선택 및 스타일 변경
+        itemEl.addEventListener('click', function () {
+            selectPlace(place.y, place.x, type);
+
+            // 이전 선택된 항목 스타일 초기화
+            if (type === 'start' && selectedStartEl) {
+                selectedStartEl.style.backgroundColor = ''; // 초기화
+            }
+            if (type === 'end' && selectedEndEl) {
+                selectedEndEl.style.backgroundColor = ''; // 초기화
+            }
+
+            // 선택 상태 업데이트
+            if (type === 'start') {
+                itemEl.style.backgroundColor = 'rgba(255, 166, 0, 0.3)'; // 출발지 색상
+                selectedStartEl = itemEl;
+            } else if (type === 'end') {
+                itemEl.style.backgroundColor = 'rgba(255, 166, 0, 0.3)'; // 도착지 색상
+                selectedEndEl = itemEl;
+            }
+        });
+        
         // 마커 클릭 시 지도 이동
         kakao.maps.event.addListener(marker, 'click', function() {
             map.panTo(new kakao.maps.LatLng(place.y, place.x));
