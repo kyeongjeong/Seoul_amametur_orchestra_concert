@@ -47,10 +47,10 @@ fetch('../../data/concert_infos.json')
                     detailsButton.textContent = '세부 정보';
                     detailsButton.classList.add('details-button');
                     detailsButton.addEventListener('click', () => {
-                        window.location.href = concert.page; // 페이지 이동
+                        window.location.href = `../classicConcertPages/${concert.link}`;
                     });
                     concertItem.querySelector('.concert-details').appendChild(detailsButton);
-                    
+
                     row.appendChild(concertItem);
                 }
 
