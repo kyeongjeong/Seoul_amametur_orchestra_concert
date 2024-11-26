@@ -119,7 +119,6 @@ function searchPlaces(type) {
     placesService.keywordSearch(keyword, function(result, status, pagination) {
         if (status === kakao.maps.services.Status.OK) {
             displayPlaces(result.slice(0, 5), type);
-            displayPagination(pagination, type);
         } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
             alert('검색 결과가 없습니다.');
         } else {
@@ -161,23 +160,6 @@ function displayPlaces(places, type) {
 
     // 지도 중심을 검색 결과 중심으로 설정
     map.setBounds(bounds);
-}
-
-// 페이징 처리
-function displayPagination(pagination, type) {
-    var paginationEl = document.getElementById(type + 'Pagination');
-    paginationEl.innerHTML = '';
-
-    for (var i = 1; i <= Math.ceil(pagination.totalCount / 5); i++) {
-        var btn = document.createElement('button');
-        btn.innerHTML = i;
-        btn.onclick = (function(page) {
-            return function() {
-                pagination.gotoPage(page);
-            };
-        })(i);
-        paginationEl.appendChild(btn);
-    }
 }
 
 // 마커 제거
