@@ -5,13 +5,14 @@ let clubs = []; // 데이터를 담을 배열
 // JSON 데이터 로드
 async function loadConcerts() {
     try {
-        const response = await fetch("concerts.json"); // JSON 파일 경로
+        const response = await fetch("../../data/concert_infos.json"); // JSON 파일 경로
         const data = await response.json();
         // JSON 데이터를 검색용 데이터로 변환
         clubs = data.map(concert => ({
+            title: concert.title,
             name: concert.club,
             university: concert.university,
-            url: `details.html?university=${encodeURIComponent(concert.university)}&club=${encodeURIComponent(concert.club)}`
+            url: `../classicConcertPages/${concert.link}`
         }));
     } catch (error) {
         console.error("Error loading JSON data:", error);
@@ -25,6 +26,7 @@ function updateSearchResults(query) {
     if (query) {
         const filteredClubs = clubs.filter(
             club =>
+                club.title.toLowerCase().includes(query) ||
                 club.name.toLowerCase().includes(query) ||
                 club.university.toLowerCase().includes(query)
         );
@@ -33,7 +35,7 @@ function updateSearchResults(query) {
             // 검색 결과가 있을 경우
             filteredClubs.forEach(club => {
                 const listItem = document.createElement("li");
-                listItem.textContent = `${club.university} ${club.name}`;
+                listItem.textContent = `${club.title} / ${club.university} ${club.name}`;
                 listItem.addEventListener("click", () => {
                     window.location.href = club.url; // 세부 페이지로 이동
                 });
