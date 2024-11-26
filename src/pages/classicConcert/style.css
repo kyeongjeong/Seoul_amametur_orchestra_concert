@@ -405,55 +405,67 @@ body {
 }
 
 .concert-list {
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
     margin-top: 40px;
+}
+
+.concert-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
 }
 
 .concert-item {
     display: flex;
-    gap: 20px; /* 사진과 내용 간 간격 */
-    margin-bottom: 30px;
-    align-items: center;
-    position: relative; /* 버튼 배치를 위한 기준 */
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+
 .concert-image {
-    width: 300px; /* 사진 크기 확대 */
-    height: 200px;
+    width: 210px;
+    height: 280px;
     background-color: lightgray;
     border-radius: 5px;
-    flex-shrink: 0;
-    background-image: url('placeholder.jpg'); /* 실제 이미지 경로로 변경 */
+    background-image: url('placeholder.jpg');
     background-size: cover;
     background-position: center;
 }
 
 .concert-details {
     flex: 1;
-    margin-left: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* 버튼을 아래로 배치 */
-    position: relative;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    gap: 10px;
 }
 
 .concert-title {
-    font-size: 22px; /* 제목 크기 조정 */
+    font-size: 20px;
     font-weight: bold;
-    margin-bottom: 0px; /* 제목 아래 간격 축소 */
+    margin-bottom: 10px;
 }
 
 .concert-date,
 .concert-time,
 .concert-location {
-    font-size: 14px; /* 내용 글씨 크기 축소 */
-    margin-bottom: 0px; /* 각 항목 간 간격 축소 */
+    font-size: 14px;
     color: #555;
+    margin: 5px 0;
 }
 
 .details-button {
-    align-self: flex-start; /* 오른쪽 아래로 정렬 */
-    margin-top: 10px; /* 버튼과 내용 간 약간의 간격 */
-    padding: 8px 16px;
+    margin-top: 15px;
+    padding: 8px 12px;
     font-size: 14px;
     border: none;
     background-color: #333;
@@ -467,12 +479,24 @@ body {
     background-color: orange;
 }
 
-.dividing_line2{
-    height: 2px;
+.dividing-line2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    margin: 30px 0 30px 0;
+    margin: 20px 0;
+    position: relative;
+}
+
+.dividing-line2::before,
+.dividing-line2::after {
+    content: '';
+    height: 2px;
+    width: 48%;
     background-color: rgba(190, 190, 190, 0.8);
 }
+
+
 
 .pagination {
     display: flex;
