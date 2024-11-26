@@ -153,7 +153,7 @@
         "date": "2025년 3월",
         "time": "미정",
         "location": "미정",
-        "image": "",
+        "image": "../../../public/images/no_image.jpg",
         "era" : "Romantic",
         "genre": ["Orchestral Piece","Opera","Symphony"],
         "InstPreference": "All", 
