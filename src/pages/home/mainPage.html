@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seoul Amateur Orchestra Club</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Seoul Armateur<br>Orchestra Club</div>
+        <nav class="menu">
+            <a href="mainPage.html" class="menu-item" id="current">Home</a>
+            <a href="../orchestraClub/orchestraClub.html" class="menu-item">Orchestra Club</a>
+            <a href="../classicConcert/concert_info.html" class="menu-item">Classic Concert</a> 
+        </nav>
+    </header>
+
+    <!-- 이미지 슬라이더 -->
+    <div class="slider">
+        <div class="slider-images" id="slider-images"></div>
+        <div class="slider-controls">
+            <button class="prev">&lt;</button>
+            <button class="next">&gt;</button>
+        </div>
+    </div>
+
+    <!-- 추천 -->
+    <div class="container">
+        <div class="content">
+            <div class="title-container">
+                <div class="title-rectangle"></div>
+                <h2 class="title">Classic Music Recommendation</h2>
+            </div>
+            
+            <div class="categories">
+                <div class="category" id="era">
+                    <h4>시대</h4>
+                    <div class="options">
+                        <div>Baroque</div>
+                        <div>Classical</div>
+                        <div>Romantic</div>
+                        <div>Modern</div>
+                    </div>
+                </div>
+                <div class="category" id="genre">
+                    <h4>형식</h4>
+                    <div class="options">
+                        <div>Symphony</div>
+                        <div>Orchestral Piece</div>
+                        <div>Concerto</div>
+                        <div>Opera</div>
+                    </div>
+                </div>
+                <div class="category" id="instPreference">
+                    <h4>악기</h4>
+                    <div class="options">
+                        <div>All</div>
+                        <div>Violin</div>
+                        <div>Cello</div>
+                        <div>Piano</div>
+                    </div>
+                </div>
+                <div class="category" id="country">
+                    <h4>국가</h4>
+                    <div class="options">
+                        <div>Austria</div>
+                        <div>Germany</div>
+                        <div>Russia</div>
+                        <div>Czech</div>
+                        <div>France</div>
+                        <div>Finland</div>
+                        <div>Italy</div>
+                        <div>Norway</div>
+                        <div>Armenia</div>
+                    </div>
+                </div>
+            </div>
+            <div class="selected-options-container">
+                <div id="selected-options-list"></div>
+                <button id="recommend-btn">Recommendation</button>
+            </div>
+            <div class="suggested-music" style="display: none;">
+                <div class="suggested-music-label">Suggested Music</div>
+                <p id="suggested-music-title"></p>
+            </div>            
+            <div class="suggested-concert" id="suggested-concert" style="display: none;">
+                <div class="suggested-concert-label">Suggested Concert</div>
+                <div class="concert-cards"></div>
+            </div>
+        </div>   
+        
+        <div class="content">
+            <div class="title-container">
+                <div class="title-rectangle"></div>
+                <h2 class="title">Musical Instrument</h2>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br>
+
+    <script src="banner.js"></script>
+    <script src="recommend.js"></script>
+</body>
+</html>

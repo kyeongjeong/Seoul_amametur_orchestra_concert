@@ -3,19 +3,19 @@ const searchResults = document.getElementById("search-results");
 
 // 검색 데이터 (동아리명 및 소속대학교명)
 const clubs = [
-    { name: "MDOP", university: "경희대학교", url: "../orchestraClubPages/index.html" },
-    { name: "ACES", university: "서강대학교", url: "../orchestraClubPages/index.html" },
-    { name: "SNUPO", university: "서울대학교", url: "../orchestraClubPages/index.html" },
-    { name: "SKKUO", university: "성균관대학교", url: "../orchestraClubPages/index.html" },
-    { name: "HANAKLANG", university: "한양대학교", url: "../orchestraClubPages/index.html" },
-    { name: "KUPHIL", university: "건국대학교", url: "../orchestraClubPages/index.html" },
-    { name: "Korea University Orchestra", university: "고려대학교", url: "../orchestraClubPages/index.html" },
-    { name: "Da KAPO", university: "광운대학교", url: "../orchestraClubPages/index.html" },
-    { name: "OPUS", university: "동국대학교", url: "../orchestraClubPages/index.html" },
-    { name: "S.O.Phi.A", university: "숙명여자대학교", url: "../orchestraClubPages/index.html" },
-    { name: "Cantabile", university: "서울시립대학교", url: "../orchestraClubPages/index.html" },
-    { name: "RUBATO", university: "중앙대학교", url: "../orchestraClubPages/index.html" },
-    { name: "HIAMO", university: "홍익대학교", url: "../orchestraClubPages/index.html" }
+    { name: "MDOP", university: "경희대학교", url: "../orchestraClubPages/mdop_khu.html" },
+    { name: "ACES", university: "서강대학교", url: "../orchestraClubPages/aces_su.html" },
+    { name: "SNUPO", university: "서울대학교", url: "../orchestraClubPages/snupo_snu.html" },
+    { name: "SKKUO", university: "성균관대학교", url: "../orchestraClubPages/skkuo_skku.html" },
+    { name: "HANAKLANG", university: "한양대학교", url: "../orchestraClubPages/hanaklang_hu.html" },
+    { name: "KUPHIL", university: "건국대학교", url: "../orchestraClubPages/kuphilharmonic_ku.html" },
+    { name: "Korea University Orchestra", university: "고려대학교", url: "../orchestraClubPages/kuorchestra_ku.html" },
+    { name: "Da KAPO", university: "광운대학교", url: "../orchestraClubPages/dakapo_kwu.html" },
+    { name: "OPUS", university: "동국대학교", url: "../orchestraClubPages/opus_dgu.html" },
+    { name: "S.O.Phi.A", university: "숙명여자대학교", url: "../orchestraClubPages/sophia_smwu.html" },
+    { name: "Cantabile", university: "서울시립대학교", url: "../orchestraClubPages/cantabile_uos.html" },
+    { name: "RUBATO", university: "중앙대학교", url: "../orchestraClubPages/rubato_cau.html" },
+    { name: "HIAMO", university: "홍익대학교", url: "../orchestraClubPages/hiamo_hongik.html" }
 ];
 
 // 검색 결과 업데이트 함수

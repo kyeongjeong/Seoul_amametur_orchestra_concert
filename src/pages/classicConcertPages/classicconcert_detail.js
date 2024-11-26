@@ -44,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-
     // 현재 HTML 파일의 클럽명을 구분하기 위한 dataset 사용
     const currentClub = document.body.dataset.club;
 
@@ -52,11 +51,12 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('concert_infos.json')
         .then(response => response.json())
         .then(data => {
-            // 현재 클럽과 일치하는 콘서트 데이터를 필터링
             const concertData = data.find(concert => concert.club === currentClub);
 
-            // 콘서트 정보가 존재할 경우 HTML에 동적으로 삽입
             if (concertData) {
+                document.querySelector('.menu-bar-link[href=""]').href = concertData.link; 
+                document.getElementById('concert-link').textContent = concertData.club;
+
                 document.getElementById('concert-title').textContent = concertData.title;
                 document.getElementById('concert-date').textContent = concertData.date;
                 document.getElementById('concert-time').textContent = concertData.time;
@@ -71,17 +71,25 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => console.error('Error fetching JSON data:', error));
 
     // 하트 버튼 클릭 이벤트
-    document.querySelector('.heart-button').addEventListener('click', function() {
-        const icon = this.querySelector('i');
-        if (icon.classList.contains('far')) {
-            icon.classList.remove('far');
-            icon.classList.add('fas', 'liked');
+    const heartButton = document.querySelector('.heart-button');
+    const heartIcon = heartButton.querySelector('i');
+
+    // 로컬 스토리지에서 하트 버튼 상태 불러오기
+    const isLiked = localStorage.getItem('heartLiked') === 'true';
+    if (isLiked) {
+        heartIcon.classList.remove('far');
+        heartIcon.classList.add('fas', 'liked');
+    }
+
+    heartButton.addEventListener('click', function() {
+        if (heartIcon.classList.contains('far')) {
+            heartIcon.classList.remove('far');
+            heartIcon.classList.add('fas', 'liked');
+            localStorage.setItem('heartLiked', 'true');
         } else {
-            icon.classList.remove('fas', 'liked');
-            icon.classList.add('far');
+            heartIcon.classList.remove('fas', 'liked');
+            heartIcon.classList.add('far');
+            localStorage.setItem('heartLiked', 'false');
         }
     });
 });
-
-
-
