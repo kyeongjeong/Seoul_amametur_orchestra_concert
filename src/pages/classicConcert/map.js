@@ -1,7 +1,7 @@
 var mapContainer = document.getElementById('map'),
 mapOption = { 
-    center: new kakao.maps.LatLng(37.611369, 127.059208), // 지도 중심좌표
-    level: 7 // 확대
+    center: new kakao.maps.LatLng(37.5060235, 126.973263), // 지도 중심좌표
+    level: 10 // 확대
 };
 
 var map = new kakao.maps.Map(mapContainer, mapOption);
@@ -45,9 +45,8 @@ fetch('../../data/positions.json') // JSON 파일 경로
                             </div>
                             <div class="desc">
                                 <div class="ellipsis">${position.address}</div>
-                                ${position.date ? `<div class="jibun ellipsis">${position.date}</div>` : ""}
-                                ${position.postal ? `<div class="jibun ellipsis">${position.postal}</div>` : ""}
-                                <div><a href="${position.link}" target="_blank" class="link">홈페이지</a></div>
+                                <div class="jibun ellipsis">${position.date}</div>
+                                <div><a href="${position.link}" target="_blank" class="link">세부 페이지</a></div>
                             </div>
                         </div>
                     </div>
@@ -254,7 +253,7 @@ async function findRoute() {
             const response = await fetch(apiUrl, {
                 method: 'GET',
                 headers: {
-                    'Authorization': 'KakaoAK ',
+                    'Authorization': 'KakaoAK ',              // 여기에 REST API 키 넣기
                     'Content-Type': 'application/json'
                 }
             });
