@@ -301,7 +301,28 @@ async function findRoute() {
                     bounds.extend(endPoint); // 도착지 추가
                     map.setBounds(bounds); // 지도 범위 설정
 
-                    alert(`경로 찾기 성공!\n총 거리: ${route.summary.distance}m\n예상 시간: ${route.summary.duration / 60}분`);
+                    const totalDistance = route.summary.distance >= 1000 
+                        ? `${(route.summary.distance / 1000).toFixed(1)}km` // 소숫점 1자리 반올림
+                        : `${route.summary.distance}m`;
+
+                    // 예상시간: 60분 이상일 경우 ~시간 ~분 형태로 변환
+                    const durationInMinutes = Math.round(route.summary.duration / 60); // 반올림
+                    const hours = Math.floor(durationInMinutes / 60);
+                    const minutes = durationInMinutes % 60;
+                    const estimatedTime = hours > 0 
+                        ? `${hours}시간 ${minutes}분`
+                        : `${minutes}분`;
+
+                    // 택시요금 및 통행요금: 세자리마다 콤마 추가
+                    const taxiFare = `${route.summary.fare.taxi.toLocaleString()}원`;
+                    const tollFare = `${route.summary.fare.toll.toLocaleString()}원`;
+
+                    // HTML에 업데이트
+                    document.getElementById('totalDistance').innerText = totalDistance;
+                    document.getElementById('estimatedTime').innerText = estimatedTime;
+                    document.getElementById('taxiFare').innerText = taxiFare;
+                    document.getElementById('tollFare').innerText = tollFare;
+
                 } else {
                     alert('경로를 찾을 수 없습니다.');
                 }
