@@ -39,9 +39,18 @@ fetch('../../data/concert_infos.json')
                             <p class="concert-date">날짜: ${concert.date} ${concert.time}</p>
                             <p class="concert-time">장소: ${concert.location}</p>
                             <p class="concert-location">주최: ${concert.university} ${concert.club}</p>
-                            <button class="details-button">세부 정보</button>
+                            
                         </div>
                     `;
+
+                    const detailsButton = document.createElement('button');
+                    detailsButton.textContent = '세부 정보';
+                    detailsButton.classList.add('details-button');
+                    detailsButton.addEventListener('click', () => {
+                        window.location.href = concert.page; // 페이지 이동
+                    });
+                    concertItem.querySelector('.concert-details').appendChild(detailsButton);
+                    
                     row.appendChild(concertItem);
                 }
 
