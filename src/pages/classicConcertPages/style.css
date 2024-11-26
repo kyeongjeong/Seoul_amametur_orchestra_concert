@@ -20,7 +20,10 @@ body {
     margin-right: 150px;
     font-size: 24px;
     font-weight: bold;
+    text-decoration: none; /* 밑줄 제거 */
+    color: black; /* 기본 텍스트 색상 */
 }
+
 .menu {
     display: flex;
     gap: 80px;
@@ -49,6 +52,18 @@ body {
     font-size: 16px;
     z-index: 999;
 }
+.menu-bar-link {
+    text-decoration: none; /* 밑줄 제거 */
+    color: inherit; /* 부모 요소의 색상을 상속 */
+}
+
+.menu-bar-link:hover {
+    text-decoration: none;
+}
+.separator {
+    margin: 0 10px; /* ❯ 양옆에 여백 추가 */
+}
+
 .content {
     max-width: 1200px;
     margin: 140px auto 20px;
@@ -161,9 +176,11 @@ p{
     gap: 50px;
 }
 
-.concert-poster {
+#concert-image {
     display: flex;
     gap: 20px;
+    width: 400px;
+    height: auto;
 }
 
 .concert-info {
