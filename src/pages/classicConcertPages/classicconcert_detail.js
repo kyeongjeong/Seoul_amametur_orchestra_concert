@@ -48,12 +48,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentClub = document.body.dataset.club;
 
     // JSON 파일 불러오기
-    fetch('concert_infos.json')
+    fetch('../../data/concert_infos.json')
         .then(response => response.json())
         .then(data => {
             const concertData = data.find(concert => concert.club === currentClub);
 
             if (concertData) {
+                const heartKey = `heartLiked_${concertData.idx}`; // idx를 고유 키로 활용
+                const heartButton = document.querySelector('.heart-button');
+                const heartIcon = heartButton.querySelector('i');
+
+                //로컬 스토리지에서 하트 상태 로드
+                const isLiked = localStorage.getItem(heartKey) === 'true';
+                if (isLiked) {
+                    heartIcon.classList.remove('far');
+                    heartIcon.classList.add('fas', 'liked');
+                }
+            
+                // 하트 버튼 클릭 시 상태 변경 및 로컬 스토리지에 저장
+                heartButton.addEventListener('click', function() {
+                    if (heartIcon.classList.contains('far')) {
+                        heartIcon.classList.remove('far');
+                        heartIcon.classList.add('fas', 'liked');
+                        localStorage.setItem(heartKey, 'true');
+                    } else {
+                        heartIcon.classList.remove('fas', 'liked');
+                        heartIcon.classList.add('far');
+                        localStorage.setItem(heartKey, 'false');
+                    }
+                });
+                
+                //공연 정보 페이지에 렌더링
                 document.querySelector('.menu-bar-link[href=""]').href = concertData.link; 
                 document.getElementById('concert-link').textContent = concertData.club;
 
@@ -69,27 +94,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         })
         .catch(error => console.error('Error fetching JSON data:', error));
-
-    // 하트 버튼 클릭 이벤트
-    const heartButton = document.querySelector('.heart-button');
-    const heartIcon = heartButton.querySelector('i');
-
-    // 로컬 스토리지에서 하트 버튼 상태 불러오기
-    const isLiked = localStorage.getItem('heartLiked') === 'true';
-    if (isLiked) {
-        heartIcon.classList.remove('far');
-        heartIcon.classList.add('fas', 'liked');
-    }
-
-    heartButton.addEventListener('click', function() {
-        if (heartIcon.classList.contains('far')) {
-            heartIcon.classList.remove('far');
-            heartIcon.classList.add('fas', 'liked');
-            localStorage.setItem('heartLiked', 'true');
-        } else {
-            heartIcon.classList.remove('fas', 'liked');
-            heartIcon.classList.add('far');
-            localStorage.setItem('heartLiked', 'false');
-        }
-    });
 });
