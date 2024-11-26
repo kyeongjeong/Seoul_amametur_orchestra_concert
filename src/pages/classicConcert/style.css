@@ -232,7 +232,7 @@ body {
 /* 출발지와 도착지 검색창을 가로로 배치 */
 .search-container-wrapper {
     display: flex;
-    gap: 30px; /* 검색창 간의 간격 */
+    gap: 30px;
     margin-top: 20px;
 }
 
@@ -250,7 +250,7 @@ body {
 }
 
 #startKeyword, #endKeyword {
-    flex-grow: 1; /* 입력창이 가능한 공간을 차지 */
+    flex-grow: 1;
     height: 40px;
     padding: 8px 16px;
     font-size: 16px;
@@ -274,8 +274,8 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin-left: 10px; /* 버튼과 입력창 사이에 여백 */
-    height: 40px; /* 버튼 높이를 입력창과 맞춤 */
+    margin-left: 10px;
+    height: 40px;
 }
 
 .search-input-wrapper button:hover {
@@ -329,6 +329,69 @@ body {
     background-color: #fff;
     width: 100%;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 길찾기 버튼 스타일 */
+#findRouteButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    display: block;
+    margin: 20px auto;
+    width: 50%;
+    max-width: 200px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#findRouteButton:hover {
+    background-color: orange;
+    transform: scale(1.05);
+}
+
+/* 경로 정보 컨테이너 */
+#routeInfo {
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(100% - 40px);
+    max-width: 800px;
+    text-align: left;
+}
+
+#routeInfo h4 {
+    margin-top: 0;
+    font-size: 22px;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#routeDetails {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#routeDetails li {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.8;
+    padding: 5px 0;
+}
+
+#routeDetails li span {
+    font-weight: bold;
+    color: #333;
 }
 
 

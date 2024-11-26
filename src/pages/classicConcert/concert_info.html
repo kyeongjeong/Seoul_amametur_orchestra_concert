@@ -60,7 +60,18 @@
             <div id="endPagination"></div>
         </div>
     </div>
-    <button onclick="findRoute()">길찾기</button>    
+    <div class="route-container">
+        <button id="findRouteButton" onclick="findRoute()">길찾기</button>
+        <div id="routeInfo">
+            <h4>경로 정보</h4>
+            <ul id="routeDetails">
+                <li>총거리: <span id="totalDistance">-</span></li>
+                <li>예상시간: <span id="estimatedTime">-</span></li>
+                <li>택시 요금: <span id="taxiFare">-</span></li>
+                <li>통행 요금: <span id="tollFare">-</span></li>
+            </ul>
+        </div>
+    </div>
     
     <script src="map.js"></script>
 
