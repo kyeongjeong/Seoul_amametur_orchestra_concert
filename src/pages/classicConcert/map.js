@@ -20,7 +20,7 @@ let selectedStartEl = null;
 let selectedEndEl = null;
 
 // JSON 데이터 로드
-fetch('positions.json') // JSON 파일 경로
+fetch('../../data/positions.json') // JSON 파일 경로
     .then(response => response.json())
     .then(positions => {
         // 마커와 커스텀 오버레이 생성
