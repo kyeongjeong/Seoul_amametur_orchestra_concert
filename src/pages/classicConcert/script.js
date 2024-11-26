@@ -1,4 +1,4 @@
-fetch('concerts.json')
+fetch('../../data/concert_infos.json')
     .then(response => response.json())
     .then(data => {
         const itemsPerPage = 4;
@@ -33,7 +33,7 @@ fetch('concerts.json')
                     const concertItem = document.createElement('div');
                     concertItem.classList.add('concert-item');
                     concertItem.innerHTML = `
-                        <div class="concert-image"></div>
+                        <img class="concert-image" src="${concert.image}">
                         <div class="concert-details">
                             <h2 class="concert-title">${concert.title}</h2>
                             <p class="concert-date">날짜: ${concert.date} ${concert.time}</p>
