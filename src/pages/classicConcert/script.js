@@ -1,7 +1,7 @@
-fetch('concerts.json')
+fetch('../../data/concert_infos.json')
     .then(response => response.json())
     .then(data => {
-        const itemsPerPage = 3;
+        const itemsPerPage = 4;
         let currentPage = 1;
         const totalPages = Math.ceil(data.length / itemsPerPage);
         const pageGroupSize = 5;
@@ -21,32 +21,54 @@ fetch('concerts.json')
             const startIndex = (page - 1) * itemsPerPage;
             const endIndex = Math.min(startIndex + itemsPerPage, data.length);
 
-            for (let i = startIndex; i < endIndex; i++) {
-                const concert = data[i];
+            const rows = [];
+            for (let i = startIndex; i < endIndex; i += 2) {
+                const row = document.createElement('div');
+                row.classList.add('concert-row');
+        
+                // 항목 생성 (좌우로 최대 2개)
+                for (let j = i; j < i + 2 && j < endIndex; j++) {
+                    const concert = data[j];
+        
+                    const concertItem = document.createElement('div');
+                    concertItem.classList.add('concert-item');
+                    concertItem.innerHTML = `
+                        <img class="concert-image" src="${concert.image}">
+                        <div class="concert-details">
+                            <h2 class="concert-title">${concert.title}</h2>
+                            <p class="concert-date">날짜: ${concert.date} ${concert.time}</p>
+                            <p class="concert-time">장소: ${concert.location}</p>
+                            <p class="concert-location">주최: ${concert.university} ${concert.club}</p>
+                            
+                        </div>
+                    `;
 
-                const concertItem = document.createElement('div');
-                concertItem.classList.add('concert-item');
+                    const detailsButton = document.createElement('button');
+                    detailsButton.textContent = '세부 정보';
+                    detailsButton.classList.add('details-button');
+                    detailsButton.addEventListener('click', () => {
+                        window.location.href = `../classicConcertPages/${concert.link}`;
+                    });
+                    concertItem.querySelector('.concert-details').appendChild(detailsButton);
 
-                concertItem.innerHTML = `
-                    <div class="concert-image"></div>
-                    <div class="concert-details">
-                        <h2 class="concert-title">${concert.university} ${concert.club}</h2>
-                        <p class="concert-date">날짜: ${concert.date}</p>
-                        <p class="concert-time">일시: ${concert.time}</p>
-                        <p class="concert-location">장소: ${concert.location}</p>
-                        <button class="details-button">세부 정보</button>
-                    </div>
-                `;
+                    row.appendChild(concertItem);
+                }
 
-                concertList.appendChild(concertItem);
 
-                // 마지막이 아니라면 구분선 추가
-                if (i < endIndex - 1) {
+                rows.push(row);
+            }
+
+            // 각 행 및 구분선 추가
+            rows.forEach((row, index) => {
+                concertList.appendChild(row);
+
+                // 행 간에 구분선 추가
+                if (rows.length > 1 && index < rows.length - 1) {
                     const dividingLine = document.createElement('div');
-                    dividingLine.classList.add('dividing_line2');
+                    dividingLine.classList.add('dividing-line2');
                     concertList.appendChild(dividingLine);
                 }
-            }
+            });
 
             // 페이지 번호 렌더링
             renderPageNumbers();

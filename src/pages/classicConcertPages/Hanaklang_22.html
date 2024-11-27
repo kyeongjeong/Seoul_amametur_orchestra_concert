@@ -12,15 +12,27 @@
 
 <body data-club="Hanaklang">
     <header class="header">
-        <div class="logo">Seoul Armateur<br>Orchestra Club</div>
+        <a href="../home/mainPage.html" class="logo">
+            Seoul Armateur<br>Orchestra Club
+        </a>
         <nav class="menu">
-            <a href="#" class="menu-item">Home</a>
-            <a href="../orchestraClub/orchestraClub.html" class="menu-item">Orchestra Club</a>
-            <a href="../classicConcert/concert_info.html" class="menu-item" id="current">Classic Concert</a> 
+            <a href="../home/mainPage.html" class="menu-item">Home</a>
+            <a href="../orchestraClub/orchestraClub.html" class="menu-item" >Orchestra Club</a>
+            <a href="../classicConcert/concert_info.html" class="menu-item" id="current">Classic Concert</a>
+            <a href="../mypages/myPage.html" class="menu-item">My Page</a> 
         </nav>
     </header>
-    <div class="current-menu-bar">Home -> Classic Concert -><span id="concert-club"></span></div>
 
+    <div class="current-menu-bar">
+        <a href="../home/mainPage.html" class="menu-bar-link">
+            <img src="../../../public/images/home_emoji.png" alt="홈 로고">
+        </a>
+        <span class="separator">❯</span>
+        <a href="../classicConcert/concert_info.html" class="menu-bar-link">Classic Concert</a>
+        <span class="separator">❯</span>
+        <a href="" class="menu-bar-link"><span id="concert-link"></span></a> 
+    </div>
+    
     <main>
         <section id="concert-details">
             <div class="concert-poster">

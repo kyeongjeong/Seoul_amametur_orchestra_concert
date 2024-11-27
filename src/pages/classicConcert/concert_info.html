@@ -8,30 +8,72 @@
 </head>
 <body>
 
-<!-- 헤더 구조 -->
 <header class="header">
-    <div class="logo">Seoul Armateur<br>Orchestra Club</div>
+    <a href="../home/mainPage.html" class="logo">
+        Seoul Armateur<br>Orchestra Club
+    </a>
     <nav class="menu">
-        <a href="#" class="menu-item">Home</a>
-        <a href="#" class="menu-item">Orchestra Club</a>
-        <a href="#" class="menu-item" id="current">Classic Concert</a>     <!-- 본인이 만든 페이지 부분을 id current로 바꾸기 -->
+        <a href="../home/mainPage.html" class="menu-item">Home</a>
+        <a href="../orchestraClub/orchestraClub.html" class="menu-item">Orchestra Club</a>
+        <a href="concert_info.html" class="menu-item" id="current">Classic Concert</a> 
+        <a href="../mypages/myPage.html" class="menu-item">My Page</a>
     </nav>
 </header>
 
-<!-- 현재 메뉴 표시 바 -->
-<div class="current-menu-bar">home -> Classic Concert</div>
+<div class="current-menu-bar">
+    <a href="../home/mainPage.html" class="menu-bar-link">
+        <img src="../../../public/images/home_emoji.png" alt="홈 로고">
+    </a>
+    <span class="separator">❯</span>
+    <a href="concert_info.html" class="menu-bar-link">Classic Concert</a>
+</div>
 
 <!-- 내용 -->
 <div class="content">
     <div class="title-container">
         <div class="title-rectangle"></div>
-        <h1 class="title">공연 정보 소개</h1>
+        <h1 class="title">공연 장소 소개</h1>
     </div>
 
     <p class="map-description">파란색 마커를 클릭하면 세부 정보를 확인할 수 있습니다.</p>
     
     <div id="map"></div>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey="></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=&libraries=services"></script>
+    
+    <div class="search-container-wrapper">
+        <div class="search-container">
+            <h4>출발지 검색</h4>
+            <div class="search-input-wrapper">
+                <input type="text" id="startKeyword" placeholder="출발지 키워드 입력" />
+                <button onclick="searchPlaces('start')">검색</button>
+            </div>
+            <ol id="startPlacesList"></ol>
+            <div id="startPagination"></div>
+        </div>
+    
+        <div class="search-container">
+            <h4>도착지 검색</h4>
+            <div class="search-input-wrapper">
+                <input type="text" id="endKeyword" placeholder="도착지 키워드 입력" />
+                <button onclick="searchPlaces('end')">검색</button>
+            </div>
+            <ol id="endPlacesList"></ol>
+            <div id="endPagination"></div>
+        </div>
+    </div>
+    <div class="route-container">
+        <button id="findRouteButton" onclick="findRoute()">길찾기</button>
+        <div id="routeInfo">
+            <h4>경로 정보</h4>
+            <ul id="routeDetails">
+                <li>총거리: <span id="totalDistance">-</span></li>
+                <li>예상시간: <span id="estimatedTime">-</span></li>
+                <li>택시 요금: <span id="taxiFare">-</span></li>
+                <li>통행 요금: <span id="tollFare">-</span></li>
+            </ul>
+        </div>
+    </div>
+    
     <script src="map.js"></script>
 
     <div class="dividing_line"></div>
@@ -49,9 +91,9 @@
     <div class="concert-list-container">
         <div id="concert-list" class="concert-list"></div>
         <div class="pagination">
-            <button id="prev-page" class="pagination-button" disabled>이전</button>
+            <button id="prev-page" class="pagination-button" disabled><</button>
             <div id="page-numbers" class="page-numbers"></div>
-            <button id="next-page" class="pagination-button">다음</button>
+            <button id="next-page" class="pagination-button">></button>
         </div>
     </div>
     
