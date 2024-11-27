@@ -38,15 +38,15 @@
 ## 📷 예시 이미지
 <details>
     <summary><b>메인 페이지</b></summary>
-    <img src="./images/mainpage.jpg">
+    <img src="./public/images/mainpage.jpg">
 </details>
 <details>
     <summary><b>전체적인 동아리 소개 페이지</b></summary>
-    <img src="./images/club_map.jpg">
+    <img src="./public/images/club_map.jpg">
 </details>
 <details>
     <summary><b>공연별 세부정보 페이지</b></summary>
-    <img src="./images/performance_information.jpg">
+    <img src="./public/images/performance_information.jpg">
 </details>
 <br><br>
 
