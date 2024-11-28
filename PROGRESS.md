@@ -59,7 +59,6 @@
 
 <details>
 <summary><b>동아리 별 세부페이지</b></summary>
-소개, 연혁
 <img src="public/images/prgressmdpic/clubdetail.png">
 <img src="public/images/prgressmdpic/clubdetail2.png">
 </details><br>
@@ -193,11 +192,24 @@
 - 사이드 배너 클릭 시 해당 섹션으로 이동 
 - 현재 보고 있는 섹션에 따라 배너 버튼 활성화 상태 업데이트
 - 페이지 로드 시 첫 번째 배너 버튼 활성화 설정
+<details>
+<summary><b>해당 커밋 목록</b></summary>
+
+- [(사이드배너 활성화,화면에 따라 버튼 상태 업데이트)](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/3f84a3981d24247d1090b51a710648cbc1a88e4e)<br>
+- [(페이지 로드 시 첫 번째 버튼 활성화)](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/daf6743c7b7a5044d3274455b255a11450820939)<br>
+</details>
 
 #### **좋아요 버튼 활성화**
 - 좋아요 버튼 클릭시 하트 이모지 변경
 - 로컬스토리지 활용하여 페이지 새로고침 후에도 버튼 상태 유지 및 마이페이지 데이터 제공
 - 각 HTML 페이지마다 독립적으로 좋아요 상태 저장
+<details>
+<summary><b>해당 커밋 목록</b></summary>
+
+- [(좋아요 버튼 활성화)](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/59cbc66327054c6d3726615f6561d9ed30aac311)<br>
+- [(버튼 독립적으로 상태 저장 및 로컬 스토리지 활용)](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/50c6c5ca3a86e85421c75401fa633f803509f94b)<br>
+</details>
+
 
 #### **동아리 별 연주회 정보 수집**
 - 연주회 세부 페이지 틀 디자인 및 구현
@@ -205,7 +217,27 @@
 - 연주회 정보 json 데이터 생성 
 - 음악 추천을 위한 idx, 음악 추가
 - html 페이지 내 연주회 정보 동적 로드
+<details>
+<summary><b>해당 커밋 목록</b></summary>
 
+- [(연주회 세부 페이지 틀 구현)](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/bbc8babb2073263a6c0928388bd89e981c4636f2) <br>
+- [(연주회정보 json 생성)](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/5f778c17ac3a3df34288d273578cba86d88aca26)<br>
+- [(DaKAPO html 생성, 내용 추가 및 정보 동적 로드)](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/418e53f7225be180aa5802a1345edfa6e70e5611) <br>
+- [(HIAMO html 생성 및 내용 추가)](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/a50bf716fa20b4f34ebb090f1cc3f50f590b759c)<br>
+- [(Kurorchestra html 생성 및 내용 추가, json 추가)](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/d3e95a3c6e38d1fc175dc23cecaed5f02d4ffb74) <br>
+- [(ACES html 생성  및 내용 추가, json 추가)](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/e67dfa73b891c0d94a73d9dfc50bc804dd3ad733)<br> 
+- [(SNUPO html 생성  및 내용 추가, json 추가)](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/a272af03f692b54e2a0aa80f62ece945e43ef68a)<br> 
+- [(SKKUO html 생성  및 내용 추가, json 추가)](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/bc098fb103c7e6a4d8ceae1ffd229bcb78b78c8d)<br> 
+- [(hanaklang html 생성  및 내용 추가, json 추가)](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/77fe0e3d81c87167139d0fe224a6833b9e702713)<br> 
+- [(RUBATO html 생성  및 내용 추가, json 추가)](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/9d2afb39736743b1ea6e5ad9638d1202eda9025d)<br> 
+- [(MDOP html 생성  및 내용 추가, json 추가)](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/385a16dd6ca2a3b3c2e71fb4500280fb07cfea0c)<br> 
+- [(cantabile html 생성  및 내용 추가, json 추가)](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/99b53a09be0fe9645993ea76d57546bae19cd175)<br> 
+- [(KUPHIL html 생성  및 내용 추가, json 추가)](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/6351dfed03d7be3a6e31d33aef3d2d4894b8fcb8)<br> 
+- [(OPUS html 생성  및 내용 추가, json 추가)](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/39862fee003a63e593ba6e4840b3dd162d91fc9d)<br> 
+- [(Sophia html 생성  및 내용 추가, json 추가)](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/3bacf4dc75259c398d4c3bf625e0a937da5b001f)<br> 
+- [(idx, music json 정보 추가)](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/8d320d3a169f4107b506f129da2934ebc0f6b1b6)<br>
+
+</details>
 <br>
 
 ### 김하경
