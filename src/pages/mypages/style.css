@@ -114,6 +114,25 @@ body {
     color: #333;
 }
 
+.heart-button {
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: gray;
+    transition: transform 0.2s;
+}
+
+.heart-button:hover {
+    transform: scale(1.2);
+}
+
+.heart-button i.liked {
+    color: red;
+}
+
+
 /* 탭 스타일 */
 .tabs {
     display: flex;
