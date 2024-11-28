@@ -1,5 +1,6 @@
 ## Project Summary
-본 프로젝트는 서울 소재 대학교 아마추어 오케스트라 동아리의 홍보와 공연 정보를 통합적으로 제공하는 웹 플랫폼을 구현하는 것을 목표로 합니다.<br> 기존에는 각 동아리가 소셜미디어나 독립적인 채널을 통해 정보를 제공함에 따라, 사용자들이 공연 일정과 동아리 정보를 파악하기 위해 여러 채널을 검색해야 하는 번거로움이 있었습니다. 본 프로젝트는 이러한 문제를 해결하고, 사용자에게 통합된 정보를 제공함으로써 오케스트라와 클래식 음악에 대한 접근성을 높이고자 합니다.
+본 프로젝트의 목표는 서울 소재 대학교 아마추어 오케스트라 동아리의 홍보와 공연 정보를 통합적으로 제공하는 웹 플랫폼의 구현입니다.<br> 기존에는 각 동아리가 소셜미디어나 독립적인 채널을 통해 정보를 제공함에 따라, 사용자들이 공연 일정과 동아리 정보를 파악하기 위해 여러 채널을 검색해야 하는 번거로움이 있었습니다. 본 프로젝트는 이러한 문제를 해결하고, 사용자에게 통합된 정보를 제공함으로써 오케스트라와 클래식 음악에 대한 접근성을 높이고자 합니다.<br>
+<br>
 
 ### 1. 메인 페이지
 - 사용자 선택 옵션을 기반으로 클래식 음악과 동아리 공연을 추천하는 기능을 제공
@@ -75,7 +76,7 @@
 <img src="public/images/prgressmdpic/mypage2.png">
 </details><br>
 
-<br><br><br>
+<br><br>
 
 ## Individual Progress Status  
 
@@ -88,10 +89,11 @@
 - 페이지 가장 하단에 오케스트라를 구성하는 악기 소개
 <details>
 <summary><b>해당 커밋 목록</b></summary>
-[이미지 슬라이드 배너 구현](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/a1684a308b1f110a453296f621bf6ef51df4fb4f)
-[무한 루프 형식으로 변경](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/4cfbe4493f950ff8a17c5a6eb5264fd2d5d59dc6)
-[자동 슬라이드 기능 추가](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/4bc42b5b8a92a0b55629a3f572f1b22ad80b8e5e)
-</details><br>
+  
+- [(이미지 슬라이드 배너 구현)](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/a1684a308b1f110a453296f621bf6ef51df4fb4f)<br>
+- [무한 루프 형식으로 변경](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/4cfbe4493f950ff8a17c5a6eb5264fd2d5d59dc6)<br>
+- [자동 슬라이드 기능 추가](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/4bc42b5b8a92a0b55629a3f572f1b22ad80b8e5e)<br>
+</details>
 
 #### **홈 화면 클래식 곡 필터링 및 랜덤추천 기능**
 - 89개의 클래식 곡 데이터를 JSON 형식으로 생성하고 이를 기반으로 곡 필터링 및 추천 기능을 구현
@@ -104,11 +106,11 @@
 - 공연 카드 클릭 시 해당 공연 상세 페이지로 이동하도록 구현
 <details>
 <summary><b>해당 커밋 목록</b></summary>
-[89개의 클래식 곡 json 추가](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/448594cebce4ee05cb6d5bff2e45be3b86a1444c)
-[옵션 선택창 구현](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/927bdc231e13fe6a77a4697a64c0985c10898acb)
-[필터링 및 랜덤추천 기능 추가](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/fd3df425149aec4276b933bba1e5a229339f7512)
-[관련 공연 목록 구현](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/090e6ac90c8b38d780958af3519e41923eab326c)
-</details><br>
+[89개의 클래식 곡 json 추가](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/448594cebce4ee05cb6d5bff2e45be3b86a1444c)<br>
+[옵션 선택창 구현](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/927bdc231e13fe6a77a4697a64c0985c10898acb)<br>
+[필터링 및 랜덤추천 기능 추가](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/fd3df425149aec4276b933bba1e5a229339f7512)<br>
+[관련 공연 목록 구현](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/090e6ac90c8b38d780958af3519e41923eab326c)<br>
+</details>
 
 #### **오케스트라 동아리 정보 조회**
 - 서울 지도 이미지를 활용하여 동아리 위치를 시각화하며, 각 동아리 위치를 마커로 표시
@@ -118,15 +120,16 @@
 - 동아리 로고, 소속 대학명, 동아리명으로 구성된 카드 형태 UI를 제공하며, 좌우 버튼으로 탐색 가능
 - 동아리명 및 소속 대학명을 기준으로 검색 가능한 검색창을 구현
 - 검색 결과를 클릭하면 해당 동아리의 상세 정보 페이지로 연결
+<details>
 <summary><b>해당 커밋 목록</b></summary>
-[지도 삽입 및 위치 수정](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/689fda62818a7c2e44061a2ef5a7cec1b6105c55)
-[마커 삽입 및 페이지 연결](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/7ae2099b2a354c8c5e6d0b32630825f90f9e1bc8)
-[검색창 구현](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/fb43abf7df11d06624589c90a251d187fecf5859)
-[슬라이드 기능 구현](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/e21993ee2e297628aa5dcd959cf2bdf2ff0e5188)
-[로고+동아리명+소속대학명 카드 구현](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/81b30fc44b61752555c40d278df181af062ec0d4)
-[검색 예외처리](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/281164830760dd5e4f819c09c01fa44ae7b42409)
-[마커 튤팁 추가](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/2c6e18c6677085e3286a0632db010219dbbd56cc)
-</details><br>
+[지도 삽입 및 위치 수정](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/689fda62818a7c2e44061a2ef5a7cec1b6105c55)<br>
+[마커 삽입 및 페이지 연결](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/7ae2099b2a354c8c5e6d0b32630825f90f9e1bc8)<br>
+[검색창 구현](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/fb43abf7df11d06624589c90a251d187fecf5859)<br>
+[슬라이드 기능 구현](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/e21993ee2e297628aa5dcd959cf2bdf2ff0e5188)<br>
+[로고+동아리명+소속대학명 카드 구현](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/81b30fc44b61752555c40d278df181af062ec0d4)<br>
+[검색 예외처리](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/281164830760dd5e4f819c09c01fa44ae7b42409)<br>
+[마커 튤팁 추가](https://github.com/kyeongjeong/Seoul_amateur_orchestra_club/commit/2c6e18c6677085e3286a0632db010219dbbd56cc)<br>
+</details>
 <br>
 
 ### 이오영
@@ -155,17 +158,17 @@
 
 ### 곽도경
 
-### **사이드배너 활성화**
+#### **사이드배너 활성화**
 - 사이드 배너 클릭 시 해당 섹션으로 이동 
 - 현재 보고 있는 섹션에 따라 배너 버튼 활성화 상태 업데이트
 - 페이지 로드 시 첫 번째 배너 버튼 활성화 설정
 
-### **좋아요 버튼 활성화**
+#### **좋아요 버튼 활성화**
 - 좋아요 버튼 클릭시 하트 이모지 변경
 - 로컬스토리지 활용하여 페이지 새로고침 후에도 버튼 상태 유지 및 마이페이지 데이터 제공
 - 각 HTML 페이지마다 독립적으로 좋아요 상태 저장
 
-### **동아리 별 연주회 정보 수집**
+#### **동아리 별 연주회 정보 수집**
 - 연주회 세부 페이지 틀 디자인 및 구현
 - 13 개의 연주회 html 생성 및 내용 추가
 - 연주회 정보 json 데이터 생성 
@@ -176,16 +179,16 @@
 
 ### 김하경
 
-### **스크롤 내비게이션 기능**
+#### **스크롤 내비게이션 기능**
 - 클릭 시 해당 섹션으로 부드럽게 이동하도록 구현
 - 사용자가 스크롤로 페이지를 이동할 경우, 현재 위치에 맞게 내비게이션 상태가 동적으로 업데이트되도록 설정
 
-### **세부 동아리 정보 기능**
+#### **세부 동아리 정보 기능**
 - 동아리 세부 페이지 틀 디자인 및 구현
 - 13개의 동아리 html 생성 및 내용 추가
 - 해당 동아리의 연주회 정보를 확인할 수 있도록 세부 페이지 이동 기능 추가
 
-## **마이페이지 좋아요 버튼 활성화**
+#### **마이페이지 좋아요 버튼 활성화**
 - 로컬스토리지를 활용하여 사용자가 좋아요를 누른 공연 정보를 유지
 - 공연의 날짜와 현재 시간을 기준으로 지난 공연과 예정 공연을 구분하여 표시
 - 좋아요 취소 버튼을 통해 로컬스토리지에서 데이터를 삭제할 수 있도록 구현
