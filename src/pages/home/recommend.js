@@ -11,6 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let concertData = []; // 공연 데이터를 저장할 변수
     let isMusicDataLoaded = false; // JSON 데이터 로드 상태를 확인하는 변수
 
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/player_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+
     //JSON 데이터 로드
     Promise.all([
         fetch('../../data/composer_music.json').then(response => response.json()),
@@ -106,6 +113,74 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 콘서트 관련 메시지 생성 함수
+    function displayConcertMessage(message) {
+        const concertCardsContainer = document.querySelector('.concert-cards');
+        concertCardsContainer.innerHTML = ''; // 기존 콘텐츠 초기화
+        const messageElement = document.createElement('div');
+        messageElement.textContent = message;
+        messageElement.style.textAlign = 'center';
+        messageElement.style.color = '#777';
+        messageElement.style.fontSize = '16px';
+        concertCardsContainer.appendChild(messageElement);
+        suggestedConcert.style.alignItems = 'center';
+        document.getElementById('suggested-concert').style.display = 'block';
+    }
+
+    // 플레이어 준비 시 음소거 및 재생 시작
+    function onPlayerReady(event) {
+        event.target.playVideo();
+    }
+
+    // 플레이어 상태 변화 감지
+    function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.ENDED) {
+            console.log('동영상 재생이 종료되었습니다.');
+        } else if (event.data == YT.PlayerState.PLAYING) {
+            console.log('동영상이 재생 중입니다.');
+        } else if (event.data == YT.PlayerState.PAUSED) {
+            console.log('동영상이 일시정지되었습니다.');
+        }
+    }
+
+    // YouTube 플레이어 설정 함수
+    function setupYouTubePlayer(videoId, message) {
+        const playerContainer = document.getElementById('player');
+        playerContainer.style.display = 'block';
+        playerContainer.style.textAlign = 'left'; // 플레이어 내부 콘텐츠 좌측 정렬
+        playerContainer.style.width = '100%'; // 부모 요소의 너비를 따라감 (필요 시 조정)
+
+        // 메시지 컨테이너 추가 (유튜브 상단 메시지)
+        // const messageContainer = document.createElement('div');
+        // messageContainer.innerHTML = `
+        //     <div style="margin-bottom: 10px; font-size: 14px; color: #555;">
+        //         ${message}
+        //     </div>
+        // `;
+        // playerContainer.parentElement.insertBefore(messageContainer, playerContainer);
+
+        // 기존 YouTube 플레이어 제거 후 다시 생성 (중복 방지)
+        if (player) {
+            player.destroy();
+        }
+
+        // 새로운 YouTube 플레이어 생성
+        player = new YT.Player('player', {
+            height: '540', // 유튜브 플레이어 높이
+            width: '960',  // 유튜브 플레이어 너비
+            videoId: videoId, // 동적으로 전달받은 videoId 사용
+            playerVars: {
+                'autoplay': 1,  // 자동 재생
+                'controls': 1,  // 컨트롤 표시
+                'rel': 1        // 관련 동영상 표시
+            },
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    }
+
     // 추천 버튼 클릭 이벤트
     document.getElementById('recommend-btn').addEventListener('click', () => {
         if (!isMusicDataLoaded) {
@@ -157,29 +232,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 suggestedConcert.style.alignItems = 'flex-start';
             } 
             else {
-                const concertCardsContainer = document.querySelector('.concert-cards');
-                concertCardsContainer.innerHTML = ''; // 기존 콘텐츠 초기화
-                const noConcertMessage = document.createElement('div');
-                noConcertMessage.textContent = 'No related concerts found.';
-                noConcertMessage.style.textAlign = 'center';
-                noConcertMessage.style.color = '#777';
-                noConcertMessage.style.fontSize = '16px';
-                concertCardsContainer.appendChild(noConcertMessage);
-                suggestedConcert.style.alignItems = 'center';
-                document.getElementById('suggested-concert').style.display = 'block'; // No concert 메시지 표시
+                displayConcertMessage('No related concerts found.');
             }
         } else if (randomMusic.eventDetailsAvailable === 0 || randomMusic.eventDetailsAvailable === -1) {
-            // 이벤트 세부 정보가 없는 경우
-            const concertCardsContainer = document.querySelector('.concert-cards');
-            concertCardsContainer.innerHTML = ''; // 기존 콘텐츠 초기화
-            const noConcertMessage = document.createElement('div');
-            noConcertMessage.textContent = 'No related concerts found.';
-            noConcertMessage.style.textAlign = 'center';
-            noConcertMessage.style.color = '#777';
-            noConcertMessage.style.fontSize = '16px';
-            concertCardsContainer.appendChild(noConcertMessage);
-            suggestedConcert.style.alignItems = 'center';
-            document.getElementById('suggested-concert').style.display = 'block'; // No concert 메시지 표시
+            if (randomMusic.youtube && randomMusic.youtube.length > 0) {
+                setupYouTubePlayer(
+                    randomMusic.youtube,
+                    "No recent concerts related to this piece are available. Instead, enjoy the YouTube preview below!"
+                );
+            } else {
+                displayConcertMessage('No related concerts found.');
+            }
         }
 
         suggestedMusic.style.display = 'flex'; // Suggested Music 표시
