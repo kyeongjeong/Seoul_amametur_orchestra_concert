@@ -40,6 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <button class="heart-button" data-heart-id="${concert.idx}">
                                     <i class="${heartState[heartKey] ? 'fas liked fa-heart' : 'far fa-heart'}"></i>
                                 </button>
+                                <button class="share-button">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
                             </div>
                         </div>
                     `;
@@ -77,6 +80,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
 
+            // 공유 버튼 이벤트 추가
+            document.querySelectorAll('.share-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    const modal = document.getElementById('share-modal');
+                    modal.style.display = 'block';
+                });
+            });
+
             // 공연이 없을 경우 메시지 표시
             if (upcomingContainer.innerHTML.trim() === '') {
                 upcomingContainer.innerHTML = '<p>예정된 공연이 없습니다.</p>';
@@ -86,6 +97,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         })
         .catch(error => console.error('Error loading concert data:', error));
+
+    // 팝업 닫기 버튼 이벤트 추가
+    document.getElementById('close-modal').addEventListener('click', () => {
+        const modal = document.getElementById('share-modal');
+        modal.style.display = 'none';
+    });
+
+    // 팝업 외부 클릭 시 닫기
+    window.addEventListener('click', (event) => {
+        const modal = document.getElementById('share-modal');
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
 
     // 탭 전환 기능
     document.querySelectorAll('.tab-button').forEach(button => {
