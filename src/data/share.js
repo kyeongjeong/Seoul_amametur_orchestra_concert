@@ -26,16 +26,16 @@ function kakaoShare(concertData) {
                 description: '이번 연주회에 함께하세요!',
                 imageUrl: window.location.origin + concertData.image,
                 link: {
-                    mobileWebUrl: "http://127.0.0.1:5500",
-                    webUrl: "http://127.0.0.1:5500"
+                    mobileWebUrl: window.location.href,
+                    webUrl: window.location.href
                 }
             },
             buttons: [
                 {
                     title: '자세히 보기',
                     link: {
-                        mobileWebUrl: "http://127.0.0.1:5500",
-                        webUrl: "http://127.0.0.1:5500"
+                    mobileWebUrl:window.location.href,
+                    webUrl: window.location.href
                     }
                 }
             ]
