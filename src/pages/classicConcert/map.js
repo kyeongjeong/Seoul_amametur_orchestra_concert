@@ -46,7 +46,7 @@ fetch('../../data/positions.json') // JSON 파일 경로
                             <div class="desc">
                                 <div class="ellipsis">${position.address}</div>
                                 <div class="jibun ellipsis">${position.date}</div>
-                                <div><a href="${position.link}" target="_blank" class="link">세부 페이지</a></div>
+                                <div><a href="${position.link}" class="link">세부 페이지</a></div>
                             </div>
                         </div>
                     </div>
