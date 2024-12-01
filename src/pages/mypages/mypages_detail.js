@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <button class="heart-button" data-heart-id="${concert.idx}">
                                         <i class="${heartState[heartKey] ? 'fas liked fa-heart' : 'far fa-heart'}"></i>
                                     </button>
-                                    <button class="share-button" data-title="${concert.title}" data-image="${concert.image}" data-link="../classicConcertPages/${concert.link}">
+                                    <button class="share-button" data-title="${concert.title}" data-image="${concert.image}" data-link="../classicConcertPages/${concert.link}" data-description="${concert.university}에서 주최합니다. 연주회 보러오세요!">
                                         <i class="fas fa-share-alt"></i>
                                     </button>
                                 </div>
@@ -95,11 +95,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         const title = button.dataset.title;
                         const image = button.dataset.image;
                         const link = `${window.location.origin}/src/pages/classicConcertPages/${button.dataset.link}`;
+                        const description = button.dataset.description; // 대학 이름 기반 설명 추가
                 
                         // 공유 데이터 저장
                         modal.dataset.title = title;
                         modal.dataset.image = image;
                         modal.dataset.link = link;
+                        modal.dataset.description = description;
                 
                         // 팝업 열기
                         modal.style.display = 'block';
@@ -139,12 +141,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const title = modal.dataset.title;
         const image = modal.dataset.image;
         const link = modal.dataset.link;
+        const description = modal.dataset.description;
 
         Kakao.Share.sendDefault({
             objectType: 'feed',
             content: {
                 title: title,
-                description: '이번 연주회에 함께하세요!',
+                description: description,
                 imageUrl: image,
                 link: {
                     mobileWebUrl: link,
