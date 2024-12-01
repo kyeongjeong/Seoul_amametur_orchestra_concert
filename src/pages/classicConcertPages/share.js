@@ -22,10 +22,10 @@ function kakaoShare(concertData) {
         Kakao.Link.sendDefault({
             objectType: 'feed',
             content: {
-                title: concertData.title,
-                description: '이번 연주회에 함께하세요!',
-                imageUrl: window.location.origin + concertData.image,
-                link: { //현재 페이지
+                title: concertData.title, // 연주회 제목
+                description: `${concertData.univ}에서 주최합니다. \n연주회 보러오세요!`, // 대학교, 날짜, 내용
+                imageUrl: "https://i.pinimg.com/736x/eb/87/e0/eb87e0533075b6d9aa1bcfdcb2246575.jpg",
+                link: { 
                     mobileWebUrl: window.location.href,
                     webUrl: window.location.href
                 }
@@ -33,7 +33,7 @@ function kakaoShare(concertData) {
             buttons: [
                 {
                     title: '자세히 보기',
-                    link: { //현재 페이지
+                    link: { 
                         mobileWebUrl: window.location.href,
                         webUrl: window.location.href
                     }
@@ -86,7 +86,9 @@ document.addEventListener('DOMContentLoaded', () => {
         kakaoShareButton.addEventListener('click', () => {
             const concertData = {
                 title: document.getElementById('concert-title').textContent,
-                image: document.getElementById('concert-image').src
+                image: document.getElementById('concert-image').src,
+                univ: document.getElementById('concert-univ').textContent,
+                date: document.getElementById('concert-date').textContent
             };
             kakaoShare(concertData);
             closeShareModal(); // 공유 후 팝업 닫기
