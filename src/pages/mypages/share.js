@@ -73,22 +73,49 @@ function clipboardShare(concertData) {
     }
 }
 
-// 팝업 외부 클릭 시 닫기
-window.addEventListener('click', (event) => {
-    const modal = document.getElementById('share-modal');
-    if (event.target === modal) {
-        closeShareModal();
-    }
-});
-
-// 공유 팝업 버튼 클릭 이벤트 추가
+// 이벤트 리스너로 공유 버튼 연결
 document.addEventListener('DOMContentLoaded', () => {
-    const clipboardShareButton = document.getElementById('clipboard-share-button');
-    if (clipboardShareButton) {
-        clipboardShareButton.addEventListener('click', () => {
-            const concertData = JSON.parse(clipboardShareButton.dataset.concert); // 공연 데이터 가져오기
-            clipboardShare(concertData);
+    // 공유 버튼 클릭 시 팝업 열기
+    const shareButton = document.querySelector('.share-button');
+    if (shareButton) {
+        shareButton.addEventListener('click', openShareModal);
+    }
+
+    // 팝업 닫기 버튼 연결
+    const closeModalButton = document.getElementById('close-modal');
+    if (closeModalButton) {
+        closeModalButton.addEventListener('click', closeShareModal);
+    }
+
+    // 카카오톡 공유 버튼 클릭
+    const kakaoShareButton = document.getElementById('kakao-share-button');
+    if (kakaoShareButton) {
+        kakaoShareButton.addEventListener('click', () => {
+            const concertData = {
+                title: document.getElementById('concert-title').textContent,
+                image: document.getElementById('concert-image').src,
+                univ: document.getElementById('concert-univ').textContent,
+                date: document.getElementById('concert-date').textContent
+            };
+            kakaoShare(concertData);
             closeShareModal(); // 공유 후 팝업 닫기
         });
     }
+
+    // 클립보드 공유 버튼 클릭
+    const clipboardShareButton = document.getElementById('clipboard-share-button');
+    if (clipboardShareButton) {
+        clipboardShareButton.addEventListener('click', () => {
+            clipboardShare();
+            closeShareModal(); // 공유 후 팝업 닫기
+        });
+    }
+
+    // 팝업 바깥 클릭 시 닫기
+    window.addEventListener('click', (event) => {
+        const modal = document.getElementById('share-modal');
+        if (event.target === modal) {
+            closeShareModal();
+        }
+    });
 });
