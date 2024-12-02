@@ -77,6 +77,24 @@ document.addEventListener('DOMContentLoaded', () => {
                         localStorage.setItem(heartKey, 'false');
                     }
                 });
+
+                 // 공유 버튼 이벤트
+                // const shareButton = document.querySelector('.share-button');
+                // shareButton.addEventListener('click', function () {
+                //     if (navigator.share) {
+                //         navigator.share({
+                //             title: document.getElementById('concert-title').textContent,
+                //             text: '연주회에 대해 알아보세요!',
+                //             url: window.location.href
+                //         }).then(() => {
+                //             console.log('공유 성공!');
+                //         }).catch((error) => {
+                //             console.error('공유 실패:', error);
+                //         });
+                //     } else {
+                //         alert('이 브라우저에서는 공유 기능이 지원되지 않습니다.');
+                //     }
+                // });
                 
                 //공연 정보 페이지에 렌더링
                 document.querySelector('.menu-bar-link[href=""]').href = concertData.link; 
@@ -88,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('concert-location').textContent = concertData.location;
                 document.getElementById('concert-univ').textContent = concertData.university;
                 document.getElementById('concert-image').src = concertData.image;
-                document.getElementById('concert-club').textContent = concertData.club;
+
             } else {
                 console.error(`No concert information found for club: ${currentClub}`);
             }
