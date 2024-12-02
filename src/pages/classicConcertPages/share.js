@@ -1,6 +1,6 @@
 // 카카오톡 SDK 초기화
 if (typeof Kakao !== 'undefined') {
-    Kakao.init('08144bd4bb478060dc34ae7834e7bd1d');
+    Kakao.init('');
     console.log(Kakao.isInitialized()); // SDK 초기화 상태 확인
 }
 
@@ -24,7 +24,7 @@ function kakaoShare(concertData) {
             content: {
                 title: concertData.title, // 연주회 제목
                 description: `${concertData.univ}에서 주최합니다. \n연주회 보러오세요!`, // 대학교, 날짜, 내용
-                imageUrl: "https://i.namu.wiki/i/FXdSpx0Bc4TtzcSBV3rGMEgo5k79yYMCXlLySKewhm5B02-qixbWlcZIdtqS1JIT10mZ3vcbOBZUt3dyrqEUlA.webp",    //이미지 이상함 
+                imageUrl: window.location.origin + concertData.image, 
                 link: { 
                     mobileWebUrl: window.location.href,
                     webUrl: window.location.href
