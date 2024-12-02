@@ -41,8 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <h4><u>${concert.genre.join(', ')}</u></h4>
                                 <h3>${concert.title}</h3>
                                 <p>${concert.date}<br>${concert.location}</p>
-                                <a href="../classicConcertPages/${concert.link}" class="btn-more">세부 정보</a>
                                 <div class="action-buttons">
+                                    <a href="../classicConcertPages/${concert.link}" class="btn-more">세부 정보</a>
                                     <button class="heart-button" data-heart-id="${concert.idx}">
                                         <i class="${heartState[heartKey] ? 'fas liked fa-heart' : 'far fa-heart'}"></i>
                                     </button>
