@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return acc;
     }, {});
 
-    // JSON 데이터 가져오기
+    // JSON 데이터 가져오기 (공연 목록 표시용)
     fetch('../../data/concert_infos_date.json')
         .then(response => response.json())
         .then(data => {

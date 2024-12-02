@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('concert-location').textContent = concertData.location;
                 document.getElementById('concert-univ').textContent = concertData.university;
                 document.getElementById('concert-image').src = concertData.image;
-                document.getElementById('concert-club').textContent = concertData.club;
+
             } else {
                 console.error(`No concert information found for club: ${currentClub}`);
             }
