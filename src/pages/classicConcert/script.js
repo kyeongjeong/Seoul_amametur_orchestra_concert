@@ -2,12 +2,12 @@ fetch('../../data/concert_infos.json')
     .then(response => response.json())
     .then(data => {
         const itemsPerPage = 4;
-        let currentPage = 1;
+        let currentPage = parseInt(localStorage.getItem('currentPage')) || 1;
         const totalPages = Math.ceil(data.length / itemsPerPage);
         const pageGroupSize = 5;
         
         // 페이지 그룹의 첫 번째와 마지막 그룹 번호 추적
-        let currentPageGroup = 1;
+        let currentPageGroup = Math.ceil(currentPage / pageGroupSize);
         const totalPageGroups = Math.ceil(totalPages / pageGroupSize);
 
         const concertList = document.getElementById('concert-list');
@@ -47,6 +47,7 @@ fetch('../../data/concert_infos.json')
                     detailsButton.textContent = '세부 정보';
                     detailsButton.classList.add('details-button');
                     detailsButton.addEventListener('click', () => {
+                        localStorage.setItem('currentPage', currentPage);
                         window.location.href = `../classicConcertPages/${concert.link}`;
                     });
                     concertItem.querySelector('.concert-details').appendChild(detailsButton);
