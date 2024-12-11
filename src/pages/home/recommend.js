@@ -143,6 +143,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // YouTube 플레이어 제거 함수
+    function removeYouTubePlayer() {
+        const playerContainer = document.getElementById('player');
+        if (player) {
+            player.destroy(); // 기존 YouTube 플레이어 삭제
+            player = null; // player 객체 초기화
+        }
+        playerContainer.innerHTML = ''; // 플레이어 컨테이너 내용 초기화
+        playerContainer.style.display = 'none'; // 컨테이너 숨김
+    }
+
     // YouTube 플레이어 설정 함수
     function setupYouTubePlayer(videoId, message) {
         const playerContainer = document.getElementById('player');
@@ -216,6 +227,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
         }
+
+        // 기존 YouTube 플레이어 제거
+        removeYouTubePlayer();
 
         // 랜덤 곡 선택
         const randomMusic = filteredMusic[Math.floor(Math.random() * filteredMusic.length)];
