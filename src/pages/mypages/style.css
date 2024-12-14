@@ -269,3 +269,59 @@ button {
 .heart-icon:active {
     transform: scale(1.2); /* 클릭 시 확대 */
 }
+
+.subscription-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+/* 토글 스위치 */
+.toggle-switch {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    display: inline-block;
+}
+
+/* 숨겨진 체크박스 */
+.toggle-switch input {
+    display: none;
+}
+
+/* 스위치 배경 */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 25px;
+}
+
+/* 스위치 동그라미 */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3.5px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+/* 토글 활성화 시 */
+input:checked + .slider {
+    background-color: orange;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
