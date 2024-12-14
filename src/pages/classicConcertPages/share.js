@@ -1,6 +1,6 @@
 // 카카오톡 SDK 초기화
 if (typeof Kakao !== 'undefined') {
-    Kakao.init('08144bd4bb478060dc34ae7834e7bd1d');
+    Kakao.init('');
     console.log(Kakao.isInitialized()); // SDK 초기화 상태 확인
 }
 
@@ -22,20 +22,20 @@ function kakaoShare(concertData) {
         Kakao.Link.sendDefault({
             objectType: 'feed',
             content: {
-                title: concertData.title,
-                description: '이번 연주회에 함께하세요!',
-                imageUrl: window.location.origin + concertData.image,
-                link: {
-                    mobileWebUrl: "http://127.0.0.1:5500",
-                    webUrl: "http://127.0.0.1:5500"
+                title: concertData.title, // 연주회 제목
+                description: `${concertData.univ}에서 주최합니다. \n연주회 보러오세요!`, // 대학교, 날짜, 내용
+                imageUrl: window.location.origin + concertData.image, 
+                link: { 
+                    mobileWebUrl: window.location.href,
+                    webUrl: window.location.href
                 }
             },
             buttons: [
                 {
                     title: '자세히 보기',
-                    link: {
-                        mobileWebUrl: "http://127.0.0.1:5500",
-                        webUrl: "http://127.0.0.1:5500"
+                    link: { 
+                        mobileWebUrl: window.location.href,
+                        webUrl: window.location.href
                     }
                 }
             ]
@@ -86,7 +86,9 @@ document.addEventListener('DOMContentLoaded', () => {
         kakaoShareButton.addEventListener('click', () => {
             const concertData = {
                 title: document.getElementById('concert-title').textContent,
-                image: document.getElementById('concert-image').src
+                image: document.getElementById('concert-image').src,
+                univ: document.getElementById('concert-univ').textContent,
+                date: document.getElementById('concert-date').textContent
             };
             kakaoShare(concertData);
             closeShareModal(); // 공유 후 팝업 닫기
