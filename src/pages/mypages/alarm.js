@@ -7,6 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const tomorrow = new Date(today);
     tomorrow.setDate(today.getDate() + 1);
 
+    // 로컬 스토리지에서 하트 상태 불러오기
+    const heartState = Object.keys(localStorage).reduce((acc, key) => {
+        if (key.startsWith('heartLiked_')) {
+            acc[key.replace('heartLiked_', '')] = localStorage.getItem(key) === 'true';
+        }
+        return acc;
+    }, {});
+
     // 알림 설정 변경 시
     subscribeToggle.addEventListener('change', async () => {
         if (subscribeToggle.checked) {
@@ -37,7 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         const upcomingConcerts = data.filter(concert => {
                             const concertDate = new Date(concert.date);
                             // 공연 날짜가 오늘 또는 내일이면 푸쉬 알림
-                            return concertDate >= today && concertDate < new Date(tomorrow.getTime() + 24 * 60 * 60 * 1000);
+                            const heartKey = `${concert.idx}`;
+                            return concertDate >= today && concertDate < new Date(tomorrow.getTime() + 24 * 60 * 60 * 1000) && heartState[heartKey];
                         });
 
                         // 푸쉬 알림 보내기
@@ -77,7 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const upcomingConcerts = data.filter(concert => {
                     const concertDate = new Date(concert.date);
                     // 공연 날짜가 오늘 또는 내일이면 푸쉬 알림
-                    return concertDate >= today && concertDate < new Date(tomorrow.getTime() + 24 * 60 * 60 * 1000);
+                    const heartKey = `${concert.idx}`;
+                    return concertDate >= today && concertDate < new Date(tomorrow.getTime() + 24 * 60 * 60 * 1000) && heartState[heartKey];
                 });
 
                 navigator.serviceWorker.ready.then(registration => {
