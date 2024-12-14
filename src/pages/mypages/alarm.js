@@ -10,6 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // 알림 설정 변경 시
     subscribeToggle.addEventListener('change', async () => {
         if (subscribeToggle.checked) {
+            // 알림 권한이 "차단" 상태라면
+            if (Notification.permission === 'denied') {
+                alert('알림 권한이 차단되어 있습니다. 알림을 받으려면 브라우저 설정에서 알림 권한을 허용해주세요.');
+                subscribeToggle.checked = false; // 다시 체크 해제
+                return;
+            }
             // 알림 권한 요청
             if (Notification.permission === 'default') {
                 const permission = await Notification.requestPermission();
