@@ -15,6 +15,15 @@ document.addEventListener('DOMContentLoaded', () => {
         return acc;
     }, {});
 
+    // 서비스 워커 등록
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js')
+            .then(() => console.log('Service Worker 등록 완료'))
+            .catch(err => console.error('Service Worker 등록 실패:', err));
+    } else {
+        alert('서비스 워커를 지원하지 않는 브라우저입니다.');
+    }
+
     // 알림 설정 변경 시
     subscribeToggle.addEventListener('change', async () => {
         if (subscribeToggle.checked) {
@@ -44,16 +53,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     .then(data => {
                         const upcomingConcerts = data.filter(concert => {
                             const concertDate = new Date(concert.date);
-                            // 공연 날짜가 오늘 또는 내일이면 푸쉬 알림
+                            // 공연 날짜가 내일이면 푸쉬 알림
                             const heartKey = `${concert.idx}`;
-                            return concertDate >= today && concertDate < new Date(tomorrow.getTime() + 24 * 60 * 60 * 1000) && heartState[heartKey];
+                            return concertDate >= tomorrow && concertDate < new Date(tomorrow.getTime() + 24 * 60 * 60 * 1000) && heartState[heartKey];
                         });
 
                         // 푸쉬 알림 보내기
                         navigator.serviceWorker.ready.then(registration => {
                             upcomingConcerts.forEach(concert => {
                                 registration.showNotification('다가오는 공연 알림', {
-                                    body: `${concert.title} 공연이 오늘 또는 내일입니다!`,
+                                    body: `${concert.title} 공연이 내일입니다!`,
                                     icon: concert.image,
                                     vibrate: [200, 100, 200],
                                     tag: `concert_${concert.idx}`, // 중복 방지 태그
@@ -85,15 +94,15 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(data => {
                 const upcomingConcerts = data.filter(concert => {
                     const concertDate = new Date(concert.date);
-                    // 공연 날짜가 오늘 또는 내일이면 푸쉬 알림
+                    // 공연 날짜가 내일이면 푸쉬 알림
                     const heartKey = `${concert.idx}`;
-                    return concertDate >= today && concertDate < new Date(tomorrow.getTime() + 24 * 60 * 60 * 1000) && heartState[heartKey];
+                    return concertDate >= tomorrow && concertDate < new Date(tomorrow.getTime() + 24 * 60 * 60 * 1000) && heartState[heartKey];
                 });
 
                 navigator.serviceWorker.ready.then(registration => {
                     upcomingConcerts.forEach(concert => {
                         registration.showNotification('다가오는 공연 알림', {
-                            body: `${concert.title} 공연이 오늘 또는 내일입니다!`,
+                            body: `${concert.title} 공연이 내일입니다!`,
                             icon: concert.image,
                             vibrate: [200, 100, 200],
                             tag: `concert_${concert.idx}`,
