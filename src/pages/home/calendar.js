@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         location: concert.location,
                         image: concert.image
                     },
-                    color: '#ff9f89',
+                    color: 'orange',
                     textColor: '#FFFFFF'
                 }));
 
