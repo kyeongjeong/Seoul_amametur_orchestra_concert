@@ -397,3 +397,52 @@ body {
     margin: 0;
     text-decoration: none;
 }
+
+
+
+/* 캘린더 */
+#calendar {
+    width: 100%;
+    float: left;
+    margin-right: 20px;
+}
+
+#concert-details {
+    width: 28%;
+    float: left;
+    padding: 10px;
+}
+
+#monthly-concerts .concert-item {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+#monthly-concerts img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+#monthly-concerts h3 {
+    margin: 10px 0;
+}
+
+#monthly-concerts p {
+    margin: 5px 0;
+}
+
+#monthly-concerts .detail-link {
+    display: inline-block;
+    margin-top: 10px;
+    /* color: #007BFF; */
+    text-decoration: none;
+}
+
+#monthly-concerts .detail-link:hover {
+    text-decoration: underline;
+}
+
+#calendar+#concert-details {
+    margin-top: 30px;
+}
