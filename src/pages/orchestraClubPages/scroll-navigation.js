@@ -24,7 +24,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-
+// 소개 버튼 클릭 시 스크롤 이동
 document.querySelector('.btn-intro').addEventListener('click', () => {
     const introSection = document.getElementById('intro');
     const offset = -150;
@@ -37,10 +37,11 @@ document.querySelector('.btn-intro').addEventListener('click', () => {
     });
 });
 
+// 연혁 버튼 클릭 시 스크롤 이동
 document.querySelector('.btn-history').addEventListener('click', () => {
-    const historySection = document.getElementById('history');
-    const offset = -170; // -170px 위로 보이게 조정 -> 물어보기!!
-    const elementPosition = historySection.getBoundingClientRect().top;
+    const clubInfo = document.querySelector('.club-info');
+    const offset = -210; // 70px 위에서 시작
+    const elementPosition = clubInfo.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.scrollY + offset;
 
     window.scrollTo({
