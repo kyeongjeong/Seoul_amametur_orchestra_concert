@@ -1,7 +1,7 @@
 {
   "homepage": "https://kyeongjeong.github.io/Seoul_amateur_orchestra_club/",
   "scripts": {
-    "deploy": "gh-pages -d public"
+    "deploy": "gh-pages -d public -r https://github.com/kyeongjeong/Seoul_amateur_orchestra_club.git"
   },
   "dependencies": {
     "dotenv": "^16.3.1",
