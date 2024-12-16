@@ -253,7 +253,7 @@ async function findRoute() {
             const response = await fetch(apiUrl, {
                 method: 'GET',
                 headers: {
-                    'Authorization': 'KakaoAK ',              // 여기에 REST API 키 넣기
+                    'Authorization': 'KakaoAK 3b47df4ba5a3ab76842fa8d949e83af4', // 여기에 REST API 키 넣기
                     'Content-Type': 'application/json'
                 }
             });
