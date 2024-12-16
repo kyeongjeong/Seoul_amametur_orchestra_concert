@@ -4,91 +4,91 @@ const nextBtn = document.querySelector('.next-btn');
 
 const sliderData = [
     { 
-        src: "../../../public/images/orchestra_logo/kyunghee_mdop.jpg", 
+        src: "/images/orchestra_logo/kyunghee_mdop.jpg", 
         alt: "경희대_엠됴피", 
         url: "../orchestraClubPages/mdop_khu.html",
         clubName: "MDOP",
         university: "경희대학교 아마추어 오케스트라"
     },
     { 
-        src: "../../../public/images/orchestra_logo/sogang_aces.jpg", 
+        src: "/images/orchestra_logo/sogang_aces.jpg", 
         alt: "서강대_에이시스", 
         url: "../orchestraClubPages/aces_su.html",
         clubName: "ACES",
         university: "서강대학교 아마추어 오케스트라"
     },
     { 
-        src: "../../../public/images/orchestra_logo/seoulNational_snupo.jpg", 
+        src: "/images/orchestra_logo/seoulNational_snupo.jpg", 
         alt: "서울대_스누포", 
         url: "../orchestraClubPages/snupo_snu.html",
         clubName: "SNUPO",
         university: "서울대학교 아마추어 오케스트라"
     },
     { 
-        src: "../../../public/images/orchestra_logo/sungkyunkwan_skkuo.jpg", 
+        src: "/images/orchestra_logo/sungkyunkwan_skkuo.jpg", 
         alt: "성균관대_스쿠오", 
         url: "../orchestraClubPages/skkuo_skku.html",
         clubName: "SKKUO",
         university: "성균관대학교 아마추어 오케스트라"
     },
     { 
-        src: "../../../public/images/orchestra_logo/hanyang_hanaklang.jpg", 
+        src: "/images/orchestra_logo/hanyang_hanaklang.jpg", 
         alt: "한양대_하나클랑", 
         url: "../orchestraClubPages/hanaklang_hu.html",
         clubName: "HANAKLANG",
         university: "한양대학교 아마추어 오케스트라"
     },
     { 
-        src: "../../../public/images/orchestra_logo/konkuk_kuphilharmonic.jpg", 
+        src: "/images/orchestra_logo/konkuk_kuphilharmonic.jpg", 
         alt: "건국대_쿠필", 
         url: "../orchestraClubPages/kuphilharmonic_ku.html",
         clubName: "KUPHIL",
         university: "건국대학교 아마추어 오케스트라"
     },
     { 
-        src: "../../../public/images/orchestra_logo/korea_kuorchestra.jpg", 
+        src: "/images/orchestra_logo/korea_kuorchestra.jpg", 
         alt: "고려대_관현악단", 
         url: "../orchestraClubPages/kuorchestra_ku.html",
         clubName: "Korea University Orchestra",
         university: "고려대학교 아마추어 오케스트라"
     },
     { 
-        src: "../../../public/images/orchestra_logo/kwangwoon_dakapo.jpg", 
+        src: "/images/orchestra_logo/kwangwoon_dakapo.jpg", 
         alt: "광운대_다카포", 
         url: "../orchestraClubPages/dakapo_kwu.html",
         clubName: "Da KAPO",
         university: "광운대학교 아마추어 오케스트라"
     },
     { 
-        src: "../../../public/images/orchestra_logo/dongguk_opus.jpg", 
+        src: "/images/orchestra_logo/dongguk_opus.jpg", 
         alt: "동국대_오퍼스", 
         url: "../orchestraClubPages/opus_dgu.html",
         clubName: "OPUS",
         university: "동국대학교 아마추어 오케스트라"
     },
     { 
-        src: "../../../public/images/orchestra_logo/sookmyung_sophia.jpg", 
+        src: "/images/orchestra_logo/sookmyung_sophia.jpg", 
         alt: "숙명여대_소피아", 
         url: "../orchestraClubPages/sophia_smwu.html",
         clubName: "S.O.Phi.A",
         university: "숙명여자대학교 아마추어 오케스트라"
     },
     { 
-        src: "../../../public/images/orchestra_logo/universityOfSeoul_cantabile.jpg", 
+        src: "/images/orchestra_logo/universityOfSeoul_cantabile.jpg", 
         alt: "시립대_칸타빌레", 
         url: "../orchestraClubPages/cantabile_uos.html",
         clubName: "Cantabile",
         university: "서울시립대학교 아마추어 오케스트라"
     },
     { 
-        src: "../../../public/images/orchestra_logo/chungang_rubato.jpg", 
+        src: "/images/orchestra_logo/chungang_rubato.jpg", 
         alt: "중앙대_루바토", 
         url: "../orchestraClubPages/rubato_cau.html",
         clubName: "RUBATO",
         university: "중앙대학교 아마추어 오케스트라"
     },
     { 
-        src: "../../../public/images/orchestra_logo/hongik_hiamo.jpg", 
+        src: "/images/orchestra_logo/hongik_hiamo.jpg", 
         alt: "홍익대_히아모", 
         url: "../orchestraClubPages/hiamo_hongik.html",
         clubName: "HIAMO",
