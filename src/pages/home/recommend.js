@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 선택된 옵션 업데이트
     function updateSelectedOptions() {
         selectedOptionsList.innerHTML = ''; // 초기화
+        console.log('현재 선택된 옵션:', selectedOptions);
         Object.keys(selectedOptions).forEach(category => {
             selectedOptions[category].forEach(option => {
                 const optionDiv = document.createElement('div');
