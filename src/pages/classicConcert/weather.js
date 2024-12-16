@@ -1,4 +1,4 @@
-const apiKey = process.env.API_KEY_WEATHER;
+const apiKey = process.env.NEXT_PUBLIC_API_KEY_WEATHER;
 const weatherContainer = document.querySelector('.weather-container');
 const locationElement = document.getElementById('location');
 const iconElement = document.getElementById('weather-icon');

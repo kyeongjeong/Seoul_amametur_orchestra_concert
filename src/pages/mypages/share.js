@@ -1,6 +1,6 @@
 // 카카오톡 SDK 초기화
 if (typeof Kakao !== 'undefined') {
-    const apiKey = process.env.API_KEY_SHARE;
+    const apiKey = process.env.NEXT_PUBLIC_API_KEY_SHARE;
     Kakao.init(apiKey);
     console.log(Kakao.isInitialized()); // SDK 초기화 상태 확인
 }
