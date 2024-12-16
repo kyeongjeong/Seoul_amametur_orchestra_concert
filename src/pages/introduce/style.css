@@ -138,6 +138,12 @@ body {
     margin:0px;
 }
 
+.instrument-info strong {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
 .instrument-section {
     margin-top: 70px;
 }
@@ -206,19 +212,17 @@ body {
 }
 
 .image-section {
-    text-align: left; /* 이미지를 왼쪽 정렬 */
-    margin: 20px 0; /* 상하 여백 */
+    text-align: center; /* 이미지를 왼쪽 정렬 */
+    margin: 10px 0; /* 상하 여백 */
 }
 
 .image-section .orchestra-image {
-    width: 35%; /* 부모 컨테이너의 35% 너비로 설정 */
-    max-width: 400px; /* 최대 너비를 400px로 제한 */
+    display: inline-block;
+    width: 80%;
     height: auto; /* 비율 유지 */
     object-fit: contain; /* 이미지 비율 유지하면서 잘리지 않도록 설정 */
-    border-radius: 10px; /* 둥근 테두리 효과 */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
     display: block; /* 블록 요소 */
-    margin-left: 0; /* 왼쪽에 붙도록 설정 */
+    margin-left: 0 auto;
 }
 
 
