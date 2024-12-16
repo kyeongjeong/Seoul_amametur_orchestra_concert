@@ -24,7 +24,7 @@ function kakaoShare(concertData) {
             content: {
                 title: concertData.title, // 연주회 제목
                 description: `${concertData.univ}에서 주최합니다. \n연주회 보러오세요!`, // 대학교, 날짜, 내용
-                imageUrl: window.location.origin + concertData.image, 
+                imageUrl: concertData.image, 
                 link: { 
                     mobileWebUrl: window.location.href,
                     webUrl: window.location.href
