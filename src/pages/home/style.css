@@ -415,7 +415,7 @@ body {
 .concert-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2열 */
-    gap: 30px; /* 카드 간격 */
+    gap: 50px; /* 카드 간격 */
     justify-content: center; /* 그리드 전체를 가운데 정렬 */
 }
 
@@ -430,12 +430,12 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center; /* 카드 내부 아이템 중앙 정렬 */
-    width: 400px; /* 카드 고정 너비 */
+    width: 370px; /* 카드 고정 너비 */
 }
 
 /* 공연 카드 이미지 */
 .concert-item img {
-    max-width: 100%;
+    max-width: 80%;
     border-radius: 8px;
     margin-bottom: 15px;
 }
@@ -464,7 +464,7 @@ body {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
-    background-color: #ff9f89;
+    background-color: #333;
     color: #fff;
     border-radius: 4px;
     text-decoration: none;
@@ -474,7 +474,7 @@ body {
 }
 
 .concert-item .detail-link:hover {
-    background-color: #ff6f61;
+    background-color: orange; 
 }
 
 /* Pagination 스타일 */
@@ -485,6 +485,7 @@ body {
 
 .pagination button {
     margin: 0 8px;
+    margin-top:30px;
     padding: 8px 12px;
     background-color: #f0f0f0;
     border: 1px solid #ddd;
@@ -495,13 +496,13 @@ body {
 }
 
 .pagination button.active {
-    background-color: #ff9f89;
+    background-color: #333;
     color: #fff;
     font-weight: bold;
 }
 
 .pagination button:hover {
-    background-color: #ff6f61;
+    background-color: #333;;
     color: #fff;
 }
 
