@@ -1,7 +1,6 @@
 // 카카오톡 SDK 초기화
 if (typeof Kakao !== 'undefined') {
-    const apiKey = '358d93b68ce97def61422b61869da9b6';
-    Kakao.init(apiKey);
+    Kakao.init('358d93b68ce97def61422b61869da9b6'); // 여기에 카카오톡 앱 키를 입력하세요.
     console.log(Kakao.isInitialized()); // SDK 초기화 상태 확인
 }
 
@@ -32,18 +31,18 @@ function kakaoShare(concertData) {
             content: {
                 title: concertData.title || '공연 정보',
                 description: '이번 연주회에 함께하세요!',
-                imageUrl: concertData.image || `${window.location.origin}/default-image.jpg`,
+                imageUrl: concertData.image || `https://seoul-amateur-orchestra-club.vercel.app/default-image.jpg`,
                 link: {
-                    mobileWebUrl: `${window.location.origin}/${concertData.link}`,
-                    webUrl: `${window.location.origin}/${concertData.link}`,
+                    mobileWebUrl: `https://seoul-amateur-orchestra-club.vercel.app/${concertData.link}`,
+                    webUrl: `https://seoul-amateur-orchestra-club.vercel.app/${concertData.link}`,
                 },
             },
             buttons: [
                 {
                     title: '자세히 보기',
                     link: {
-                        mobileWebUrl: `${window.location.origin}/${concertData.link}`,
-                        webUrl: `${window.location.origin}/${concertData.link}`,
+                        mobileWebUrl: `https://seoul-amateur-orchestra-club.vercel.app/${concertData.link}`,
+                        webUrl: `https://seoul-amateur-orchestra-club.vercel.app/${concertData.link}`,
                     },
                 },
             ],
@@ -56,7 +55,7 @@ function kakaoShare(concertData) {
 // 클립보드에 링크 복사 함수
 function clipboardShare(concertData) {
     const tmpTextarea = document.createElement('textarea');
-    tmpTextarea.value = `${window.location.origin}/${concertData.link}`; // 공연 세부 페이지의 URL 복사
+    tmpTextarea.value = `https://seoul-amateur-orchestra-club.vercel.app/${concertData.link}`; // 공연 세부 페이지의 URL 복사
     tmpTextarea.setAttribute('readonly', '');
     tmpTextarea.style.position = 'absolute';
     tmpTextarea.style.left = '-9999px';
@@ -79,7 +78,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 공유 버튼 클릭 시 팝업 열기
     const shareButton = document.querySelector('.share-button');
     if (shareButton) {
-        shareButton.addEventListener('click', openShareModal);
+        shareButton.addEventListener('click', () => {
+            const concertData = {
+                title: document.getElementById('concert-title').textContent,
+                image: document.getElementById('concert-image').src,
+                link: document.getElementById('concert-link').textContent
+            };
+            openShareModal(concertData);
+        });
     }
 
     // 팝업 닫기 버튼 연결
@@ -95,8 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const concertData = {
                 title: document.getElementById('concert-title').textContent,
                 image: document.getElementById('concert-image').src,
-                univ: document.getElementById('concert-univ').textContent,
-                date: document.getElementById('concert-date').textContent
+                link: document.getElementById('concert-link').textContent
             };
             kakaoShare(concertData);
             closeShareModal(); // 공유 후 팝업 닫기
@@ -107,7 +112,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const clipboardShareButton = document.getElementById('clipboard-share-button');
     if (clipboardShareButton) {
         clipboardShareButton.addEventListener('click', () => {
-            clipboardShare();
+            const concertData = {
+                link: document.getElementById('concert-link').textContent
+            };
+            clipboardShare(concertData);
             closeShareModal(); // 공유 후 팝업 닫기
         });
     }
