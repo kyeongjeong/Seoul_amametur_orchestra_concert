@@ -1,10 +1,10 @@
 // 슬라이더 이미지 데이터
 const images = [
-    "../../../public/images/main_banner/main_banner_1.jpg",
-    "../../../public/images/main_banner/main_banner_2.jpg",
-    "../../../public/images/main_banner/main_banner_3.jpg",
-    "../../../public/images/main_banner/main_banner_4.jpg",
-    "../../../public/images/main_banner/main_banner_5.jpg"
+    "/images/main_banner/main_banner_1.jpg",
+    "/images/main_banner/main_banner_2.jpg",
+    "/images/main_banner/main_banner_3.jpg",
+    "/images/main_banner/main_banner_4.jpg",
+    "/images/main_banner/main_banner_5.jpg"
 ];
 
 // 슬라이더 요소 선택
