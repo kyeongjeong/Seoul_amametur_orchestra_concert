@@ -1,4 +1,4 @@
-const apiKey = '';
+const apiKey = '6d615c63207715df50b34dc88ae90f29';
 const weatherContainer = document.querySelector('.weather-container');
 const locationElement = document.getElementById('location');
 const iconElement = document.getElementById('weather-icon');

@@ -24,7 +24,7 @@ function createMarker(top, left, university, club, url) {
     marker.href = url;
 
     const markerImg = document.createElement("img");
-    markerImg.src = "../../../public/images/map_marker.png";
+    markerImg.src = "/images/map_marker.png";
     markerImg.alt = "Map Marker";
     markerImg.style.width = "30px";
     markerImg.style.height = "30px";

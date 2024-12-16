@@ -1,6 +1,6 @@
 // 카카오톡 SDK 초기화
 if (typeof Kakao !== 'undefined') {
-    Kakao.init('');
+    Kakao.init('358d93b68ce97def61422b61869da9b6');
     console.log(Kakao.isInitialized()); // SDK 초기화 상태 확인
 }
 

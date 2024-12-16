@@ -70,11 +70,11 @@
         "title": "Cello Suites (Unaccompanied)",
         "composer": "J.S. Bach",
         "era": "baroque",
-        "genre": "orchestralPiece",
+        "genre": "Orchestral Piece",
         "instPreference": "cello",
         "country": "Austria",
         "eventDetailsAvailable": -1,
-        "youtube": "4l5Ef8hMXEg"
+        "youtube": "mGQLXRTl3Z0"
     },
     {
         "idx": 8,
@@ -184,7 +184,7 @@
         "instPreference": "piano",
         "country": "Germany",
         "eventDetailsAvailable": 0,
-        "youtube": "3TiYGxOQDYw"
+        "youtube": "qP9gE8Enxfo"
     },
     {
         "idx": 18,
@@ -206,7 +206,7 @@
         "instPreference": "violin",
         "country": "Germany",
         "eventDetailsAvailable": -1,
-        "youtube": "cokCgWPRZPg"
+        "youtube": "0Cg_0jepxow"
     },
     {
         "idx": 20,
@@ -257,7 +257,7 @@
         "title": "Egmont Overture",
         "composer": "L. van Beethoven",
         "era": "classical",
-        "genre": "orchestralPiece",
+        "genre": "Orchestral Piece",
         "instPreference": "all",
         "country": "Germany",
         "eventDetailsAvailable": 1,
@@ -268,7 +268,7 @@
         "title": "Coriolan Overture",
         "composer": "L. van Beethoven",
         "era": "classical",
-        "genre": "orchestralPiece",
+        "genre": "Orchestral Piece",
         "instPreference": "all",
         "country": "Germany",
         "eventDetailsAvailable": 1,
@@ -279,7 +279,7 @@
         "title": "Serenade No.13 in G major 'Eine kleine Nachtmusik'",
         "composer": "W.A. Mozart",
         "era": "classical",
-        "genre": "orchestralPiece",
+        "genre": "Orchestral Piece",
         "instPreference": "all",
         "country": "Austria",
         "eventDetailsAvailable": -1,
@@ -338,7 +338,7 @@
         "instPreference": "all",
         "country": "Russia",
         "eventDetailsAvailable": 0,
-        "youtube": "TbDnlAmMtSE"
+        "youtube": "a_B02BZp-5Y"
     },
     {
         "idx": 32,
@@ -371,7 +371,7 @@
         "instPreference": "all",
         "country": "Germany",
         "eventDetailsAvailable": 0,
-        "youtube": "Z6aV5UAlmyQ"
+        "youtube": "otcrnrQAwD8"
     },
     {
         "idx": 35,
@@ -481,7 +481,7 @@
         "instPreference": "all",
         "country": "Czech",
         "eventDetailsAvailable": 0,
-        "youtube": "wIBtWyKj-vA"
+        "youtube": "QXAv-NGppFw"
     },
     {
         "idx": 45,
@@ -503,7 +503,7 @@
         "instPreference": "all",
         "country": "Finland",
         "eventDetailsAvailable": 0,
-        "youtube": "TnOZxNiLk9U"
+        "youtube": "iXU8EXL7a_4"
     },
     {
         "idx": 47,
@@ -558,7 +558,7 @@
         "instPreference": "cello",
         "country": "Russia",
         "eventDetailsAvailable": -1,
-        "youtube": "tG0laIxC0Lo"
+        "youtube": "DQ3iI3s4svg"
     },
     {
         "idx": 52,
@@ -580,7 +580,7 @@
         "instPreference": "piano",
         "country": "Germany",
         "eventDetailsAvailable": -1,
-        "youtube": "I1Yoyz6_Los"
+        "youtube": "OaDi2pdRLPw"
     },
     {
         "idx": 54,
@@ -602,7 +602,7 @@
         "instPreference": "cello",
         "country": "Czech",
         "eventDetailsAvailable": 0,
-        "youtube": "nJSlmoXpzfM"
+        "youtube": "tgWDoUNnLRM"
     },
     {
         "idx": 56,
@@ -613,7 +613,7 @@
         "instPreference": "violin",
         "country": "France",
         "eventDetailsAvailable": 0,
-        "youtube": "DZxwiABbock"
+        "youtube": "ZgQutR3Cz4Y"
     },
     {
         "idx": 57,
@@ -635,7 +635,7 @@
         "instPreference": "piano",
         "country": "Norway",
         "eventDetailsAvailable": -1,
-        "youtube": "I1Yoyz6_Los&t=9s"
+        "youtube": "I1Yoyz6_Los"
     },
     {
         "idx": 59,
@@ -646,14 +646,14 @@
         "instPreference": "cello",
         "country": "UK",
         "eventDetailsAvailable": -1,
-        "youtube": "8hi8oAw0aUE"
+        "youtube": "tXY-A5vMKLM"
     },
     {
         "idx": 60,
         "title": "Swan Lake Suite",
         "composer": "P.I. Tchaikovsky",
         "era": "romantic",
-        "genre": "orchestralPiece",
+        "genre": "Orchestral Piece",
         "instPreference": "all",
         "country": "Russia",
         "eventDetailsAvailable": 1,
@@ -664,7 +664,7 @@
         "title": "Danish March",
         "composer": "P.I. Tchaikovsky",
         "era": "romantic",
-        "genre": "orchestralPiece",
+        "genre": "Orchestral Piece",
         "instPreference": "all",
         "country": "Russia",
         "eventDetailsAvailable": 0,
@@ -675,7 +675,7 @@
         "title": "Romeo and Juliet Fantasy Overture",
         "composer": "P.I. Tchaikovsky",
         "era": "romantic",
-        "genre": "orchestralPiece",
+        "genre": "Orchestral Piece",
         "instPreference": "all",
         "country": "Russia",
         "eventDetailsAvailable": 0,
@@ -686,7 +686,7 @@
         "title": "Slavic March in C minor",
         "composer": "P.I. Tchaikovsky",
         "era": "romantic",
-        "genre": "orchestralPiece",
+        "genre": "Orchestral Piece",
         "instPreference": "all",
         "country": "Russia",
         "eventDetailsAvailable": 0,
@@ -697,29 +697,29 @@
         "title": "The Nutcracker Suite",
         "composer": "P.I. Tchaikovsky",
         "era": "romantic",
-        "genre": "orchestralPiece",
+        "genre": "Orchestral Piece",
         "instPreference": "all",
         "country": "Russia",
         "eventDetailsAvailable": 0,
-        "youtube": "M8J8urC_8Jw"
+        "youtube": "GiEIe0ClGIM"
     },
     {
         "idx": 65,
         "title": "Symphonic Poem No.2 'Tasso'",
         "composer": "F. Liszt",
         "era": "romantic",
-        "genre": "orchestralPiece",
+        "genre": "Orchestral Piece",
         "instPreference": "all",
         "country": "Germany",
         "eventDetailsAvailable": 0,
-        "youtube": "KqFubbd8xOE"
+        "youtube": "L0LRw6toKcM"
     },
     {
         "idx": 66,
         "title": "Tragic Overture",
         "composer": "J. Brahms",
         "era": "romantic",
-        "genre": "orchestralPiece",
+        "genre": "Orchestral Piece",
         "instPreference": "all",
         "country": "Germany",
         "eventDetailsAvailable": 0,
@@ -730,7 +730,7 @@
         "title": "Academic Festival Overture",
         "composer": "J. Brahms",
         "era": "romantic",
-        "genre": "orchestralPiece",
+        "genre": "Orchestral Piece",
         "instPreference": "all",
         "country": "Germany",
         "eventDetailsAvailable": 0,
@@ -741,7 +741,7 @@
         "title": "Variations on a Theme by Haydn",
         "composer": "J. Brahms",
         "era": "romantic",
-        "genre": "orchestralPiece",
+        "genre": "Orchestral Piece",
         "instPreference": "all",
         "country": "Germany",
         "eventDetailsAvailable": 0,
@@ -752,7 +752,7 @@
         "title": "Peer Gynt Suite No.1",
         "composer": "E. Grieg",
         "era": "romantic",
-        "genre": "orchestralPiece",
+        "genre": "Orchestral Piece",
         "instPreference": "all",
         "country": "Norway",
         "eventDetailsAvailable": 0,
@@ -763,7 +763,7 @@
         "title": "Czech Suite in D major",
         "composer": "A. Dvořák",
         "era": "romantic",
-        "genre": "orchestralPiece",
+        "genre": "Orchestral Piece",
         "instPreference": "all",
         "country": "Czech",
         "eventDetailsAvailable": 1,
@@ -774,7 +774,7 @@
         "title": "Slavic Dances",
         "composer": "A. Dvořák",
         "era": "romantic",
-        "genre": "orchestralPiece",
+        "genre": "Orchestral Piece",
         "instPreference": "all",
         "country": "Czech",
         "eventDetailsAvailable": 0,
@@ -785,7 +785,7 @@
         "title": "L'Arlésienne Suite No.1",
         "composer": "G. Bizet",
         "era": "romantic",
-        "genre": "orchestralPiece",
+        "genre": "Orchestral Piece",
         "instPreference": "all",
         "country": "France",
         "eventDetailsAvailable": 0,
@@ -796,18 +796,18 @@
         "title": "Danse Macabre",
         "composer": "C. Saint-Saëns",
         "era": "romantic",
-        "genre": "orchestralPiece",
+        "genre": "Orchestral Piece",
         "instPreference": "all",
         "country": "France",
         "eventDetailsAvailable": 0,
-        "youtube": "71fZhMXlGT4"
+        "youtube": "ZDWMoJz8OYU"
     },
     {
         "idx": 74,
         "title": "Má vlast (My Country) - Vltava",
         "composer": "B. Smetana",
         "era": "romantic",
-        "genre": "orchestralPiece",
+        "genre": "Orchestral Piece",
         "instPreference": "all",
         "country": "Czech",
         "eventDetailsAvailable": 1,
@@ -818,7 +818,7 @@
         "title": "Finlandia",
         "composer": "J. Sibelius",
         "era": "romantic",
-        "genre": "orchestralPiece",
+        "genre": "Orchestral Piece",
         "instPreference": "all",
         "country": "Finland",
         "eventDetailsAvailable": 1,
@@ -829,7 +829,7 @@
         "title": "Orphée aux enfers (Orpheus in the Underworld) Overture",
         "composer": "J. Offenbach",
         "era": "romantic",
-        "genre": "orchestralPiece",
+        "genre": "Orchestral Piece",
         "instPreference": "all",
         "country": "France",
         "eventDetailsAvailable": 1,
@@ -877,7 +877,7 @@
         "instPreference": "all",
         "country": "Germany",
         "eventDetailsAvailable": 0,
-        "youtube": "txAtjngr6dE"
+        "youtube": "nnq_AVNB_58"
     },
     {
         "idx": 81,
@@ -921,7 +921,7 @@
         "instPreference": "all",
         "country": "Italy",
         "eventDetailsAvailable": 0,
-        "youtube": "r2QNLu6xsWc"
+        "youtube": "mdGtyQnCMtI"
     },
     {
         "idx": 85,
@@ -932,7 +932,7 @@
         "instPreference": "all",
         "country": "Italy",
         "eventDetailsAvailable": 0,
-        "youtube": "sHQ1Date2v0"
+        "youtube": "tJoDL1cSRjM"
     },
     {
         "idx": 86,
@@ -950,7 +950,7 @@
         "title": "Masquerade Suite, Op.35",
         "composer": "A. Khachaturian",
         "era": "modern",
-        "genre": "orchestralPiece",
+        "genre": "Orchestral Piece",
         "instPreference": "all",
         "country": "Armenia",
         "eventDetailsAvailable": 0,
@@ -976,6 +976,6 @@
         "instPreference": "all",
         "country": "Russia",
         "eventDetailsAvailable": 1,
-        "youtube": "iR9P82WbQug"
+        "youtube": "6NTdPMRhKXI"
     }
 ]
