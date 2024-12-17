@@ -4,7 +4,7 @@ if (typeof Kakao !== 'undefined') {
     console.log(Kakao.isInitialized()); // SDK 초기화 상태 확인
 }
 
-// 공유 팝업 열기 함수
+// 공유 팝업 열기 함수 dd
 function openShareModal(concertData) {
     const modal = document.getElementById('share-modal');
     modal.style.display = 'block';
