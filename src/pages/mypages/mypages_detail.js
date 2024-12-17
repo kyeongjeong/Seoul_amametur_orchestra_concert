@@ -100,20 +100,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 // 공유 버튼 이벤트 다시 추가
+                // 공유 버튼 이벤트 다시 추가
                 document.querySelectorAll('.share-button').forEach(button => {
                     button.addEventListener('click', () => {
                         const modal = document.getElementById('share-modal');
                         const title = button.dataset.title;
                         const image = button.dataset.image;
-                        const link = `${window.location.origin}/src/pages/classicConcertPages/${button.dataset.link}`;
+                        const link = button.dataset.link; // 절대 경로 그대로 사용
                         const description = button.dataset.description; // 대학 이름 기반 설명 추가
-                
+
                         // 공유 데이터 저장
                         modal.dataset.title = title;
                         modal.dataset.image = image;
                         modal.dataset.link = link;
                         modal.dataset.description = description;
-                
+
                         // 팝업 열기
                         modal.style.display = 'block';
                     });
