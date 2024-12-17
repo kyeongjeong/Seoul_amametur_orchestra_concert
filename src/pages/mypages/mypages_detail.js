@@ -99,25 +99,26 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 });
 
-                // 공유 버튼 이벤트 다시 추가
                 document.querySelectorAll('.share-button').forEach(button => {
                     button.addEventListener('click', () => {
                         const modal = document.getElementById('share-modal');
                         const title = button.dataset.title;
-                        const image = button.dataset.image;
-                        const link = button.dataset.link; // 절대 경로 그대로 사용
-                        const description = button.dataset.description; // 대학 이름 기반 설명 추가
-
+                        const image = button.dataset.image.startsWith('http') 
+                            ? button.dataset.image 
+                            : `${window.location.origin}${button.dataset.image}`; // 상대 경로를 절대 경로로 변환
+                        const link = button.dataset.link;
+                        const description = button.dataset.description;
+                
                         // 공유 데이터 저장
                         modal.dataset.title = title;
                         modal.dataset.image = image;
                         modal.dataset.link = link;
                         modal.dataset.description = description;
-
-                        // 팝업 열기
+                
                         modal.style.display = 'block';
                     });
                 });
+                
             };
 
             renderConcerts();
