@@ -33,26 +33,37 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (!heartState[heartKey]) return;
 
                     const concertCard = `
-                        <div class="history-item">
-                            <div class="history-image">
-                                <img src="${concert.image}" alt="${concert.title}">
-                            </div>
-                            <div class="reservation-info">
-                                <h4><u>${concert.genre.join(', ')}</u></h4>
-                                <h3>${concert.title}</h3>
-                                <p>${concert.date}<br>${concert.location}</p>
-                                <div class="action-buttons">
-                                    <a href="../classicConcertPages/${concert.link}" class="btn-more">세부 정보</a>
-                                    <button class="heart-button" data-heart-id="${concert.idx}">
-                                        <i class="${heartState[heartKey] ? 'fas liked fa-heart' : 'far fa-heart'}"></i>
-                                    </button>
-                                    <button class="share-button" data-title="${concert.title}" data-image="${concert.image}" data-link="../classicConcertPages/${concert.link}" data-description="${concert.university}에서 주최합니다. 연주회 보러오세요!">
-                                        <i class="fas fa-share-alt"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    `;
+    <div class="history-item">
+        <div class="history-image">
+            <img src="${concert.image}" alt="${concert.title}">
+        </div>
+        <div class="reservation-info">
+            <h4><u>${concert.genre.join(', ')}</u></h4>
+            <h3>${concert.title}</h3>
+            <p>${concert.date}<br>${concert.location}</p>
+            <div class="action-buttons">
+                <a href="https://seoul-amateur-orchestra-club.vercel.app/pages/classicConcertPages/${concert.link}" 
+                   class="btn-more">세부 정보</a>
+                <button class="heart-button" data-heart-id="${concert.idx}">
+                    <i class="${heartState[heartKey] ? 'fas liked fa-heart' : 'far fa-heart'}"></i>
+                </button>
+                <button 
+                    class="share-button" 
+                    data-title="${concert.title}" 
+                    data-image="${concert.image}" 
+                    data-description="${concert.university}에서 주최합니다. 연주회 보러오세요!" 
+                    data-link="https://seoul-amateur-orchestra-club.vercel.app/pages/classicConcertPages/${concert.link}"
+                >
+                    <i class="fas fa-share-alt"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+`;
+
+
+
+
 
                     // 공연 날짜에 따라 분류
                     if (concertDate >= today) {

@@ -16,34 +16,6 @@ function closeShareModal() {
     modal.style.display = 'none';
 }
 
-// 카카오톡 공유 함수
-function kakaoShare(concertData) {
-    if (typeof Kakao !== 'undefined') {
-        Kakao.Link.sendDefault({
-            objectType: 'feed',
-            content: {
-                title: concertData.title, // 연주회 제목
-                description: `${concertData.univ}에서 주최합니다. \n연주회 보러오세요!`, // 대학교, 날짜, 내용
-                imageUrl: concertData.image, 
-                link: { 
-                    mobileWebUrl: window.location.href,
-                    webUrl: window.location.href
-                }
-            },
-            buttons: [
-                {
-                    title: '자세히 보기',
-                    link: { 
-                        mobileWebUrl: window.location.href,
-                        webUrl: window.location.href
-                    }
-                }
-            ]
-        });
-    } else {
-        console.error('Kakao SDK not initialized.');
-    }
-}
 
 // 클립보드에 링크 복사 함수
 function clipboardShare() {
@@ -54,11 +26,10 @@ function clipboardShare() {
     tmpTextarea.style.left = '-9999px';
     document.body.appendChild(tmpTextarea);
     tmpTextarea.select();
-    tmpTextarea.setSelectionRange(0, 9999); // 셀렉트 범위 설정
+    tmpTextarea.setSelectionRange(0, 9999);
     var successChk = document.execCommand('copy');
     document.body.removeChild(tmpTextarea);
 
-    // 클립보드 성공 여부 확인
     if (!successChk) {
         alert("클립보드 복사에 실패하였습니다.");
     } else {
@@ -91,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 date: document.getElementById('concert-date').textContent
             };
             kakaoShare(concertData);
-            closeShareModal(); // 공유 후 팝업 닫기
+            closeShareModal();
         });
     }
 
@@ -100,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (clipboardShareButton) {
         clipboardShareButton.addEventListener('click', () => {
             clipboardShare();
-            closeShareModal(); // 공유 후 팝업 닫기
+            closeShareModal();
         });
     }
 
