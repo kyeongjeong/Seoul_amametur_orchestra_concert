@@ -16,25 +16,20 @@ function closeShareModal() {
     modal.style.display = 'none';
 }
 
-
 // 클립보드에 링크 복사 함수
-function clipboardShare() {
+function clipboardShare(link) {
     const tmpTextarea = document.createElement('textarea');
-    tmpTextarea.value = window.location.href; // 현재 페이지의 URL 복사
+    tmpTextarea.value = link; // 인자로 전달된 링크 복사
     tmpTextarea.setAttribute('readonly', '');
     tmpTextarea.style.position = 'absolute';
     tmpTextarea.style.left = '-9999px';
     document.body.appendChild(tmpTextarea);
     tmpTextarea.select();
     tmpTextarea.setSelectionRange(0, 9999);
-    var successChk = document.execCommand('copy');
+    document.execCommand('copy');
     document.body.removeChild(tmpTextarea);
 
-    if (!successChk) {
-        alert("클립보드 복사에 실패하였습니다.");
-    } else {
-        alert("링크가 클립보드에 복사되었습니다!");
-    }
+    alert("링크가 클립보드에 복사되었습니다!");
 }
 
 // 이벤트 리스너로 공유 버튼 연결
@@ -55,13 +50,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const kakaoShareButton = document.getElementById('kakao-share-button');
     if (kakaoShareButton) {
         kakaoShareButton.addEventListener('click', () => {
-            const concertData = {
-                title: document.getElementById('concert-title').textContent,
-                image: document.getElementById('concert-image').src,
-                univ: document.getElementById('concert-univ').textContent,
-                date: document.getElementById('concert-date').textContent
-            };
-            kakaoShare(concertData);
+            const modal = document.getElementById('share-modal');
+            const title = modal.dataset.title;
+            const image = modal.dataset.image;
+            const link = modal.dataset.link;
+            const description = modal.dataset.description;
+
+            Kakao.Share.sendDefault({
+                objectType: 'feed',
+                content: {
+                    title: title,
+                    description: description,
+                    imageUrl: image,
+                    link: {
+                        mobileWebUrl: link,
+                        webUrl: link
+                    }
+                },
+                buttons: [
+                    {
+                        title: '자세히 보기',
+                        link: {
+                            mobileWebUrl: link,
+                            webUrl: link
+                        }
+                    }
+                ]
+            });
             closeShareModal();
         });
     }
@@ -70,7 +85,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const clipboardShareButton = document.getElementById('clipboard-share-button');
     if (clipboardShareButton) {
         clipboardShareButton.addEventListener('click', () => {
-            clipboardShare();
+            const modal = document.getElementById('share-modal');
+            const link = modal.dataset.link; // 팝업에 저장된 링크 사용
+            clipboardShare(link);
             closeShareModal();
         });
     }

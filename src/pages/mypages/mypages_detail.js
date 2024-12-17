@@ -33,33 +33,33 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (!heartState[heartKey]) return;
 
                     const concertCard = `
-    <div class="history-item">
-        <div class="history-image">
-            <img src="${concert.image}" alt="${concert.title}">
-        </div>
-        <div class="reservation-info">
-            <h4><u>${concert.genre.join(', ')}</u></h4>
-            <h3>${concert.title}</h3>
-            <p>${concert.date}<br>${concert.location}</p>
-            <div class="action-buttons">
-                <a href="https://seoul-amateur-orchestra-club.vercel.app/pages/classicConcertPages/${concert.link}" 
-                   class="btn-more">세부 정보</a>
-                <button class="heart-button" data-heart-id="${concert.idx}">
-                    <i class="${heartState[heartKey] ? 'fas liked fa-heart' : 'far fa-heart'}"></i>
-                </button>
-                <button 
-                    class="share-button" 
-                    data-title="${concert.title}" 
-                    data-image="${concert.image}" 
-                    data-description="${concert.university}에서 주최합니다. 연주회 보러오세요!" 
-                    data-link="https://seoul-amateur-orchestra-club.vercel.app/pages/classicConcertPages/${concert.link}"
-                >
-                    <i class="fas fa-share-alt"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-`;
+                        <div class="history-item">
+                            <div class="history-image">
+                                <img src="${concert.image}" alt="${concert.title}">
+                            </div>
+                            <div class="reservation-info">
+                                <h4><u>${concert.genre.join(', ')}</u></h4>
+                                <h3>${concert.title}</h3>
+                                <p>${concert.date}<br>${concert.location}</p>
+                                <div class="action-buttons">
+                                    <a href="https://seoul-amateur-orchestra-club.vercel.app/pages/classicConcertPages/${concert.link}" 
+                                    class="btn-more">세부 정보</a>
+                                    <button class="heart-button" data-heart-id="${concert.idx}">
+                                        <i class="${heartState[heartKey] ? 'fas liked fa-heart' : 'far fa-heart'}"></i>
+                                    </button>
+                                    <button 
+                                        class="share-button" 
+                                        data-title="${concert.title}" 
+                                        data-image="${concert.image}" 
+                                        data-description="${concert.university}에서 주최합니다. 연주회 보러오세요!" 
+                                        data-link="https://seoul-amateur-orchestra-club.vercel.app/pages/classicConcertPages/${concert.link}"
+                                    >
+                                        <i class="fas fa-share-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
 
 
 
@@ -99,7 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 });
 
-                // 공유 버튼 이벤트 다시 추가
                 // 공유 버튼 이벤트 다시 추가
                 document.querySelectorAll('.share-button').forEach(button => {
                     button.addEventListener('click', () => {
@@ -181,26 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.style.display = 'none';
     });
 
-    // 클립보드 공유 버튼 이벤트 추가
-    document.getElementById('clipboard-share-button').addEventListener('click', () => {
-        const modal = document.getElementById('share-modal');
-        const link = modal.dataset.link;
-
-        const tmpTextarea = document.createElement('textarea');
-        tmpTextarea.value = link;
-        tmpTextarea.setAttribute('readonly', '');
-        tmpTextarea.style.position = 'absolute';
-        tmpTextarea.style.left = '-9999px';
-        document.body.appendChild(tmpTextarea);
-        tmpTextarea.select();
-        tmpTextarea.setSelectionRange(0, 9999);
-        document.execCommand('copy');
-        document.body.removeChild(tmpTextarea);
-
-        alert('링크가 클립보드에 복사되었습니다!');
-        modal.style.display = 'none';
-    });
-
+    
     // 탭 전환 기능
     document.querySelectorAll('.tab-button').forEach(button => {
         button.addEventListener('click', () => {
